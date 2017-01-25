@@ -10,11 +10,11 @@ The project repository for TDDD96, Group 8
 * Before starting working, make it a habit to always pull from the branch you are currently working on.
 
 * Once there are files staged for commit:
-⋅⋅ 1. git add <filename1> <filename2> ...
-⋅⋅ 2. git commit -m <message> (alternatively, leave out the "m" flag and use your favourite editor)
-⋅⋅ 3. git pull origin <branch_name>
-⋅⋅ 4. If any, resolve merge conflicts
-⋅⋅ 5. git push origin <branch_name>
+ 1. git add <filename1> <filename2> ...
+ 2. git commit -m <message> (alternatively, leave out the "m" flag and use your favourite editor)
+ 3. git pull origin <branch_name>
+ 4. If any, resolve merge conflicts
+ 5. git push origin <branch_name>
 
 ## Useful links
 * [How to write commit messages - detailed]
