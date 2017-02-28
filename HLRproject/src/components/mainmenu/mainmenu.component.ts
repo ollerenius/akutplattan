@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
   templateUrl: './mainmenu.component.html',
   styleUrls: ['./mainmenu.component.css']
 })
+
 export class MainMenuComponent {
-  title = 'Mainmenu works!';
+  get title(): string {
+    return this._title;
+  }
+
+  set title(value: string) {
+    this._title = value;
+  }
+  private _title = 'Main Menu';
 }
