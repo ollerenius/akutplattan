@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./barnhlr.component.css']
 })
 export class BarnHLRComponent {
-  title = 'BarnHLR component';
+  title = 'BarnHLR page';
 }
