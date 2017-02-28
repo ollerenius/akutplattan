@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './log.component.html',
   styleUrls: ['./log.component.css']
 })
-export class AppComponent {
+export class LogComponent {
   title = 'Log app page';
 }
