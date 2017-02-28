@@ -4,10 +4,18 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'main-menu',
   templateUrl: './mainmenu.component.html',
   styleUrls: ['./mainmenu.component.css']
 })
+
 export class MainMenuComponent {
-  title = 'Mainmenu works!';
+  get title(): string {
+    return this._title;
+  }
+
+  set title(value: string) {
+    this._title = value;
+  }
+  private _title = 'Main Menu';
 }

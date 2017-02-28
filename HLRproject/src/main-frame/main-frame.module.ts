@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { MainFrameComponent } from './main-frame.component';
+//import { MainMenuComponent } from '../components/mainmenu/mainmenu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    MainFrameComponent
   ],
   imports: [
     BrowserModule,
@@ -15,6 +16,6 @@ import { AppComponent } from './app.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainFrameComponent]
 })
-export class AppModule { }
+export class MainFrameModule { }
