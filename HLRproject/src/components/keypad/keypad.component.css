@@ -6,3 +6,8 @@
 .keypad-input{
   font-size: 40px;
 }
+
+.btn-text{
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
