@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Attribute} from '@angular/core';
 
 @Component({
   selector: 'keypad-comp',
@@ -6,13 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./keypad.component.css']
 })
 export class KeyPadComponent {
-  title = 'Keypad component';
 
 
-
+  keypad_placeholder = "...";
+  keypad_res = "";
   firstTime: boolean = true;
   weight: number = 0;
   testList: Array<number> = [];
+
+  constructor(@Attribute('placeholder') input: string) {
+    this.keypad_placeholder = input;
+  }
+
 
   public setManualWeight(pressedButton){
     let outputText: string = 'Enter Weight';
@@ -21,24 +26,24 @@ export class KeyPadComponent {
     {
       this.testList.push(this.weight);
       this.weight = 0;
-      this.title = outputText;
+      this.keypad_res = outputText;
       this.firstTime = true;
     }
     else if(pressedButton == 'C')
     {
-      this.title = outputText;
+      this.keypad_res = outputText;
       this.firstTime = true;
     }
     else if (this.firstTime)
     {
       this.weight = 10 * this.weight + pressedButton;
-      this.title = String(pressedButton);
+      this.keypad_res = String(pressedButton);
       this.firstTime = false;
     }
     else
     {
       this.weight = 10 * this.weight + pressedButton;
-      this.title += String(pressedButton);
+      this.keypad_res += String(pressedButton);
     }
   }
 }

@@ -1,32 +1,21 @@
-<div class="row">
-  <div class="col-md-2">
-    <h1>
-      {{title}}
-    </h1>
+<div class="col-md-6 keypad-frame" >
+  <div class="row">
+    <input class="input-lg keypad-input form-control col-md-12" type="text" placeholder="{{keypad_placeholder}}" readonly>
+  </div>
+
+  <div class="row">
+    <button class="btn-large col-md-4 btn-default" *ngFor="let i of [1,2,3]" (click)="setManualWeight(i)">{{i}}</button>
+  </div>
+
+  <div class="row">
+    <button class="btn-large col-md-4 btn-default" *ngFor="let j of [4,5,6]"  (click)="setManualWeight(j)">{{j}}</button>
+  </div>
+
+  <div class="row">
+    <button class="btn-large col-md-4 btn-default" *ngFor="let k of [7,8,9]" (click)="setManualWeight(k)">{{k}}</button>
+  </div>
+
+  <div class="row">
+    <button class="btn-large col-md-4 btn-default" *ngFor="let l of ['C',0,'OK']" (click)="setManualWeight(l)">{{l}}</button>
   </div>
 </div>
-
-<div class="row">
-  <button class="btn col-md-1 btn-default" *ngFor="let i of [1,2,3]" (click)="setManualWeight(i)">{{i}}</button>
-</div>
-
-<div class="row">
-  <button class="btn col-md-1 btn-default" *ngFor="let j of [4,5,6]"  (click)="setManualWeight(j)">{{j}}</button>
-</div>
-
-<div class="row">
-  <button class="btn col-md-1 btn-default" *ngFor="let k of [7,8,9]" (click)="setManualWeight(k)">{{k}}</button>
-</div>
-
-<div class="row">
-  <button class="btn col-md-1 btn-default" *ngFor="let l of ['C',0,'OK']" (click)="setManualWeight(l)">{{l}}</button>
-</div>
-
-<div class="row">
-  <div class="col-md-4">
-    <ul *ngIf="testList.length > 0">
-      <li *ngFor="let m of testList">{{m}}</li>
-    </ul>
-  </div>
-</div>
-
