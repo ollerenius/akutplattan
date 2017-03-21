@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import {ChecklistComponent} from "./checklist/checklist.component";
 
 @Component({
-  selector: 'hlrflow-page',
+  selector: 'hlr-page',
   templateUrl: './hlr.component.html',
   styleUrls: ['./hlr.component.css']
 })
 export class HLRComponent {
-  title = 'HLR page';
+  public title: string = 'HLR page';
+  checklist: ChecklistComponent;
 }
