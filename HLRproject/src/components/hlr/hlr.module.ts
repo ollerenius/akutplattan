@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import {HLRComponent} from "./hlr.component";
 import {ChecklistComponent } from "./checklist/checklist.component"
+import {HLRFlowComponent} from "./hlrflow/hlrflow.component";
 
 @NgModule({
   declarations: [
     HLRComponent,
-    ChecklistComponent
+    ChecklistComponent,
+    HLRFlowComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +19,6 @@ import {ChecklistComponent } from "./checklist/checklist.component"
     HttpModule
   ],
   providers: [],
-  bootstrap: [HLRComponent, ChecklistComponent]
+  bootstrap: [HLRComponent, ChecklistComponent, HLRFlowComponent]
 })
 export class HLRModule { }
