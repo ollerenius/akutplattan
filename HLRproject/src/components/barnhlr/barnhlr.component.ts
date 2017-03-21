@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class BarnHLRComponent {
   title = 'BarnHLR page';
+  vikt = 0;
 }

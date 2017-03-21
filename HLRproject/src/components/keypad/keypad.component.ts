@@ -10,40 +10,23 @@ export class KeyPadComponent {
 
   keypad_placeholder = "...";
   keypad_res = "";
-  firstTime: boolean = true;
-  weight: number = 0;
-  testList: Array<number> = [];
 
   constructor(@Attribute('placeholder') input: string) {
     this.keypad_placeholder = input;
   }
 
-
-  public setManualWeight(pressedButton){
-    let outputText: string = 'Enter Weight';
-
-    if(pressedButton == 'OK')
-    {
-      this.testList.push(this.weight);
-      this.weight = 0;
-      this.keypad_res = outputText;
-      this.firstTime = true;
-    }
-    else if(pressedButton == 'C')
-    {
-      this.keypad_res = outputText;
-      this.firstTime = true;
-    }
-    else if (this.firstTime)
-    {
-      this.weight = 10 * this.weight + pressedButton;
-      this.keypad_res = String(pressedButton);
-      this.firstTime = false;
-    }
-    else
-    {
-      this.weight = 10 * this.weight + pressedButton;
-      this.keypad_res += String(pressedButton);
+  public handleInput(pressedKey){
+    switch(pressedKey){
+      case 'C':
+          this.keypad_res = "";
+        break;
+      case 'OK':
+          console.log("Result is " + Number(this.keypad_res));
+        break;
+      default:
+          this.keypad_res += pressedKey;
+        break;
     }
   }
+
 }
