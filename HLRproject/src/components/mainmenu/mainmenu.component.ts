@@ -10,12 +10,9 @@ import { Component } from '@angular/core';
 })
 
 export class MainMenuComponent {
-  get title(): string {
-    return this._title;
+
+  goToHLR(): void {
+
   }
 
-  set title(value: string) {
-    this._title = value;
-  }
-  private _title = 'Main Menu';
 }
