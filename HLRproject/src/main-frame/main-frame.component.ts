@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class MainFrameComponent {
   title = 'Main Frame Rocks!';
+  leftArrow: string;
+
+  constructor(){
+    this.leftArrow = '../assets/images/left-arrow.jpg'
+  }
 }
