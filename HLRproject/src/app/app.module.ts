@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { PopoverComponent } from '../components/hlr/popover/popover.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PopoverComponent
   ],
   imports: [
     BrowserModule,
