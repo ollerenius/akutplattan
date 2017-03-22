@@ -19,7 +19,6 @@ export class HeaderComponent {
     this.leftArrow = '../assets/images/left-arrow.jpg'
   }
 
-  // The following should be part of HeaderComponent, not the main frame
   currentTime : string = this.getCurrentTime();
   private getCurrentTime() : string {
     var date : Date = new Date();
@@ -32,6 +31,11 @@ export class HeaderComponent {
 
   updateTime() : void {
     this.currentTime = this.getCurrentTime();
+  }
+
+
+  goBack() : void {
+    console.log('You pressed the Back-button.');
   }
 
 }
