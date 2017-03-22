@@ -2,9 +2,13 @@
   height: 70px;
 }
 
-#headerElement .img-responsive{
+.img-responsive {
   display: block;
   width: auto;
   max-height: 100%;
 
+}
+
+.row {
+  border-bottom: 1px solid #ccc;
 }
