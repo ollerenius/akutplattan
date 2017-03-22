@@ -25,7 +25,7 @@ export class KeyPadComponent {
         break;
       default:
           //Checks so that pressed key isn't 0 when there is no number, as well as sanity checking the clicked input.
-          if (!(pressedKey == '0' && this.keypad_res.length == 0) && !isNaN(Number(this.keypad_res))){
+          if (!(pressedKey == '0' && this.keypad_res.length == 0) && !isNaN(Number(pressedKey))){
             if(this.keypad_res.length < 3){
               this.keypad_res += pressedKey;
             }
