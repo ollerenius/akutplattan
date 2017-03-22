@@ -24,7 +24,14 @@ export class KeyPadComponent {
           console.log("Result is " + Number(this.keypad_res));
         break;
       default:
-          this.keypad_res += pressedKey;
+          //Checks so that pressed key isn't 0 when there is no number, as well as sanity checking the clicked input.
+          if (!(pressedKey == '0' && this.keypad_res.length == 0) && !isNaN(Number(this.keypad_res))){
+            if(this.keypad_res.length < 3){
+              this.keypad_res += pressedKey;
+            }
+          }
+
+
         break;
     }
   }
