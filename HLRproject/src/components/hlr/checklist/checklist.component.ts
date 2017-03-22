@@ -10,4 +10,15 @@ import { Component } from '@angular/core';
 })
 export class ChecklistComponent {
   public title: string = 'Checklist';
+
+  model = {
+    larma: false,
+    pvk: false,
+    narkos: false,
+    hjartbrada: false,
+    acetat: false,
+    medicinjour: false,
+    syrgas: false,
+    anhoriga: false
+  };
 }

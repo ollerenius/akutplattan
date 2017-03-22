@@ -11,4 +11,6 @@ export class HLRComponent {
   public title: string = 'HLR page';
   checklist: ChecklistComponent;
   flow: HLRFlowComponent;
+
+
 }

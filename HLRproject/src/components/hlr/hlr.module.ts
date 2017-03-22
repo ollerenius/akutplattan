@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import {HLRComponent} from "./hlr.component";
 import {ChecklistComponent } from "./checklist/checklist.component"
 import {HLRFlowComponent} from "./hlrflow/hlrflow.component";
+import { PopoverModule } from 'ng2-bootstrap/popover';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {HLRFlowComponent} from "./hlrflow/hlrflow.component";
     HLRFlowComponent
   ],
   imports: [
+    PopoverModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule

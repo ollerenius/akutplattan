@@ -1,17 +1,55 @@
-<div class="checkbox">
-  <div class="checkbox.inline">
-    <label><input type="checkbox" value="">Larma</label>
-    <label><input type="checkbox" value="">PVK</label>
-    <label><input type="checkbox" value="">Narkos</label>
+<div class="container-fluid">
+  <div class="row">
+    <div class="checkbox">
+      <div class="col-md-4">
+        <label class="btn btn-primary" [class.active]="model.larma">
+          <input type="checkbox" [(ngModel)]="model.larma" value="larma">Larma
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="btn btn-primary" [class.active]="model.pvk">
+          <input type="checkbox" [(ngModel)]="model.pvk" value="pvk">PVK
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="btn btn-primary" [class.active]="model.narkos">
+          <input type="checkbox" [(ngModel)]="model.narkos" value="narkos">Narkos
+        </label>
+      </div>
+    </div>
   </div>
-  <div class="checkbox.inline">
-    <label><input type="checkbox" value="">Hjärtbräda</label>
-    <label><input type="checkbox" value="">Ringa acetat</label>
-    <label><input type="checkbox" value="">Medicinjour</label>
+  <div class="row">
+    <div class="checkbox">
+      <div class="col-md-4">
+        <label class="btn btn-primary" [class.active]="model.hjartbrada">
+          <input type="checkbox" [(ngModel)]="model.hjartbrada" value="hjartbrada">Hjärtbräda
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="btn btn-primary" [class.active]="model.acetat">
+          <input type="checkbox" [(ngModel)]="model.acetat" value="acetat">Ringa acetat
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="btn btn-primary" [class.active]="model.medicinjour">
+          <input type="checkbox" [(ngModel)]="model.medicinjour" value="medicinjour">Medicinjour
+        </label>
+      </div>
+    </div>
   </div>
-  <div class="checkbox.inline">
-    <label><input type="checkbox" value="">Syrgas</label>
-    <label><input type="checkbox" value="">Anhöriga</label>
+  <div class="row">
+    <div class="checkbox">
+      <div class="col-md-4">
+        <label class="btn btn-primary" [class.active]="model.syrgas">
+          <input type="checkbox" [(ngModel)]="model.syrgas" value="syrgas">Syrgas
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label class="btn btn-primary" [class.active]="model.anhoriga">
+          <input type="checkbox" [(ngModel)]="model.anhoriga" value="anhoriga">Anhöriga
+        </label>
+      </div>
+    </div>
   </div>
 </div>
-
+<hr>
