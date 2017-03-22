@@ -1,0 +1,10 @@
+#headerElement {
+  height: 70px;
+}
+
+#headerElement .img-responsive{
+  display: block;
+  width: auto;
+  max-height: 100%;
+
+}

@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { MainFrameComponent } from './main-frame.component';
 import { MainMenuComponent } from '../components/mainmenu/mainmenu.component';
+import {HeaderComponent} from "../components/header/header.component";
 
 @NgModule({
   declarations: [
     MainFrameComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
