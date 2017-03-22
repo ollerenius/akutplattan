@@ -6,7 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['main-frame.component.css']
 })
 export class MainFrameComponent {
+  
   title = 'Titel';
+
+  leftArrow: string;
+
+  constructor(){
+    this.leftArrow = '../assets/images/left-arrow.jpg'
+  }
 
   // The following should be part of HeaderComponent, not the main frame
   currentTime : string = this.getCurrentTime();
