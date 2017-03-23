@@ -1,0 +1,11 @@
+<!--  POPOVER FOR "MEDICINE"-BUTTONS   -->
+
+<template #popMedicineTemplate>
+  <div [innerHTML]="adrenaline"></div>
+  <div [innerHTML]="amiodarone"></div>
+</template>
+
+
+<button type="button" class="btn btn-lg" triggers="focus" [popover]="popMedicineTemplate" popoverTitle="Medicin" [innerHTML]="buttontext">
+
+</button>
