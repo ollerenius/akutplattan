@@ -1,0 +1,23 @@
+
+<div class="col-md-offset-3">
+  <div class="row">
+    <!-- <keypad-comp placeholder='Ange vikt...'></keypad-comp> -->
+    <keypad-comp placeholder='Ange ålder...'></keypad-comp>
+  </div>
+  <div class="row" *ngIf="inputType">
+    <div class="barnhlr-choose">
+        <div class="row">
+
+            <h1>Beräknad vikt: {{vikt}} kg</h1>
+
+        </div>
+        <div class="row">
+
+            <button class="col-md-4 btn-success">Använd vikt</button>
+            <button class="col-md-4 btn-danger">Ange egen vikt</button>
+
+        </div>
+      </div>
+
+  </div>
+</div>

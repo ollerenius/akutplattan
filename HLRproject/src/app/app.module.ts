@@ -6,18 +6,23 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {KeyPadComponent} from "../components/keypad/keypad.component";
+import {BarnHLRStartComponent} from "../components/barnhlr/barnhlr.component";
+import {BarnHLRSettingsComponent} from "../components/barnhlrsettings/barnhlrsettings.component";
+import {BarnHLRService} from "../components/barnhlr/barnhlr.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    KeyPadComponent
+    KeyPadComponent,
+    BarnHLRStartComponent,
+    BarnHLRSettingsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [BarnHLRService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

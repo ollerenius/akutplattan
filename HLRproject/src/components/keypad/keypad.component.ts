@@ -8,8 +8,8 @@ import {Component, Attribute} from '@angular/core';
 export class KeyPadComponent {
 
 
-  keypad_placeholder = "...";
-  keypad_res = "";
+  keypad_placeholder:string = "...";
+  keypad_res:string = "";
 
   constructor(@Attribute('placeholder') input: string) {
     this.keypad_placeholder = input;
