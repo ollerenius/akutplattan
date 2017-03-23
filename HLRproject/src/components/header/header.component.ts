@@ -1,5 +1,6 @@
 /**
- * Created by susanna on 2017-03-22.
+ * HeaderComponent is the component that contains the
+ * "menu bar" at the top of the application.
  */
 
 import { Component } from '@angular/core';
@@ -13,6 +14,10 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   title = 'Titel';
+
+  /**
+   * The path to the back arrow image file.
+   */
   leftArrow: string;
   currentTime : string;
 
@@ -21,6 +26,10 @@ export class HeaderComponent {
     this.startClock();
   }
 
+  /**
+   * goBack() is called when clicking the back button in the header.
+   * Functionality not yet implemented.
+   */
   goBack() : void {
     console.log('You pressed the Back-button.');
   }
