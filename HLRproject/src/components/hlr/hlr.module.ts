@@ -7,13 +7,13 @@ import { PopoverModule } from 'ng2-bootstrap/popover';
 import {HLRComponent} from "./hlr.component";
 import {ChecklistComponent } from "./checklist/checklist.component"
 import {HLRFlowComponent} from "./hlrflow/hlrflow.component";
-import { PopoverComponent } from './popover/popover.component';
+import { PopoverAnalysisComponent } from './popover_analysis/popover_analysis.component';
 
 @NgModule({
   declarations: [
     HLRComponent,
     ChecklistComponent,
-    PopoverComponent,
+    PopoverAnalysisComponent,
     HLRFlowComponent
   ],
   imports: [

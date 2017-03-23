@@ -1,0 +1,16 @@
+<!--  POPOVER FOR "ANALYS" VF/VT ASYSTOLI-BUTTONS   -->
+
+<template #popTemplate><div> <button type="button" class="btn btn-primary" >
+  VF/VT
+</button> </div>
+
+  <div> <button type="button" class="btn btn-primary" >
+    Asystoli/PEA
+  </button> </div>
+</template>
+
+
+<button type="button" class="btn btn-success"
+        [popover]="popTemplate" popoverTitle="Analys">
+  Analys
+</button>
