@@ -12,8 +12,6 @@ export class HLRFlowComponent {
 
   buttonTitle: string = "testing";
 
-  public html:string = `<span class="btn btn-danger">Never trust HTML!!!</span>`;
-
   public  analysFunction(){
 
   }

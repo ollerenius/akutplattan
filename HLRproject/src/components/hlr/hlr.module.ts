@@ -8,12 +8,14 @@ import {HLRComponent} from "./hlr.component";
 import {ChecklistComponent } from "./checklist/checklist.component"
 import {HLRFlowComponent} from "./hlrflow/hlrflow.component";
 import { PopoverAnalysisComponent } from './popover_analysis/popover_analysis.component';
+import { PopoverMedicineComponent } from './popover_medicine/popover_medicine.component';
 
 @NgModule({
   declarations: [
     HLRComponent,
     ChecklistComponent,
     PopoverAnalysisComponent,
+    PopoverMedicineComponent,
     HLRFlowComponent
   ],
   imports: [
