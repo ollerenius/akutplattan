@@ -7,8 +7,8 @@ describe('hlrproject App', () => {
     page = new HLRprojectPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying main-frame works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('main-frame works!');
   });
 });
