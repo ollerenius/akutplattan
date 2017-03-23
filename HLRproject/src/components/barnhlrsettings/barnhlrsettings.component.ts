@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import { BarnHLRStartComponent }  from './../barnhlr/barnhlr.component'
 import { BarnHLRService } from './../barnhlr/barnhlr.service';
+
 
 @Component({
   selector: 'barnhlrsettings-page',
@@ -8,16 +10,16 @@ import { BarnHLRService } from './../barnhlr/barnhlr.service';
 })
 export class BarnHLRSettingsComponent implements OnInit{
   title = 'BarnHLR page';
-  inputType: boolean = true;
-
+  useAge: boolean;
 
   constructor(private barnHLRService: BarnHLRService) {
 
   }
 
   getSettings(): void {
-   this.inputType = this.barnHLRService.getSettings().valueOf();
+  this.barnHLRService.getSettings().then(useAge => this.useAge = useAge);
   }
+
 
 
   ngOnInit(): void {

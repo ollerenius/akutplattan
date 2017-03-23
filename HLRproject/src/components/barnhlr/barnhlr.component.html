@@ -3,8 +3,8 @@
     <h1>Känd vikt?</h1>
   </div>
   <div class="row">
-    <button class="barnhlr-button btn-large col-md-4 col-md-offset-1 btn-success" [routerLink]="['/barnhlr/calc']">Ja</button>
-    <button class="barnhlr-button btn-large col-md-4 col-md-offset-2 btn-danger" [routerLink]="['/barnhlr/calc']">Nej</button>
+    <button class="barnhlr-button btn-large col-md-4 col-md-offset-1 btn-success" (click)="useAge==true" [routerLink]="['/barnhlr/calc']">Ja</button>
+    <button class="barnhlr-button btn-large col-md-4 col-md-offset-2 btn-danger" (click)="useAge==false" [routerLink]="['/barnhlr/calc']">Nej</button>
 </div>
 </div>
 
