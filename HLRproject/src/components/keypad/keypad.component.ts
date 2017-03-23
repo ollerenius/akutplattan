@@ -1,4 +1,4 @@
-import {Component, Attribute} from '@angular/core';
+import {Component, Attribute, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'keypad-comp',
@@ -6,7 +6,7 @@ import {Component, Attribute} from '@angular/core';
   styleUrls: ['./keypad.component.css']
 })
 export class KeyPadComponent {
-
+  @Output() notify: EventEmitter<number> = new EventEmitter<number>();
 
   keypad_placeholder:string = "...";
   keypad_res:string = "";
@@ -21,6 +21,14 @@ export class KeyPadComponent {
           this.keypad_res = "";
         break;
       case 'OK':
+          let res_keypad = Number(this.keypad_res);
+
+          if(!isNaN(res_keypad)){
+            this.notify.emit(Number(this.keypad_res));
+          }
+          else{
+            this.notify.emit(0);
+          }
           console.log("Result is " + Number(this.keypad_res));
         break;
       default:
@@ -30,10 +38,9 @@ export class KeyPadComponent {
               this.keypad_res += pressedKey;
             }
           }
-
-
         break;
     }
+
   }
 
 }

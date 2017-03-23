@@ -2,13 +2,13 @@
 <div class="col-md-offset-3">
   <div class="row">
     <!-- <keypad-comp placeholder='Ange vikt...'></keypad-comp> -->
-    <keypad-comp placeholder='Ange ålder...'></keypad-comp>
+    <keypad-comp (notify)='onNotify($event)' placeholder='Ange ålder...'></keypad-comp>
   </div>
   <div class="row" *ngIf="useAge">
     <div class="barnhlr-choose">
         <div class="row">
 
-            <h1>Beräknad vikt: {{vikt}} kg</h1>
+            <h1>Beräknad vikt: {{wetflag}} kg</h1>
 
         </div>
         <div class="row">

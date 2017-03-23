@@ -12,7 +12,6 @@ import { BarnHLRService } from './barnhlr.service';
 
 export class BarnHLRStartComponent implements OnDestroy {
   title:string = 'BarnHLR start';
-  weight:number = 0;
   useAge:boolean;
   barnhlrservice : BarnHLRService;
 
@@ -20,20 +19,7 @@ export class BarnHLRStartComponent implements OnDestroy {
     this.barnhlrservice = barnHLRService;
   }
 
-
-  getSettings(): void {
-    //this.useAge = this.barnHLRService.getSettings().valueOf();
-  }
-
-  ngOnInit(): void {
-    this.getSettings();
-  }
-
   ngOnDestroy(){
     this.barnhlrservice.bool_val = this.useAge;
   }
-
-
-
-
 }
