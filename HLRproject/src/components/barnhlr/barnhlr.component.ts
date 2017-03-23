@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import { BarnHLRService } from './barnhlr.service';
 
 
@@ -10,13 +10,14 @@ import { BarnHLRService } from './barnhlr.service';
 
 
 
-export class BarnHLRStartComponent implements OnInit {
+export class BarnHLRStartComponent implements OnDestroy {
   title:string = 'BarnHLR start';
   weight:number = 0;
   useAge:boolean;
-
+  barnhlrservice : BarnHLRService;
 
   constructor(private barnHLRService: BarnHLRService) {
+    this.barnhlrservice = barnHLRService;
   }
 
 
@@ -26,6 +27,10 @@ export class BarnHLRStartComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSettings();
+  }
+
+  ngOnDestroy(){
+    this.barnhlrservice.bool_val = this.useAge;
   }
 
 

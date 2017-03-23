@@ -5,7 +5,5 @@ import { BarnHLRStartComponent } from './barnhlr.component';
 
 @Injectable()
 export class BarnHLRService{
-  getSettings(): Promise<boolean> {
-    return Promise.resolve(true);
-  }
+  bool_val : boolean;
 }
