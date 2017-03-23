@@ -1,16 +1,21 @@
-<!--  POPOVER FOR "ANALYS" VF/VT ASYSTOLI-BUTTONS   -->
+<!--  POPOVER FOR "ANALYS" VF/VT ASYSTOLI-RADIO BUTTONS   -->
 
-<template #popTemplate><div> <button type="button" class="btn btn-primary" >
-  VF/VT
-</button> </div>
 
-  <div> <button type="button" class="btn btn-primary" >
-    Asystoli/PEA
-  </button> </div>
+<!-- Inside the actual popover window -->
+
+<template #popAnalysisTemplate><div>
+  <label class="btn btn-primary" [(ngModel)]="radioModel"
+         btnRadio="VF/VT_alternative">VF/VT</label>
+  <label class="btn btn-primary" [(ngModel)]="radioModel"
+         btnRadio="Asystoli/PEA_alternative">Asystoli/PEA</label>
+  </div>
 </template>
 
 
+
+
+<!-- The actual button that includes a popover -->
 <button type="button" class="btn btn-success"
-        [popover]="popTemplate" popoverTitle="Analys">
+        [popover]="popAnalysisTemplate" popoverTitle="Analys" triggers="click" >
   Analys
 </button>
