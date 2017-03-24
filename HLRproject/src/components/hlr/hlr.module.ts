@@ -10,6 +10,7 @@ import {ChecklistComponent } from "./checklist/checklist.component"
 import {HLRFlowComponent} from "./hlrflow/hlrflow.component";
 import { PopoverAnalysisComponent } from './popover_analysis/popover_analysis.component';
 import { PopoverMedicineComponent } from './popover_medicine/popover_medicine.component';
+import {HeartmassagetextComponent} from './heartmassagetext/heartmassagetext.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PopoverMedicineComponent } from './popover_medicine/popover_medicine.co
     ChecklistComponent,
     PopoverAnalysisComponent,
     PopoverMedicineComponent,
-    HLRFlowComponent
+    HLRFlowComponent,
+    HeartmassagetextComponent
   ],
   imports: [
     PopoverModule.forRoot(),
