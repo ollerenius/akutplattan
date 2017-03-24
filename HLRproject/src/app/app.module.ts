@@ -23,5 +23,5 @@ import {routing} from "./app.routes";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class MainFrameModule {
+export class AppModule {
 }
