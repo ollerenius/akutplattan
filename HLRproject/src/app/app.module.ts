@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MainFrameComponent } from './main-frame.component';
+import { AppComponent } from './app.component';
 import { MainMenuComponent } from '../components/mainmenu/mainmenu.component';
 import {HeaderComponent} from "../components/header/header.component";
-import {routing} from "./main-frame.routes";
+import {routing} from "./app.routes";
 import {BarnHLRStartComponent} from "../components/barnhlr/barnhlr.component";
 import {BarnHLRSettingsComponent} from "../components/barnhlrsettings/barnhlrsettings.component";
 import {BarnHLRService} from "../components/barnhlr/barnhlr.service";
@@ -14,7 +14,7 @@ import {KeyPadComponent} from "../components/keypad/keypad.component";
 
 @NgModule({
   declarations: [
-    MainFrameComponent,
+    AppComponent,
     MainMenuComponent,
     HeaderComponent,
     KeyPadComponent,
@@ -28,7 +28,7 @@ import {KeyPadComponent} from "../components/keypad/keypad.component";
     routing
   ],
   providers: [BarnHLRService],
-  bootstrap: [MainFrameComponent]
+  bootstrap: [AppComponent]
 })
 export class MainFrameModule {
 }
