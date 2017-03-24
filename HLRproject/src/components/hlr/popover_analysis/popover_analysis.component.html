@@ -2,17 +2,13 @@
 
 
 <!-- Inside the actual popover window -->
-
 <template #popAnalysisTemplate><div>
-  <label class="btn btn-danger" [(ngModel)]="radioModel"
+  <label class="btn btn-danger btn-block" [(ngModel)]="radioModel"
          btnRadio="VF/VT_alternative">VF/VT</label>
-  <label class="btn btn-danger" [(ngModel)]="radioModel"
+  <label class="btn btn-danger btn-block" [(ngModel)]="radioModel"
          btnRadio="Asystoli/PEA_alternative">Asystoli/PEA</label>
   </div>
 </template>
-
-
-
 
 <!-- The actual button that includes a popover -->
 <button type="button" class="btn btn-success"

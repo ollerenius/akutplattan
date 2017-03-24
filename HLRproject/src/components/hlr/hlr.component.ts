@@ -9,6 +9,4 @@ import {HLRFlowComponent} from "./hlrflow/hlrflow.component";
 })
 export class HLRComponent {
   public title: string = 'HLR page';
-  checklist: ChecklistComponent;
-  flow: HLRFlowComponent;
 }
