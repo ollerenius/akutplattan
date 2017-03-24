@@ -1,11 +1,13 @@
 <!--  POPOVER FOR "MEDICINE"-BUTTONS   -->
 
 <template #popMedicineTemplate>
-  <div [innerHTML]="adrenaline"></div>
-  <div [innerHTML]="amiodarone"></div>
+  <div>
+    <label class="btn btn-primary btn-block" [innerHTML]="adrenaline" [(ngModel)]="checkModel.adrenaline" btnCheckbox></label>
+    <label class="btn btn-primary btn-block" [innerHTML]="amiodarone" [(ngModel)]="checkModel.amiodarone" btnCheckbox></label>
+  </div>
 </template>
 
 
-<button type="button" class="btn btn-lg" triggers="focus" [popover]="popMedicineTemplate" popoverTitle="Medicin" [innerHTML]="buttontext">
+<button type="button" class="btn btn-lg" [popover]="popMedicineTemplate" popoverTitle="Medicin" [innerHTML]="buttontext">
 
 </button>

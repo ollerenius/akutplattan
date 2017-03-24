@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./checklist.component.css']
 })
 export class ChecklistComponent {
+
+  //TODO: make fancy checkboxes
   public title: string = 'Checklist';
 
   // Used for identifying the buttons as active (true) or not (false)
