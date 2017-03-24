@@ -1,0 +1,27 @@
+<button class="btn btn-lg btn-default" (click)="goToHistory()">Historik</button>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <button class="btn btn-danger btn-lg btn-huge center-block" (click)="goToHLR()">
+      HLR
+    </button>
+  </div>
+
+  <div class="row">
+    <!-- TODO: Add bootstrap classes for different screen sizes -->
+    <!-- TODO: Add routerLink for every button instead of click. ex. [routerLink]="['/header']-->
+    <div class="col-md-6">
+      <button class="btn btn-danger btn-lg btn-huge center-block" (click)="goToBarnHLR()">
+        Barn-HLR
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-danger btn-lg btn-huge center-block" (click)="goToAndningstopp()">
+        Andningsstopp
+      </button>
+    </div>
+  </div>
+
+</div>
+
