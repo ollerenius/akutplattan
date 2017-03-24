@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 
 export class PopoverAnalysisComponent {
 
-  public radioModel: string = 'VF/VT_alternative'; //Preexisting choise for the radio button
+  public radioModel: string = 'VF/VT_alternative'; //Preexisting choice for the radio button
 
 }
 

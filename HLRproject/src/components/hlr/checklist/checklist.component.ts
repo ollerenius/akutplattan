@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
 export class ChecklistComponent {
   public title: string = 'Checklist';
 
+  // Used for identifying the buttons as active (true) or not (false)
   model = {
     larma: false,
     pvk: false,

@@ -9,12 +9,6 @@ import { Component } from '@angular/core';
 
 export class HLRFlowComponent {
   title = 'HLR-flow component';
-
-  buttonTitle: string = "testing";
-
-  public  analysFunction(){
-
-  }
 }
 
 
