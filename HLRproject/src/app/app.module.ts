@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MainFrameComponent } from './main-frame.component';
+import { AppComponent } from './app.component';
 import { MainMenuComponent } from '../components/mainmenu/mainmenu.component';
 import {HeaderComponent} from "../components/header/header.component";
-import {routing} from "./main-frame.routes";
+import {routing} from "./app.routes";
 
 @NgModule({
   declarations: [
-    MainFrameComponent,
+    AppComponent,
     MainMenuComponent,
     HeaderComponent
   ],
@@ -21,7 +21,7 @@ import {routing} from "./main-frame.routes";
     routing
   ],
   providers: [],
-  bootstrap: [MainFrameComponent]
+  bootstrap: [AppComponent]
 })
-export class MainFrameModule {
+export class AppModule {
 }
