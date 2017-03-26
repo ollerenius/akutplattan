@@ -7,12 +7,15 @@ import { MainFrameComponent } from './main-frame.component';
 import { MainMenuComponent } from '../components/mainmenu/mainmenu.component';
 import {HeaderComponent} from "../components/header/header.component";
 import {routing} from "./main-frame.routes";
+import {LogComponent} from "../components/log/log.component";
+import {LoggingService} from "../services/logging.service";
 
 @NgModule({
   declarations: [
     MainFrameComponent,
     MainMenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    LogComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import {routing} from "./main-frame.routes";
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [MainFrameComponent]
 })
 export class MainFrameModule {

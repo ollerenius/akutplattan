@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Tid</th>
+        <th>DEF.</th>
+        <th></th>
+        <th>Information</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- A generated history row -->
+      <tr *ngFor="let hlritem of hlrItems">
+        <th scope="row">{{hlritem.timestamp}}</th>
+        <td>{{hlritem.hlrState}}</td>
+        <th scope="row">{{hlritem.compressions}}</th>
+        <td>{{hlritem.information}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
