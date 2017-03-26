@@ -6,6 +6,6 @@ export class HLRprojectPage {
   }
 
   getParagraphText() {
-    return element(by.css('main-frame-root h1')).getText();
+    return element(by.css('app-root h1')).getText();
   }
 }

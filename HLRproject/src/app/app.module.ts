@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { MainFrameComponent } from './main-frame.component';
+import { AppComponent } from './app.component';
 import { MainMenuComponent } from '../components/mainmenu/mainmenu.component';
 import {HeaderComponent} from "../components/header/header.component";
-import {routing} from "./main-frame.routes";
 import {LogComponent} from "../components/log/log.component";
 import {LoggingService} from "../services/logging.service";
+import {routing} from "./app.routes";
 
 @NgModule({
   declarations: [
-    MainFrameComponent,
+    AppComponent,
     MainMenuComponent,
     HeaderComponent,
     LogComponent
@@ -24,7 +24,7 @@ import {LoggingService} from "../services/logging.service";
     routing
   ],
   providers: [LoggingService],
-  bootstrap: [MainFrameComponent]
+  bootstrap: [AppComponent]
 })
-export class MainFrameModule {
+export class AppModule {
 }

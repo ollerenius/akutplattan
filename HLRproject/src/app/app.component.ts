@@ -5,9 +5,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'main-frame',
-  templateUrl: 'main-frame.component.html',
-  styleUrls: ['main-frame.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class MainFrameComponent {
+export class AppComponent {
 }
