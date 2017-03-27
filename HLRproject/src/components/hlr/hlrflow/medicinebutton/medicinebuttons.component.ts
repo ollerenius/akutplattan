@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'popoverMedicine',
-  templateUrl: 'popover_medicine.component.html',
-  styleUrls: ['popover_medicine.component.css']
+  selector: 'medicineButton',
+  templateUrl: 'medicinebutton.component.html',
+  styleUrls: ['medicinebutton.component.css']
 })
-export class PopoverMedicineComponent {
+export class MedicineButtonComponent {
   //TODO: add checkboxes to popover, discuss with group
   adrenalineDose: number = 400;
   amiodaroneDose: number = 300;
