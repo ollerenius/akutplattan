@@ -12,6 +12,7 @@ import { HLRFlowComponent } from "./hlrflow/hlrflow.component";
 import { AnalysisButtonComponent } from './hlrflow/analysisbutton/analysisbutton.component';
 import { MedicineButtonComponent } from './hlrflow/medicinebutton/medicinebuttons.component';
 import { HeartMassageComponent } from './hlrflow/heartmassage/heartmassage.component';
+import {HlrstepComponent} from "./hlrflow/hlrstep/hlrstep.component";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HeartMassageComponent } from './hlrflow/heartmassage/heartmassage.compo
     HLRFlowComponent,
     AnalysisButtonComponent,
     MedicineButtonComponent,
-    HeartMassageComponent
+    HeartMassageComponent,
+    HlrstepComponent
   ],
   imports: [
     PopoverModule.forRoot(),
