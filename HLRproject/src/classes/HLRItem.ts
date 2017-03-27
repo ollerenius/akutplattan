@@ -3,20 +3,20 @@
  */
 interface HLRItemInterface{
   timestamp : string;
-  hlrState : boolean;
+  defibrilate : boolean;
   compressions : string;
   information : string;
 }
 
 export class HLRItem implements HLRItemInterface{
   timestamp : string;
-  hlrState : boolean;
+  defibrilate : boolean;
   compressions : string;
   information : string;
 
-  constructor(timestamp : string, hlrState : boolean, compressions : string, information : string){
+  constructor(timestamp : string, defibrilate : boolean, compressions : string, information : string){
     this.timestamp = timestamp;
-    this.hlrState = hlrState;
+    this.defibrilate = defibrilate;
     this.compressions = compressions;
     this.information = information;
   }

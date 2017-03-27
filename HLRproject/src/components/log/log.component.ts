@@ -5,7 +5,7 @@ import {LoggingService} from "../../services/logging.service";
 @Component({
   selector: 'log-component',
   templateUrl: './log.component.html',
-  styleUrls: ['./log.component.css']
+  styleUrls: ['log.component.css']
 })
 
 export class LogComponent {
