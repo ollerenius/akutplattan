@@ -1,11 +1,13 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { MainFrameModule } from "./main-frame/main-frame.module";
+import { AppModule } from './app/app.module';
+import { HLRModule } from './components/hlr/hlr.module'
 import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(MainFrameModule);
+//platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(HLRModule);
