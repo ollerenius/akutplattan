@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@media  (orientation: portrait) {
+  body {
+    -webkit-transform: rotate(-270deg);
+    -moz-transform: rotate(-270deg);
+    -o-transform: rotate(-270deg);
+    -ms-transform: rotate(-270deg);
+    transform: rotate(-270deg);
+  }
+}
