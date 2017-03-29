@@ -1,18 +1,43 @@
 <div class="col-md-4 text-center">
   <div class="panel panel-default">
     <div class="panel-body">
-      <i class="fa fa-desktop"></i>
+      <!-- START OF BOLT BUTTON -->
       <button class="btn btn-lg"><img [src]="boltFullPath" height="50" width="50" (click)="changeImage()"></button>
+      <!-- END OF BOLT BUTTON -->
     </div>
     <div class="panel-body">
-      <heartMassage></heartMassage>
+      <!-- START OF HEART MASSAGE TEXT -->
+      <div class="panel-heading" [innerHTML]="heartMassageAdult"></div>
+      <!-- END OF HEART MASSAGE TEXT -->
     </div>
     <div class="panel-body text-center">
-      <medicineButton></medicineButton>
+      <!-- START OF MEDICINE BUTTON -->
+      <template #popMedicineTemplate>
+        <div>
+          <label class="btn btn-primary btn-block" [innerHTML]="adrenaline" [(ngModel)]="checkModel.adrenaline" btnCheckbox></label>
+          <label class="btn btn-primary btn-block" [innerHTML]="amiodarone" [(ngModel)]="checkModel.amiodarone" btnCheckbox></label>
+        </div>
+      </template>
+      <button type="button" class="btn btn-lg" [popover]="popMedicineTemplate" popoverTitle="Medicin" [innerHTML]="buttontext"></button>
+      <!-- END OF MEDICINE BUTTON -->
     </div>
+
+    <!-- START OF ANALYSIS BUTTON -->
     <div class="panel-body">
       {{step.amiodaroneDose}}
-      <analysisButton></analysisButton>
+      <template #popAnalysisTemplate><div>
+        <label class="btn btn-danger btn-block" [(ngModel)]="radioModel"
+               btnRadio="VF/VT_alternative">VF/VT</label>
+        <label class="btn btn-danger btn-block" [(ngModel)]="radioModel"
+               btnRadio="Asystoli/PEA_alternative">Asystoli/PEA</label>
+      </div>
+      </template>
+      <!-- The actual button that includes a popover -->
+      <button type="button" class="btn btn-lg"
+              [popover]="popAnalysisTemplate" popoverTitle="Analys" triggers="click" >
+        Analys
+      </button>
+      <!-- END OF ANALYSIS BUTTON -->
     </div>
   </div>
 </div>

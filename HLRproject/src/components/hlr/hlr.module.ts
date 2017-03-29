@@ -9,9 +9,9 @@ import { HLRComponent } from "./hlr.component";
 
 import { ChecklistComponent } from "./checklist/checklist.component";
 import { HLRFlowComponent } from "./hlrflow/hlrflow.component";
-import { AnalysisButtonComponent } from './hlrflow/analysisbutton/analysisbutton.component';
-import { MedicineButtonComponent } from './hlrflow/medicinebutton/medicinebuttons.component';
-import { HeartMassageComponent } from './hlrflow/heartmassage/heartmassage.component';
+//import { AnalysisButtonComponent } from './hlrflow/analysisbutton/analysisbutton.component';
+//import { MedicineButtonComponent } from './hlrflow/medicinebutton/medicinebuttons.component';
+//import { HeartMassageComponent } from './hlrflow/heartmassage/heartmassage.component';
 import {HlrstepComponent} from "./hlrflow/hlrstep/hlrstep.component";
 
 
@@ -20,9 +20,9 @@ import {HlrstepComponent} from "./hlrflow/hlrstep/hlrstep.component";
     HLRComponent,
     ChecklistComponent,
     HLRFlowComponent,
-    AnalysisButtonComponent,
-    MedicineButtonComponent,
-    HeartMassageComponent,
+  //  AnalysisButtonComponent,
+  //  MedicineButtonComponent,
+  //  HeartMassageComponent,
     HlrstepComponent
   ],
   imports: [

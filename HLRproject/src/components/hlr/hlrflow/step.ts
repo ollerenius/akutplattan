@@ -1,7 +1,3 @@
-/**
- * Created by susanna on 2017-03-29.
- */
-
 export class Step{
   amiodaroneDose: number;
   adrenalineDose: number;
