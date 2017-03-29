@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Step} from "./step";
 
-const stepss: Step[] = [
+const steps: Step[] = [
   {amiodaroneDose: 99, adrenalineDose: 88, defibrillate: true, vf_vt: true},
   {amiodaroneDose: 98, adrenalineDose: 87, defibrillate: true, vf_vt: true}
 ];
@@ -13,10 +13,10 @@ const stepss: Step[] = [
 })
 
 export class HLRFlowComponent{
-  stepss: Step[];
+  steps: Step[];
 
   constructor() {
-    this.stepss = stepss;
+    this.steps = steps;
   }
 
 }
