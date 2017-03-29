@@ -28,7 +28,7 @@
         <label class="btn btn-danger btn-block" [(ngModel)]="radioModel"
                btnRadio="VF/VT_alternative">VF/VT</label>
         <label class="btn btn-danger btn-block" [(ngModel)]="radioModel"
-               btnRadio="Asystoli/PEA_alternative">Asystoli/PEA</label>
+               btnRadio="Asystoli/PEA_alternative" (click)="changedStateComplete()">Asystoli/PEA</label>
       </div>
       </template>
       <!-- The actual button that includes a popover -->

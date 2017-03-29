@@ -1,8 +1,10 @@
 <section>
   <div class="container">
     <div class="row">
+      <!--<hlrstep (changedState)="someMethod($event)" [step]="steps[0]"></hlrstep>-->
+
       <div *ngFor="let step of steps">
-        <hlrstep [step]="step"></hlrstep>
+        <hlrstep (changedState)="someMethod($event)" [step]="step"></hlrstep>
       </div>
     </div>
   </div>

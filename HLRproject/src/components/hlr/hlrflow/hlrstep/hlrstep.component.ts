@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Step} from "../step";
 
 @Component({
@@ -6,10 +6,23 @@ import {Step} from "../step";
   templateUrl: 'hlrstep.component.html',
   styleUrls: ['hlrstep.component.css']
 })
-export class HlrstepComponent  {
+export class HlrstepComponent /*implements OnInit*/{
   // STEP
   @Input() step: Step;
-  title: string = 'HLR-flow component';
+  @Output() changedState:EventEmitter<string> = new EventEmitter();
+
+  changedStateComplete(){
+    this.changedState.emit(this.radioModel);
+  }
+
+  /*ngOnInit(){
+    if(this.step.vf_vt = true){
+      this.radioModel = 'VF/VT_alternative';
+    }
+    else{
+      this.radioModel = 'Asystoli/PEA_alternative';
+    }
+  }*/
 
 
   // BOLT BUTTON
@@ -49,5 +62,5 @@ export class HlrstepComponent  {
   };
 
   // ANALYSIS BUTTON
-  public radioModel: string = 'VF/VT_alternative'; //Preexisting choice for the radio button
+  radioModel: string = 'VF/VT_alternative'; //Preexisting choice for the radio button
 }
