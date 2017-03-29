@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Step} from "./step";
+
+const stepss: Step[] = [
+  {amiodaroneDose: 99, adrenalineDose: 88, defibrillate: true, vf_vt: true},
+  {amiodaroneDose: 98, adrenalineDose: 87, defibrillate: true, vf_vt: true}
+];
 
 @Component({
   selector: 'hlrflow',
@@ -6,25 +12,13 @@ import { Component } from '@angular/core';
   styleUrls: ['hlrflow.component.css']
 })
 
-export class HLRFlowComponent {
-  step1: Step = new Step(500,500,true,true);
-  steps: Step[];
-}
+export class HLRFlowComponent{
+  stepss: Step[];
 
-class Step{
-  amiodaroneDose: number;
-  adrenalineDose: number;
-  defibrillate: boolean;
-  vf_vt: boolean;
-
-  constructor(amiDose: number, adDose: number, def: boolean, vf_vt: boolean){
-    this.adrenalineDose = adDose;
-    this.amiodaroneDose = amiDose;
-    this.defibrillate = def;
-    this.vf_vt = vf_vt;
+  constructor() {
+    this.stepss = stepss;
   }
 
-  printStep(){
-    return 'adrenaline: ' + this.adrenalineDose.toString() + ' amiodarone: ' + this.amiodaroneDose.toString();
-  }
 }
+
+

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Step} from "../step";
 
 @Component({
   selector: 'hlrstep',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['hlrstep.component.css']
 })
 export class HlrstepComponent  {
+  @Input() step: Step;
   title: string = 'HLR-flow component';
   boltFilledPath: string ='/src/images/bolt-filled-small.png';
   boltOutlinePath: string ='/src/images/bolt-outline-small.png';

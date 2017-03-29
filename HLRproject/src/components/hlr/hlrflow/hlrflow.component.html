@@ -2,6 +2,12 @@
 <section id="plans">
   <div class="container">
     <div class="row">
+      <div *ngFor="let step of stepss">
+        {{step.adrenalineDose}}
+        <hlrstep [step]="step"></hlrstep>
+      </div>
+    </div>
+    <div class="row">
 
       <!-- item -->
       <!--
@@ -11,24 +17,14 @@
             <i class="fa fa-desktop"></i>
             <h3>Adrenalin</h3> -->
 
+
+
       <hlrstep></hlrstep>
       <hlrstep></hlrstep>
       <hlrstep></hlrstep>
       <hlrstep></hlrstep>
       <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
-      <hlrstep></hlrstep>
+
 
     </div>
   </div>
