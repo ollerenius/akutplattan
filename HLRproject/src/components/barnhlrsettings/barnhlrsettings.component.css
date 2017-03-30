@@ -1,4 +1,8 @@
 .barnhlr-choose{
-  padding: 40px;
+  padding: 0px 40px 40px 40px;
   font-size: 42px;
+}
+.messaure-buttons{
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

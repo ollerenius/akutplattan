@@ -1,23 +1,19 @@
+ <div class="row">
+   <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-3">
+     <div class="col-xs-12 col-sm-10 col-md-8">
+       <keypad-comp (notify)='onNotify($event)' placeholder='Ange ålder...'></keypad-comp>
+     </div>
+   </div>
+ </div>
 
-<div class="col-md-offset-3">
-  <div class="row">
-    <!-- <keypad-comp placeholder='Ange vikt...'></keypad-comp> -->
-    <keypad-comp (notify)='onNotify($event)' placeholder='Ange ålder...'></keypad-comp>
-  </div>
-  <div class="row" *ngIf="useAge">
-    <div class="barnhlr-choose">
-        <div class="row">
-
-            <h1>Beräknad vikt: {{wetflag}} kg</h1>
-
-        </div>
-        <div class="row">
-
-            <button class="col-md-4 btn-success">Använd vikt</button>
-            <button class="col-md-4 btn-danger">Ange egen vikt</button>
-
-        </div>
-      </div>
-
-  </div>
-</div>
+ <div class="row" *ngIf="useAge">
+   <div class="barnhlr-choose">
+     <div class="col-sm-offset-2 col-md-offset-3">
+       <h1>Beräknad vikt: {{wetflag}} kg</h1>
+     </div>
+     <div class="col-sm-offset-2 col-md-offset-3">
+       <button class="col-xs-12 col-sm-5 col-md-4 btn-success">Använd vikt</button>
+       <button class="col-xs-12 col-sm-5 col-md-4 btn-danger">Ange egen vikt</button>
+     </div>
+   </div>
+ </div>
