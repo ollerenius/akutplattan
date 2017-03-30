@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges, DoCheck} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, DoCheck} from '@angular/core';
 import {Step} from "../step";
 
 @Component({
@@ -10,11 +10,10 @@ export class HlrstepComponent implements OnInit, DoCheck {
 
   //TODO: Use this information
   @Input() step: Step;
-  @Output() changedState:EventEmitter<string> = new EventEmitter();
+  @Output() analysisNotifierEmitter:EventEmitter<string> = new EventEmitter();
 
-  changedStateComplete(){
-    this.changedState.emit(this.radioModel);
-    this.step.vf_vt = false;
+  changeAnalysisStatesNotifier(){
+    this.analysisNotifierEmitter.emit(this.radioModel);
   }
 
   ngOnInit(){
@@ -25,7 +24,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck() : void {
-    if (this.step.radioModel !== this.oldRadioModel) {
+    if (this.step.radioModel != this.oldRadioModel) {
       this.oldRadioModel = this.step.radioModel;
       this.radioModel = this.step.radioModel;
     }

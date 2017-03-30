@@ -14,14 +14,17 @@ export class HLRFlowComponent{
 
   constructor() {
     this.steps = [
-      new Step(99, 88, true, true, "VF/VT_alternative"),
-      new Step(98, 87, true, true, "VF/VT_alternative")
+      new Step(99, 88, true, true, "VF/VT_alternative", /*0*/),
+      new Step(98, 87, true, true, "VF/VT_alternative", /*1*/),
     ];
   }
 
   //TODO: Use this data to change state of future steps
   //TODO: Add to a list
-  someMethod(event) {
+  //TODO: Implement index control so the parent (HLRflow) knows the current HLRstep.
+  //TODO: Alternative solution: Give each HLRstep an unique index, emit index back to parent,
+  // TODO: ...use the recieved index in a loop to change future values. :)
+  changeAnalysisState(event) {
     for (let step of this.steps) {
       step.radioModel = event;
     }
