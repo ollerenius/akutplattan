@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges, DoCheck} from '@angular/core';
 import {Step} from "../step";
 
 @Component({
@@ -6,24 +6,30 @@ import {Step} from "../step";
   templateUrl: 'hlrstep.component.html',
   styleUrls: ['hlrstep.component.css']
 })
-export class HlrstepComponent /*implements OnInit*/{
-  // STEP
+export class HlrstepComponent implements OnInit, DoCheck {
+
+  //TODO: Use this information
   @Input() step: Step;
   @Output() changedState:EventEmitter<string> = new EventEmitter();
 
   changedStateComplete(){
     this.changedState.emit(this.radioModel);
+    this.step.vf_vt = false;
   }
 
-  /*ngOnInit(){
-    if(this.step.vf_vt = true){
-      this.radioModel = 'VF/VT_alternative';
-    }
-    else{
-      this.radioModel = 'Asystoli/PEA_alternative';
-    }
-  }*/
+  ngOnInit(){
+    this.adrenaline = 'Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg';
+    this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' mg';
+    this.radioModel = this.step.radioModel;
+    this.oldRadioModel = this.radioModel;
+  }
 
+  ngDoCheck() : void {
+    if (this.step.radioModel !== this.oldRadioModel) {
+      this.oldRadioModel = this.step.radioModel;
+      this.radioModel = this.step.radioModel;
+    }
+  }
 
   // BOLT BUTTON
   boltFilledPath: string ='/src/images/bolt-filled-small.png';
@@ -51,8 +57,8 @@ export class HlrstepComponent /*implements OnInit*/{
 
   //MEDICINE BUTTON
   //TODO: add checkboxes to popover, discuss with group
-  public adrenaline: string = 'Adrenalin: ' /*+ this.adrenalineDose.toString()*/ + ' mg';
-  public amiodarone: string = 'Amiodarone: ' /*+ this.amiodaroneDose.toString()*/ + ' mg';
+  public adrenaline: string;
+  public amiodarone: string;
 
   public buttontext: string = 'Adrenalin' + '<br>' + 'Amiodaron';
 
@@ -62,5 +68,6 @@ export class HlrstepComponent /*implements OnInit*/{
   };
 
   // ANALYSIS BUTTON
-  radioModel: string = 'VF/VT_alternative'; //Preexisting choice for the radio button
+  radioModel: string;
+  oldRadioModel : string;
 }

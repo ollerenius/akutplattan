@@ -2,6 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <!-- START OF BOLT BUTTON -->
+      <!-- TODO: Add (click) to report medicine buttons to log -->
       <button class="btn btn-lg"><img [src]="boltFullPath" height="50" width="50" (click)="changeImage()"></button>
       <!-- END OF BOLT BUTTON -->
     </div>
@@ -14,6 +15,7 @@
       <!-- START OF MEDICINE BUTTON -->
       <template #popMedicineTemplate>
         <div>
+          <!-- TODO: Add (click) to report medicine buttons to log -->
           <label class="btn btn-primary btn-block" [innerHTML]="adrenaline" [(ngModel)]="checkModel.adrenaline" btnCheckbox></label>
           <label class="btn btn-primary btn-block" [innerHTML]="amiodarone" [(ngModel)]="checkModel.amiodarone" btnCheckbox></label>
         </div>
