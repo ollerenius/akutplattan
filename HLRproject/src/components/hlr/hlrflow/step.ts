@@ -8,13 +8,15 @@ export class Step {
    * @type {number}
    */
   public currentStepIndex : number = 0;
+  public index : number;
+  private static ASSIGN_INDEX : number = 0;
 
   constructor(public amiodaroneDose: number,
               public adrenalineDose : number,
               public deffibrilate : boolean,
               public vfVt : boolean,
-              public radioModel : string,
-              public index : number){
+              public radioModel : string){
 
+    this.index = Step.ASSIGN_INDEX++;
   }
 }

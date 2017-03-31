@@ -12,14 +12,12 @@ import {Step} from "./step";
 export class HLRFlowComponent{
   steps: Array<Step>;
   private currentStepIndex : number = 0;
-  // TODO: Make this a static variable in the step class?
-  private assignIndex : number = 0;
 
   constructor() {
     this.steps = [
-      new Step(99, 88, true, true, "VF/VT_alternative", this.assignIndex++),
-      new Step(98, 87, true, true, "VF/VT_alternative", this.assignIndex++),
-      new Step(98, 87, true, true, "VF/VT_alternative", this.assignIndex++)
+      new Step(99, 88, true, true, "VF/VT_alternative"),
+      new Step(98, 87, true, true, "VF/VT_alternative"),
+      new Step(98, 87, true, true, "VF/VT_alternative")
     ];
   }
 
