@@ -11,23 +11,33 @@ import {Step} from "./step";
 
 export class HLRFlowComponent{
   steps: Array<Step>;
+  private currentStepIndex : number = 0;
+  // TODO: Make this a static variable in the step class?
+  private assignIndex : number = 0;
 
   constructor() {
     this.steps = [
-      new Step(99, 88, true, true, "VF/VT_alternative", /*0*/),
-      new Step(98, 87, true, true, "VF/VT_alternative", /*1*/),
+      new Step(99, 88, true, true, "VF/VT_alternative", this.assignIndex++),
+      new Step(98, 87, true, true, "VF/VT_alternative", this.assignIndex++),
+      new Step(98, 87, true, true, "VF/VT_alternative", this.assignIndex++)
     ];
   }
 
-  //TODO: Use this data to change state of future steps
-  //TODO: Add to a list
-  //TODO: Implement index control so the parent (HLRflow) knows the current HLRstep.
-  //TODO: Alternative solution: Give each HLRstep an unique index, emit index back to parent,
-  // TODO: ...use the recieved index in a loop to change future values. :)
+  /**
+   * Current solution: once a change is triggered from the current step
+   * (every instance of the HLR Step component must check if it is the
+   *  current one before triggering) this method goes to the next step. It also changes the state of all the
+   * remaining steps but does not touch the previous ones.
+   */
   changeAnalysisState(event) {
     for (let step of this.steps) {
-      step.radioModel = event;
+      if (step.index >= this.currentStepIndex) {
+        step.radioModel = event;
+      }
+      // Go to next step
+      step.currentStepIndex = this.currentStepIndex + 1;
     }
+    this.currentStepIndex++;
   }
 }
 

@@ -12,8 +12,21 @@ export class HlrstepComponent implements OnInit, DoCheck {
   @Input() step: Step;
   @Output() analysisNotifierEmitter:EventEmitter<string> = new EventEmitter();
 
+  /**
+   * This method is called when an analysis button is pressed ('VF/VT' or 'Asystoli')
+   * If this step is the currently active one (as specified by Step.currentStepIndex)
+   * it will emit a message to the parent component. If not, it will do nothing.
+   * TODO: The button still changes color even if it has no effect. Make it so that
+   * TODO: only the currently active step can be modified by the user.
+   * TODO: This is probably best achieved in the HTML file.
+   * TODO: Idea: maybe move the currentStepIndex check to the HTML file completely?
+   */
   changeAnalysisStatesNotifier(){
-    this.analysisNotifierEmitter.emit(this.radioModel);
+    // Check if this is the currently active step in the flow
+    if (this.step.currentStepIndex == this.step.index) {
+      this.analysisNotifierEmitter.emit(this.radioModel);
+    }
+
   }
 
   ngOnInit(){
