@@ -1,3 +1,7 @@
+/**
+ * MainFrameComponent is the component that contains the entire
+ * application.
+ */
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +10,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
 }

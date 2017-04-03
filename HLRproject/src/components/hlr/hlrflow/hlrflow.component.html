@@ -1,8 +1,6 @@
 <section>
   <div class="container">
     <div class="row">
-      <!--<hlrstep (analysisNotifierEmitter)="changeAnalysisState($event)" [step]="steps[0]"></hlrstep>-->
-
       <div *ngFor="let step of steps">
         <hlrstep (analysisNotifierEmitter)="changeAnalysisState($event)" [step]="step"></hlrstep>
       </div>

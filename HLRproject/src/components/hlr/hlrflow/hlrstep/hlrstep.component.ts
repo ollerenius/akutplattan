@@ -58,8 +58,8 @@ export class HlrstepComponent implements OnInit, DoCheck {
   }
 
   // BOLT BUTTON
-  boltFilledPath: string ='/src/images/bolt-filled-small.png';
-  boltOutlinePath: string ='/src/images/bolt-outline-small.png';
+  boltFilledPath: string ='../../../../assets/images/bolt-filled-small.png';
+  boltOutlinePath: string ='../../../../assets/images/bolt-outline-small.png';
 
   boltFullPath: string = this.boltOutlinePath;
   public boltFilled: boolean = false;

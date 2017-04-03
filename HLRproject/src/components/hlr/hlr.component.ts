@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {ChecklistComponent} from "./checklist/checklist.component";
-import {HLRFlowComponent} from "./hlrflow/hlrflow.component";
 
 @Component({
   selector: 'hlr-page',
