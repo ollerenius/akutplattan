@@ -43,6 +43,20 @@ export class HlrstepComponent implements OnInit, DoCheck {
     }
   }
 
+  /**
+   * This method specifies whether the border of the current step should
+   * be colored or not. If the index of this step equals the current index,
+   * the border will be set to red; otherwise null.
+   * It is called from the HTML file.
+   * @returns {string}
+   */
+  getBorder() : string {
+    if (this.step.currentStepIndex == this.step.index) {
+      return "2px solid red";
+    }
+    return "";
+  }
+
   // BOLT BUTTON
   boltFilledPath: string ='/src/images/bolt-filled-small.png';
   boltOutlinePath: string ='/src/images/bolt-outline-small.png';
