@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from '../components/mainmenu/mainmenu.component';
 import {HeaderComponent} from "../components/header/header.component";
+import {LogComponent} from "../components/log/log.component";
+import {LoggingService} from "../services/logging.service";
 import {routing} from "./app.routes";
 import {HLRModule} from "../components/hlr/hlr.module";
 
@@ -13,7 +15,8 @@ import {HLRModule} from "../components/hlr/hlr.module";
   declarations: [
     AppComponent,
     MainMenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    LogComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import {HLRModule} from "../components/hlr/hlr.module";
     routing,
     HLRModule
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

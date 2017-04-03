@@ -47,6 +47,9 @@ export class HeaderComponent {
       case '/hlr':
         new_route = '/';
         break;
+      case '/log':
+        new_route = '/';
+        break;
       default:
         new_route = '';
     }
