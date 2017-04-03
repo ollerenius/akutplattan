@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MainMenuComponent } from '../components/mainmenu/mainmenu.component';
 import {HeaderComponent} from "../components/header/header.component";
 import {routing} from "./app.routes";
+import {HLRModule} from "../components/hlr/hlr.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {routing} from "./app.routes";
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    HLRModule
   ],
   providers: [],
   bootstrap: [AppComponent]

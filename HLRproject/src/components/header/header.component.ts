@@ -44,6 +44,9 @@ export class HeaderComponent {
           break;
         Where current and new routes always start with an /.
        */
+      case '/hlr':
+        new_route = '/';
+        break;
       default:
         new_route = '';
     }

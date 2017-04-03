@@ -1,12 +1,10 @@
 import {Component} from '@angular/core';
 import {Step} from "./step";
-//import {HlrstepComponent} from "./hlrstep/hlrstep.component";
 
 @Component({
   selector: 'hlrflow',
   templateUrl: 'hlrflow.component.html',
   styleUrls: ['hlrflow.component.css']
-  //directives: [HlrstepComponent] ???
 })
 
 export class HLRFlowComponent{
@@ -38,12 +36,6 @@ export class HLRFlowComponent{
     this.currentStepIndex++;
   }
 }
-
-/*function changeState() {
-  for (let s of this.steps) {
-    s.vf_vt = false;
-  }
-}*/
 
 
 
