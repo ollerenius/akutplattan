@@ -13,9 +13,9 @@ export class HLRFlowComponent{
 
   constructor() {
     this.steps = [
-      new Step(99, 88, true, true, "VF/VT_alternative"),
-      new Step(98, 87, true, true, "VF/VT_alternative"),
-      new Step(98, 87, true, true, "VF/VT_alternative")
+      new Step(99, 88, false, "VF/VT_alternative"),
+      new Step(98, 87, false, "VF/VT_alternative"),
+      new Step(98, 87, false, "VF/VT_alternative")
     ];
   }
 
