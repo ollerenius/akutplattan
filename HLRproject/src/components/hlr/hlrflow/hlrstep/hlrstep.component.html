@@ -15,9 +15,8 @@
       <!-- START OF MEDICINE BUTTON -->
       <template #popMedicineTemplate>
         <div>
-          <!-- TODO: Add (click) to report medicine buttons to log -->
-          <label class="btn btn-primary btn-block" [innerHTML]="adrenaline" [(ngModel)]="checkModel.adrenaline" btnCheckbox></label>
-          <label class="btn btn-primary btn-block" [innerHTML]="amiodarone" [(ngModel)]="checkModel.amiodarone" btnCheckbox></label>
+          <label class="btn btn-primary btn-block" (click)="pressedMedicineButton('adrenaline')" [innerHTML]="adrenaline" [(ngModel)]="checkModel.adrenaline" btnCheckbox></label>
+          <label class="btn btn-primary btn-block" (click)="pressedMedicineButton('amiodarone')" [innerHTML]="amiodarone" [(ngModel)]="checkModel.amiodarone" btnCheckbox></label>
         </div>
       </template>
       <button type="button" class="btn btn-lg" [popover]="popMedicineTemplate" popoverTitle="Medicin" [innerHTML]="buttontext"></button>

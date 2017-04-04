@@ -30,9 +30,13 @@ export class HlrstepComponent implements OnInit, DoCheck {
     // Check if this is the currently active step in the flow
     if (this.step.currentStepIndex == this.step.index) {
       this.analysisNotifierEmitter.emit(this.radioModel);
-      this.loggingService.addHLRItem(this.timerService.currentTimeString, this.step.deffibrilate, "TODO", this.getStringFromAnalysisButton());
+      this.addToLog(this.getStringFromAnalysisButton());
     }
 
+  }
+
+  addToLog(information : string){
+    this.loggingService.addHLRItem(this.timerService.currentTimeString, this.step.deffibrilate, "TODO", information);
   }
 
   getStringFromAnalysisButton(){
@@ -47,6 +51,16 @@ export class HlrstepComponent implements OnInit, DoCheck {
     }
   }
 
+  pressedMedicineButton(medicineString : string){
+    switch(medicineString){
+      case "adrenaline":
+          this.addToLog(this.adrenaline);
+        break;
+      case "amiodarone":
+        this.addToLog(this.amiodarone);
+        break;
+    }
+  }
 
 
   ngOnInit(){
