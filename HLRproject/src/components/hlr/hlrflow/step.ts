@@ -13,8 +13,7 @@ export class Step {
 
   constructor(public amiodaroneDose: number,
               public adrenalineDose : number,
-              public deffibrilate : boolean,
-              public vfVt : boolean,
+              public defibrilate : boolean,
               public radioModel : string){
 
     this.index = Step.ASSIGN_INDEX++;

@@ -62,17 +62,16 @@ export class HlrstepComponent implements OnInit, DoCheck {
   boltOutlinePath: string ='../../../../assets/images/bolt-outline-small.png';
 
   boltFullPath: string = this.boltOutlinePath;
-  public boltFilled: boolean = false;
 
   public changeImage(){
     //TODO: add log and timestamp
-    if(this.boltFilled){
+    if(this.step.defibrilate){
       this.boltFullPath = this.boltOutlinePath;
-      this.boltFilled = false;
+      this.step.defibrilate = false;
     }
     else{
       this.boltFullPath = this.boltFilledPath;
-      this.boltFilled = true;
+      this.step.defibrilate = true;
     }
   }
 
