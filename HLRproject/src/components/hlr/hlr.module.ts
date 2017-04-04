@@ -10,6 +10,8 @@ import { HLRComponent } from "./hlr.component";
 import { ChecklistComponent } from "./checklist/checklist.component";
 import { HLRFlowComponent } from "./hlrflow/hlrflow.component";
 import {HlrstepComponent} from "./hlrflow/hlrstep/hlrstep.component";
+import {LoggingService} from "../../services/logging.service";
+import {TimerComponent} from "./timer/timer.component";
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import {HlrstepComponent} from "./hlrflow/hlrstep/hlrstep.component";
     HLRComponent,
     ChecklistComponent,
     HLRFlowComponent,
-    HlrstepComponent
+    HlrstepComponent,
+    TimerComponent
   ],
   imports: [
     PopoverModule.forRoot(),
@@ -26,7 +29,7 @@ import {HlrstepComponent} from "./hlrflow/hlrstep/hlrstep.component";
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [HLRComponent]
 })
 export class HLRModule { }

@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter, DoCheck} from '@angular/core';
 import {Step} from "../step";
+import {LoggingService} from "../../../../services/logging.service";
 
 @Component({
   selector: 'hlrstep',
@@ -11,6 +12,9 @@ export class HlrstepComponent implements OnInit, DoCheck {
   //TODO: Use this information
   @Input() step: Step;
   @Output() analysisNotifierEmitter:EventEmitter<string> = new EventEmitter();
+
+  constructor(private loggingService : LoggingService){
+  }
 
   /**
    * This method is called when an analysis button is pressed ('VF/VT' or 'Asystoli')
@@ -25,9 +29,25 @@ export class HlrstepComponent implements OnInit, DoCheck {
     // Check if this is the currently active step in the flow
     if (this.step.currentStepIndex == this.step.index) {
       this.analysisNotifierEmitter.emit(this.radioModel);
+      console.log("Doing analysis");
+      this.loggingService.addHLRItem("15:00",true, "15:2", this.getStringFromAnalysisButton());
     }
 
   }
+
+  getStringFromAnalysisButton(){
+    let str_button : string = this.step.radioModel.toString();
+    switch(str_button){
+      case "VF/VT_alternative":
+        return "Ändrade nästkommande steg till VF/VT";
+      case "Asystoli/PEA_alternative":
+        return "Ändrade nästkommande steg till Asystoli/PEA";
+      default:
+        return "ERROR: Nostate detected.";
+    }
+  }
+
+
 
   ngOnInit(){
     this.adrenaline = 'Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg';

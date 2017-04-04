@@ -4,7 +4,6 @@
  * main menu. It consists of a number of buttons for navigation.
  */
 import { Component } from '@angular/core';
-import {LoggingService} from "../../services/logging.service";
 
 @Component({
   selector: 'mainmenu-page',
@@ -13,14 +12,6 @@ import {LoggingService} from "../../services/logging.service";
 })
 
 export class MainMenuComponent {
-
-  constructor(private loggingService : LoggingService){
-    this.loggingService = loggingService;
-    //TODO: Remove this test case and add real data from HLR
-    this.loggingService.addHLRItem("13:20",true, "30:2", "Det här är en påhittad informationsbit endast menad för att testa servicens kapabilitet.")
-  }
-
-
 
   goToHLR(): void {
     console.log('Go to HLR')

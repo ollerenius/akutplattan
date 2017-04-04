@@ -16,8 +16,7 @@ import {HLRModule} from "../components/hlr/hlr.module";
     AppComponent,
     MainMenuComponent,
     HeaderComponent,
-    LogComponent
-  ],
+    LogComponent],
   imports: [
     BrowserModule,
     FormsModule,
