@@ -13,8 +13,8 @@
       <tr *ngFor="let hlritem of hlrItems">
         <th scope="row">{{hlritem.timestamp}}</th>
         <td>
-          <img *ngIf="hlritem.defibrilate == Defibrilate.TRUE" class="icon-format" src="../../assets/images/bolt-filled-small.png"/>
-          <img *ngIf="hlritem.defibrilate == Defibrilate.FALSE" class="icon-format" src="../../assets/images/bolt-outline-small.png"/>
+          <img *ngIf="hlritem.defibrilate == defib.TRUE" class="icon-format" src="../../assets/images/bolt-filled-small.png"/>
+          <img *ngIf="hlritem.defibrilate == defib.FALSE" class="icon-format" src="../../assets/images/bolt-outline-small.png"/>
         </td>
         <th scope="row">{{hlritem.compressions}}</th>
         <td>{{hlritem.information}}</td>

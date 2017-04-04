@@ -11,6 +11,8 @@ import {LoggingService} from "../../services/logging.service";
 export class LogComponent {
   title = 'Vårdlogg';
   hlrItems : HLRItem[] = [];
+  //Have to make the enum visible to the scope of the html file
+  defib = Defibrilate;
 
   constructor(private loggingService : LoggingService){
     this.loggingService = loggingService;

@@ -48,6 +48,7 @@ export class ChecklistComponent implements OnInit {
     }
   }
 
+  //This will setup the standard-option checkbox-list
   setupCheckboxes(){
     this.checkboxDataList.push(new CheckboxData("Larma", false));
     this.checkboxDataList.push(new CheckboxData("Pvk", false));
@@ -59,8 +60,14 @@ export class ChecklistComponent implements OnInit {
     this.checkboxDataList.push(new CheckboxData("Anhöriga", false));
   }
 
-  addToLog(information : string){
-    this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "-", information);
+  addToLog(information : string, state : boolean){
+    //The state is inverted to what it actually is, due to the click event and checkbox value change happening at the same time
+    if(!state){
+      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har markerats.");
+    }
+    else{
+      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har avmarkerats.");
+    }
   }
 
   /**
