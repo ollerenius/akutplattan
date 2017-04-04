@@ -1,52 +1,10 @@
 <div class="container-fluid">
-  <div class="row">
+  <div *ngFor="let row of checkboxRows" class="row">
     <div class="checkbox">
-      <div class="col-md-4">
-        <label class="btn btn-lg" [class.green-box]="model.larma">
-          <input type="checkbox" [(ngModel)]="model.larma" value="larma">Larma
-        </label>
-      </div>
-      <div class="col-md-4">
-        <label class="btn btn-lg" [class.green-box]="model.pvk">
-          <input type="checkbox" [(ngModel)]="model.pvk" value="pvk">PVK
-        </label>
-      </div>
-      <div class="col-md-4">
-        <label class="btn btn-lg" [class.green-box]="model.narkos">
-          <input type="checkbox" [(ngModel)]="model.narkos" value="narkos">Narkos
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="checkbox">
-      <div class="col-md-4">
-        <label class="btn btn-lg" [class.green-box]="model.hjartbrada">
-          <input type="checkbox" [(ngModel)]="model.hjartbrada" value="hjartbrada">Hjärtbräda
-        </label>
-      </div>
-      <div class="col-md-4">
-        <label class="btn btn-lg" [class.green-box]="model.acetat">
-          <input type="checkbox" [(ngModel)]="model.acetat" value="acetat">Ringa acetat
-        </label>
-      </div>
-      <div class="col-md-4">
-        <label class="btn btn-lg" [class.green-box]="model.medicinjour">
-          <input type="checkbox" [(ngModel)]="model.medicinjour" value="medicinjour">Medicinjour
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="checkbox">
-      <div class="col-md-4">
-        <label class="btn btn-lg" [class.green-box]="model.syrgas">
-          <input type="checkbox" [(ngModel)]="model.syrgas" value="syrgas">Syrgas
-        </label>
-      </div>
-      <div class="col-md-4">
-        <label class="btn btn-lg" [class.green-box]="model.anhoriga">
-          <input type="checkbox" [(ngModel)]="model.anhoriga" value="anhoriga">Anhöriga
+      <div *ngFor="let checkbox of row" class="col-md-4">
+        <label class="btn btn-lg" [class.green-box]="checkbox.value">
+          <input type="checkbox" [(ngModel)]="checkbox.value" value="checkbox.name">
+          {{checkbox.name}}
         </label>
       </div>
     </div>
