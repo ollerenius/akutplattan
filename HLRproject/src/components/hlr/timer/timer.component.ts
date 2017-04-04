@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TimerService} from "../../../services/timer.service";
 
 @Component({
   selector: 'hlr-timer',
@@ -10,7 +11,7 @@ export class TimerComponent{
   currentTime : string = "00:00:00";
   timeElapsed : number = 0;
 
-  constructor() {
+  constructor(private timerService : TimerService) {
     this.startTimer();
   }
 
@@ -51,5 +52,6 @@ export class TimerComponent{
       secondsString = '0' + seconds;
     }
     this.currentTime = hoursString + ':' + minutesString + ':' + secondsString;
+    this.timerService.currentTimeString = this.currentTime;
   }
 }

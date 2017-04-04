@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter, DoCheck} from '@angular/core';
 import {Step} from "../step";
 import {LoggingService} from "../../../../services/logging.service";
+import {TimerService} from "../../../../services/timer.service";
 
 @Component({
   selector: 'hlrstep',
@@ -13,7 +14,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
   @Input() step: Step;
   @Output() analysisNotifierEmitter:EventEmitter<string> = new EventEmitter();
 
-  constructor(private loggingService : LoggingService){
+  constructor(private loggingService : LoggingService, private timerService : TimerService){
   }
 
   /**
@@ -29,8 +30,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
     // Check if this is the currently active step in the flow
     if (this.step.currentStepIndex == this.step.index) {
       this.analysisNotifierEmitter.emit(this.radioModel);
-      console.log("Doing analysis");
-      this.loggingService.addHLRItem("15:00",true, "15:2", this.getStringFromAnalysisButton());
+      this.loggingService.addHLRItem(this.timerService.currentTimeString, this.step.deffibrilate, "TODO", this.getStringFromAnalysisButton());
     }
 
   }

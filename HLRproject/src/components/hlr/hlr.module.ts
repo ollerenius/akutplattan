@@ -12,6 +12,7 @@ import { HLRFlowComponent } from "./hlrflow/hlrflow.component";
 import {HlrstepComponent} from "./hlrflow/hlrstep/hlrstep.component";
 import {LoggingService} from "../../services/logging.service";
 import {TimerComponent} from "./timer/timer.component";
+import {TimerService} from "../../services/timer.service";
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import {TimerComponent} from "./timer/timer.component";
     FormsModule,
     HttpModule
   ],
-  providers: [LoggingService],
+  providers: [LoggingService, TimerService],
   bootstrap: [HLRComponent]
 })
 export class HLRModule { }
