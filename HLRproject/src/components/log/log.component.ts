@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {HLRItem} from "../../classes/HLRItem";
+import {HLRItem, Defibrilate} from "../../classes/HLRItem";
 import {LoggingService} from "../../services/logging.service";
 
 @Component({

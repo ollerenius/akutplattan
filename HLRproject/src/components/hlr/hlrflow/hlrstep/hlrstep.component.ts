@@ -2,6 +2,7 @@ import {Component, OnInit, Input, Output, EventEmitter, DoCheck} from '@angular/
 import {Step} from "../step";
 import {LoggingService} from "../../../../services/logging.service";
 import {TimerService} from "../../../../services/timer.service";
+import {Defibrilate} from "../../../../classes/HLRItem";
 
 @Component({
   selector: 'hlrstep',
@@ -36,7 +37,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
   }
 
   addToLog(information : string){
-    this.loggingService.addHLRItem(this.timerService.currentTimeString, this.step.deffibrilate, "TODO", information);
+    this.loggingService.addHLRItem(this.timerService.currentTimeString, this.step.defibrilate ? Defibrilate.TRUE : Defibrilate.FALSE , "TODO", information);
   }
 
   getStringFromAnalysisButton(){
@@ -100,12 +101,16 @@ export class HlrstepComponent implements OnInit, DoCheck {
   public changeImage(){
     //TODO: add log and timestamp
     if(this.step.defibrilate){
+      //Test
       this.boltFullPath = this.boltOutlinePath;
       this.step.defibrilate = false;
+      //TODO: Add a CSS attribute instead of depec. font to do this!
+      this.addToLog("Defibrilering ångrad!")
     }
     else{
       this.boltFullPath = this.boltFilledPath;
       this.step.defibrilate = true;
+      this.addToLog("Defibrilering utförd!")
     }
   }
 

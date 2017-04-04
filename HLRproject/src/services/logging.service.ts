@@ -3,7 +3,7 @@
  */
 
 import {Injectable} from "@angular/core";
-import {HLRItem} from "../classes/HLRItem";
+import {HLRItem, Defibrilate} from "../classes/HLRItem";
 
 @Injectable()
 export class LoggingService{
@@ -13,8 +13,8 @@ export class LoggingService{
     this.hlrItems = [];
   }
 
-  addHLRItem(timestamp : string, hlrState : boolean, compressions : string, information : string){
-    this.hlrItems.push(new HLRItem(timestamp,hlrState,compressions,information));
+  addHLRItem(timestamp : string, defibrilation : Defibrilate, compressions : string, information : string){
+    this.hlrItems.push(new HLRItem(timestamp, defibrilation, compressions, information));
   }
 
   removeLastHLRItem() : HLRItem{
