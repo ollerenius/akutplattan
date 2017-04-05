@@ -54,7 +54,7 @@ export class ChecklistComponent implements OnInit {
     this.checkboxDataList.push(new CheckboxData("Pvk", false));
     this.checkboxDataList.push(new CheckboxData("Narkos", false));
     this.checkboxDataList.push(new CheckboxData("Hjärtbräda", false));
-    this.checkboxDataList.push(new CheckboxData("Ringa acetat", false));
+    this.checkboxDataList.push(new CheckboxData("Ringer acetat", false));
     this.checkboxDataList.push(new CheckboxData("Medicinjour", false));
     this.checkboxDataList.push(new CheckboxData("Syrgas", false));
     this.checkboxDataList.push(new CheckboxData("Anhöriga", false));
@@ -63,10 +63,10 @@ export class ChecklistComponent implements OnInit {
   addToLog(information : string, state : boolean){
     //The state is inverted to what it actually is, due to the click event and checkbox value change happening at the same time
     if(!state){
-      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har markerats.");
+      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har markerats.", false);
     }
     else{
-      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har avmarkerats.");
+      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har avmarkerats.", false);
     }
   }
 

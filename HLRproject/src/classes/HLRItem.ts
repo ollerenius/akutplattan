@@ -19,11 +19,13 @@ export class HLRItem implements HLRItemInterface{
   defibrilate : Defibrilate;
   compressions : string;
   information : string;
+  ruler : boolean;
 
-  constructor(timestamp : string, defibrilate : Defibrilate, compressions : string, information : string){
+  constructor(timestamp : string, defibrilate : Defibrilate, compressions : string, information : string, ruler : boolean){
     this.timestamp = timestamp;
     this.defibrilate = defibrilate;
     this.compressions = compressions;
     this.information = information;
+    this.ruler = ruler;
   }
 }

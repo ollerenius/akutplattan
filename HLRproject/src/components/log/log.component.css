@@ -4,3 +4,7 @@
   display:inline-block;
   padding: 1px;
 }
+
+.newstep{
+  border-bottom: 3px solid black;
+}

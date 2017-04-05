@@ -13,8 +13,8 @@ export class LoggingService{
     this.hlrItems = [];
   }
 
-  addHLRItem(timestamp : string, defibrilation : Defibrilate, compressions : string, information : string){
-    this.hlrItems.push(new HLRItem(timestamp, defibrilation, compressions, information));
+  addHLRItem(timestamp : string, defibrilation : Defibrilate, compressions : string, information : string, ruler : boolean){
+    this.hlrItems.push(new HLRItem(timestamp, defibrilation, compressions, information, ruler));
   }
 
   removeLastHLRItem() : HLRItem{

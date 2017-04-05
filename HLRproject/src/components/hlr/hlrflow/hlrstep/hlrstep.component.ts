@@ -31,13 +31,13 @@ export class HlrstepComponent implements OnInit, DoCheck {
     // Check if this is the currently active step in the flow
     if (this.step.currentStepIndex == this.step.index) {
       this.analysisNotifierEmitter.emit(this.radioModel);
-      this.addToLog(this.getStringFromAnalysisButton());
+      this.addToLog(this.getStringFromAnalysisButton(), Defibrilate.NONE, true);
     }
 
   }
 
-  addToLog(information : string){
-    this.loggingService.addHLRItem(this.timerService.currentTimeString, this.step.defibrilate ? Defibrilate.TRUE : Defibrilate.FALSE , "TODO", information);
+  addToLog(information : string, defibrilate : Defibrilate, ruler : boolean){
+    this.loggingService.addHLRItem(this.timerService.currentTimeString, defibrilate , "TODO", information, ruler);
   }
 
   getStringFromAnalysisButton(){
@@ -52,15 +52,25 @@ export class HlrstepComponent implements OnInit, DoCheck {
     }
   }
 
-  pressedMedicineButton(medicineString : string){
+  pressedMedicineButton(medicineString : string, state : boolean){
+    let logString : string = "";
     switch(medicineString){
       case "adrenaline":
-          this.addToLog(this.adrenaline);
+        logString += this.adrenaline;
         break;
       case "amiodarone":
-        this.addToLog(this.amiodarone);
+        logString += this.amiodarone;
         break;
     }
+    //Inverted as we go from state -> !state during this click.
+    if(state){
+      logString += " har administrerats."
+    }
+    else{
+      //TODO: Annan formulering?
+      logString += " har ångrats."
+    }
+    this.addToLog(logString, Defibrilate.NONE, false);
   }
 
 
@@ -105,12 +115,12 @@ export class HlrstepComponent implements OnInit, DoCheck {
       this.boltFullPath = this.boltOutlinePath;
       this.step.defibrilate = false;
       //TODO: Add a CSS attribute instead of depec. font to do this!
-      this.addToLog("Defibrilering ångrad!")
+      this.addToLog("Defibrilering ångrad!", Defibrilate.FALSE, false)
     }
     else{
       this.boltFullPath = this.boltFilledPath;
       this.step.defibrilate = true;
-      this.addToLog("Defibrilering utförd!")
+      this.addToLog("Defibrilering utförd!", Defibrilate.TRUE, false)
     }
   }
 
