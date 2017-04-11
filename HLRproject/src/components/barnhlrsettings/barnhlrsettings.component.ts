@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import { BarnHLRStartComponent }  from './../barnhlr/barnhlr.component'
+import {Component} from '@angular/core';
 import { BarnHLRService } from './../barnhlr/barnhlr.service';
 
 

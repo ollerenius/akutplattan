@@ -7,12 +7,19 @@ import { AppComponent } from './app.component';
 import { MainMenuComponent } from '../components/mainmenu/mainmenu.component';
 import {HeaderComponent} from "../components/header/header.component";
 import {routing} from "./app.routes";
+import {BarnHLRSettingsComponent} from "../components/barnhlrsettings/barnhlrsettings.component";
+import {BarnHLRStartComponent} from "../components/barnhlr/barnhlr.component";
+import {BarnHLRService} from "../components/barnhlr/barnhlr.service";
+import {KeyPadComponent} from "../components/keypad/keypad.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    BarnHLRSettingsComponent,
+    BarnHLRStartComponent,
+    KeyPadComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +27,7 @@ import {routing} from "./app.routes";
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [BarnHLRService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
