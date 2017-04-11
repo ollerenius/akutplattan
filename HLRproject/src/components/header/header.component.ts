@@ -4,7 +4,7 @@
  */
 
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'header-element',
@@ -33,16 +33,25 @@ export class HeaderComponent {
    */
   goBack() : void {
     //TODO: This was the best way at the time to route this while preventing paths that shouldn't be "backable"
-    //TODO: Turn this into a better handling.
+    //TODO: This should be improved. Either by doing "back-routing" in a different way, or by simply adding handling for the different Promises that navigateByUrl can return.
     let cur_route : string = this.router.url;
-    let new_route : string = '';
+    let new_route : string;
     switch(cur_route){
+      /*
+        New routes are added as such:
+        case 'current_route':
+          new_route = 'the_new_route';
+          break;
+        Where current and new routes always start with an /.
+       */
       case '/barnhlr':
         new_route = '/';
         break;
       case '/barnhlr/calc':
         new_route = '/barnhlr';
         break;
+      default:
+        new_route = '';
     }
     if (new_route !== '') {
       this.router.navigateByUrl(new_route);
