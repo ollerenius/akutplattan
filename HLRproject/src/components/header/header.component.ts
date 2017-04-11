@@ -50,6 +50,12 @@ export class HeaderComponent {
       case '/log':
         new_route = '/';
         break;
+      case '/barnhlr':
+        new_route = '/';
+        break;
+      case '/barnhlr/calc':
+        new_route = '/barnhlr';
+        break;
       default:
         new_route = '';
     }

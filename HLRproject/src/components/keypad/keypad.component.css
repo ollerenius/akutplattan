@@ -1,0 +1,14 @@
+.keypad-frame{
+  padding: 10px 40px 0px 40px;
+  font-size: 40px;
+
+}
+
+.keypad-input{
+  /*font-size: 40px;*/
+}
+
+.keypad-button{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

@@ -9,6 +9,10 @@ import {HeaderComponent} from "../components/header/header.component";
 import {LogComponent} from "../components/log/log.component";
 import {LoggingService} from "../services/logging.service";
 import {routing} from "./app.routes";
+import {BarnHLRSettingsComponent} from "../components/barnhlrsettings/barnhlrsettings.component";
+import {BarnHLRStartComponent} from "../components/barnhlr/barnhlr.component";
+import {BarnHLRService} from "../components/barnhlr/barnhlr.service";
+import {KeyPadComponent} from "../components/keypad/keypad.component";
 import {HLRModule} from "../components/hlr/hlr.module";
 
 @NgModule({
@@ -16,7 +20,12 @@ import {HLRModule} from "../components/hlr/hlr.module";
     AppComponent,
     MainMenuComponent,
     HeaderComponent,
-    LogComponent],
+    BarnHLRSettingsComponent,
+    BarnHLRStartComponent,
+    KeyPadComponent,
+    HeaderComponent,
+    LogComponent]
+  ,
   imports: [
     BrowserModule,
     FormsModule,
@@ -24,7 +33,7 @@ import {HLRModule} from "../components/hlr/hlr.module";
     routing,
     HLRModule
   ],
-  providers: [LoggingService],
+  providers: [BarnHLRService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
