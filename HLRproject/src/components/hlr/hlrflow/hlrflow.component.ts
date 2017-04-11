@@ -15,6 +15,8 @@ export class HLRFlowComponent{
     this.steps = [
       new Step(99, 88, false, "VF/VT_alternative"),
       new Step(98, 87, false, "VF/VT_alternative"),
+      new Step(98, 87, false, "VF/VT_alternative"),
+      new Step(98, 87, false, "VF/VT_alternative"),
       new Step(98, 87, false, "VF/VT_alternative")
     ];
   }

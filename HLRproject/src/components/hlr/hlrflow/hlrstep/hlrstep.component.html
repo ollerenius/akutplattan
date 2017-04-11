@@ -1,9 +1,8 @@
-<div class="col-md-4 text-center" id="step" [style.border]="getBorder()">
-  <div class="panel panel-default">
+ <div class="panel panel-default text-center step" [style.border]="getBorder()">
     <div class="panel-body">
       <!-- START OF BOLT BUTTON -->
       <!-- TODO: Add (click) to report medicine buttons to log -->
-      <button class="btn btn-lg"><img [src]="boltFullPath" height="50" width="50" (click)="changeImage()"></button>
+      <button class="btn btn-lg def-button"><img class="def-image" [src]="boltFullPath" (click)="changeImage()"/></button>
       <!-- END OF BOLT BUTTON -->
     </div>
     <div class="panel-body">
@@ -41,4 +40,3 @@
       <!-- END OF ANALYSIS BUTTON -->
     </div>
   </div>
-</div>
