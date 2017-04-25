@@ -14,6 +14,7 @@ import {BarnHLRStartComponent} from "../components/barnhlr/barnhlr.component";
 import {BarnHLRService} from "../components/barnhlr/barnhlr.service";
 import {KeyPadComponent} from "../components/keypad/keypad.component";
 import {HLRModule} from "../components/hlr/hlr.module";
+import { ButtonsModule } from 'ng2-bootstrap/buttons';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {HLRModule} from "../components/hlr/hlr.module";
     BrowserModule,
     FormsModule,
     HttpModule,
+    ButtonsModule.forRoot(),
     routing,
     HLRModule
   ],

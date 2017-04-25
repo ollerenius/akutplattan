@@ -1,8 +1,22 @@
+<div class="row">
+   <div class="col-xs-offset-0 col-sm-offset-1 col-md-offset-3 col-xs-12 col-sm-10 col-md-6">
+         <div class="row">
+         <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel" btnRadio="Manader" [class.green-box]="inputRadioModel=='Manader'">
+            Månader
+         </label>
+         <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel" btnRadio="Ar" [class.green-box]="inputRadioModel=='Ar'">
+            År
+         </label>
+         <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel" btnRadio="Personnummer" [class.green-box]="inputRadioModel=='Personnummer'">
+            Personnummer
+         </label>
+      </div>
+
+   </div>
+</div>
  <div class="row">
-   <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-3">
-     <div class="col-xs-12 col-sm-10 col-md-8">
+   <div class="col-xs-offset-0 col-sm-offset-1 col-md-offset-3 col-xs-12 col-sm-10 col-md-6">
        <keypad-comp (notify)='onNotify($event)' placeholder='Ange ålder...'></keypad-comp>
-     </div>
    </div>
  </div>
 
