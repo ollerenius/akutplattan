@@ -69,46 +69,5 @@ export class ChecklistComponent implements OnInit {
       this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har avmarkerats.", false);
     }
   }
-
-  /**
-  checklistChecked(name : string){
-    switch(name){
-      case "larma":
-        this.handleButton(name, this.model.larma);
-        break;
-      case "pvk":
-        this.handleButton(name, this.model.pvk);
-        break;
-      case "narkos":
-        this.handleButton(name, this.model.narkos);
-        break;
-      case "hja":
-        this.handleButton(name, this.model.larma);
-        break;
-
-    }
-  }
-
-  handleButton(name : string, radioButtonState : boolean){
-    if(radioButtonState){
-      this.addToLog(name + " har markerats.")
-    }
-    else{
-      this.addToLog(name + " har avmarkerats.")
-    }
-
-  }
-  // Used for identifying the buttons as active (true) or not (false)
-  model = {
-    larma: false,
-    pvk: false,
-    narkos: false,
-    hjartbrada: false,
-    acetat: false,
-    medicinjour: false,
-    syrgas: false,
-    anhoriga: false
-  };
-   **/
 }
 
