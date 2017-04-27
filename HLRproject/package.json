@@ -23,7 +23,8 @@
     "core-js": "^2.4.1",
     "ng2-bootstrap": "^1.6.1",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.7.6"
+    "zone.js": "^0.7.6",
+    "fastclick": "^1.0.6"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0-rc.0",
