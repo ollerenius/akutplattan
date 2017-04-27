@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div *ngFor="let row of checkboxRows" class="row">
     <div class="checkbox">
-      <div *ngFor="let checkbox of row" class="col-md-4">
+      <div *ngFor="let checkbox of row" class="col-md-3">
         <label class="btn btn-lg" [class.green-box]="checkbox.value">
           <input (click)="addToLog(checkbox.name, checkbox.value)" type="checkbox" [(ngModel)]="checkbox.value" value="checkbox.name">
           {{checkbox.name}}

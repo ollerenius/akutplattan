@@ -27,20 +27,20 @@ export class HlrstepComponent implements OnInit, DoCheck {
    * TODO: This is probably best achieved in the HTML file.
    * TODO: Idea: maybe move the currentStepIndex check to the HTML file completely?
    */
-  changeAnalysisStatesNotifier(){
+  changeAnalysisStatesNotifier() : void {
     // Check if this is the currently active step in the flow
     if (this.step.currentStepIndex == this.step.index) {
       this.analysisNotifierEmitter.emit(this.radioModel);
-      this.addToLog(this.getStringFromAnalysisButton(), Defibrilate.NONE, true);
+      this.addToLog(this.getStringFromAnalysisButton(), Defibrilate.NONE, false);
     }
-
+    this.addToLog("Fortsatte till nästa steg", Defibrilate.NONE, true);
   }
 
-  addToLog(information : string, defibrilate : Defibrilate, ruler : boolean){
+  addToLog(information : string, defibrilate : Defibrilate, ruler : boolean) : void {
     this.loggingService.addHLRItem(this.timerService.currentTimeString, defibrilate , "TODO", information, ruler);
   }
 
-  getStringFromAnalysisButton(){
+  getStringFromAnalysisButton() : string {
     let str_button : string = this.step.radioModel.toString();
     switch(str_button){
       case "VF/VT_alternative":
@@ -52,7 +52,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
     }
   }
 
-  pressedMedicineButton(medicineString : string, state : boolean){
+  pressedMedicineButton(medicineString : string, state : boolean) : void {
     let logString : string = "";
     switch(medicineString){
       case "adrenaline":
@@ -60,6 +60,9 @@ export class HlrstepComponent implements OnInit, DoCheck {
         break;
       case "amiodarone":
         logString += this.amiodarone;
+        break;
+      default:
+        logString += "ERROR";
         break;
     }
     //Inverted as we go from state -> !state during this click.
@@ -74,7 +77,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
   }
 
 
-  ngOnInit(){
+  ngOnInit() : void {
     this.adrenaline = 'Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg';
     this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' mg';
     this.radioModel = this.step.radioModel;
@@ -108,7 +111,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
 
   boltFullPath: string = this.boltOutlinePath;
 
-  public changeImage(){
+  public changeImage() : void {
     //TODO: add log and timestamp
     if(this.step.defibrilate){
       //Test
@@ -144,4 +147,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
   // ANALYSIS BUTTON
   radioModel: string;
   oldRadioModel : string;
+
+  // NEXT BUTTON
+  nextStep: boolean = false;
 }
