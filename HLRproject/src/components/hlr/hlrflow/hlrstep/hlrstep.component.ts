@@ -51,7 +51,8 @@ export class HlrstepComponent implements OnInit {
 
     if (this.step.currentStepIndex == this.step.index) {
       this.analysisNotifierEmitter.emit(this.step.radioModel);
-      this.addToLog("Fortsatte till nästa steg", Defibrilate.NONE, true);
+      this.addToLog("Fortsatte till nästa steg i tillstånd " +
+        this.getStringFromAnalysisButton(), Defibrilate.NONE, true);
     }
   }
 
@@ -63,11 +64,12 @@ export class HlrstepComponent implements OnInit {
     let str_button : string = this.step.radioModel.toString();
     switch(str_button){
       case "VF/VT_alternative":
-        return "Ändrade nästkommande steg till VF/VT";
+        return "VF/VT";
       case "Asystoli/PEA_alternative":
-        return "Ändrade nästkommande steg till Asystoli/PEA";
+        return "Asystoli/PEA";
       default:
-        return "ERROR: Nostate detected.";
+        console.log("Alternative not defined - getStringFromAnalysisButton")
+        return "not defined";
     }
   }
 
@@ -101,9 +103,10 @@ export class HlrstepComponent implements OnInit {
     this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' mg';
   }
 
+  // TODO:
   public changeAnalysisInStep(){
     if (this.step.currentStepIndex == this.step.index) {
-      this.addToLog(this.getStringFromAnalysisButton(), Defibrilate.NONE, false);
+
     }
   }
 
