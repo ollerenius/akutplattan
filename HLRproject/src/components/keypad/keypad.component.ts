@@ -32,8 +32,10 @@ export class KeyPadComponent {
       case 'C':
           this.keypad_res = "";
         break;
-      case 'OK':
-        console.log("Depricated.");
+      case '<-':
+          if(this.keypad_res.length != 0){
+            this.keypad_res = this.keypad_res.slice(0,this.keypad_res.length-1);
+          }
         break;
       default:
           if("0123456789".indexOf(pressedKey) != -1){
