@@ -6,6 +6,11 @@ import {TimerService} from "../../../services/timer.service";
   templateUrl: 'timer.component.html',
   styleUrls: ['timer.component.css']
 })
+
+/**
+ * A class necessary for displaying the time which has passed since a HLR-process was initated.
+ * This information is also passed outside the component by use of a TimerService singleton.
+ */
 export class TimerComponent{
 
   currentTime : string = "00:00:00";
@@ -15,7 +20,9 @@ export class TimerComponent{
     this.startTimer();
   }
 
-
+  /**
+   * Initiates the clock of the timer.
+   */
   private startTimer() : void {
     this.updateTimer();
     setInterval(() => {

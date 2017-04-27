@@ -1,12 +1,16 @@
 import {Component} from '@angular/core';
-import {BarnHLRService} from './../barnhlr/barnhlr.service';
-import {CheckboxData} from "../../classes/CheckboxData";
+import {BarnHLRService} from '../barnhlr/barnhlr.service';
 
 @Component({
   selector: 'barnhlrsettings-page',
   templateUrl: './barnhlrsettings.component.html',
   styleUrls: ['./barnhlrsettings.component.css'],
 })
+
+
+/**
+ * The main page of barnhlr. Used to get the necessary medicine dosage for kids, with age or weight as input variables.
+ */
 export class BarnHLRSettingsComponent{
   title = 'BarnHLR page';
   useAge: boolean;
@@ -21,11 +25,11 @@ export class BarnHLRSettingsComponent{
     this.useAge = barnHLRService.bool_val;
   }
 
-  changeInputType(){
-    //The state is inverted to what it actually is, due to the click event and checkbox value change happening at the same time
-
-  }
-
+  /**
+   * Takes an age and returns the estimated weight for that age.
+   * @param age The age in months which we want the estimated weight for.
+   * @returns {number} The estimated weight.
+   */
   wetflag_transform(age : number) : number{
     //TODO: Implement functionality for years / months instead of only months
     let months : number = age;

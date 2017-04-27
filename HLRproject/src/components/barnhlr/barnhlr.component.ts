@@ -8,18 +8,17 @@ import { BarnHLRService } from './barnhlr.service';
   styleUrls: ['barnhlr.component.css']
 })
 
-
-
+/**
+ * An intro page to the barnhlr step, where the information about wheter a childs weight
+ * is known or not is handled and transferred to barnhlrsettings page.
+ */
 export class BarnHLRStartComponent implements OnDestroy {
-  title:string = 'BarnHLR start';
   useAge:boolean;
-  barnhlrservice : BarnHLRService;
 
   constructor(private barnHLRService: BarnHLRService) {
-    this.barnhlrservice = barnHLRService;
   }
 
   ngOnDestroy(){
-    this.barnhlrservice.bool_val = this.useAge;
+    this.barnHLRService.bool_val = this.useAge;
   }
 }
