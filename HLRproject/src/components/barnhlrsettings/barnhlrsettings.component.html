@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="useAge == true">
    <div class="col-xs-offset-0 col-sm-offset-1 col-md-offset-3 col-xs-12 col-sm-10 col-md-6">
          <div class="row">
          <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel"
@@ -27,7 +27,10 @@
  <div class="row">
    <div class="barnhlr-choose">
      <div class="col-sm-offset-2 col-md-offset-3">
-       <h1>Beräknad {{calcUnit}}: {{wetflag}}</h1>
+       <h1>
+         <div *ngIf="useAge == true">Beräknad vikt: {{wetflag}}</div>
+         <div *ngIf="useAge == false">Angiven vikt: {{wetflag}}</div>
+       </h1>
      </div>
      <div class="col-sm-offset-2 col-md-offset-3">
        <button class="col-xs-12 col-sm-5 col-md-4 btn-success" [routerLink]="['/hlr']">Använd</button>

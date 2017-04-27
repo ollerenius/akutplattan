@@ -44,11 +44,11 @@ export class BarnHLRSettingsComponent{
   }
 
   /**
-   *
-   * @param old
+   * Changes what input state we are in, age or weight.
+   * @param currentState : boolean The current state
    */
-  switchKeypad(old : boolean){
-    if (old == true){
+  switchKeypad(currentState : boolean){
+    if (currentState == true){
       this.useAge = false;
       this.calcUnit =  "vikt";
       this.oppositeCalcUnit = "ålder";
@@ -65,12 +65,17 @@ export class BarnHLRSettingsComponent{
    */
   private updateDisplayedWetflagValue(){
     let inputType = this.inputRadioModel;
-    if(this.verifyStringFromKeypad(this.lastKeypadString, inputType)){
-      let wetflagNumber : number = this._wetflagTransform(this.lastKeypadString, inputType);
-      this.wetflag = String(wetflagNumber +"kg");
-      //TODO: Only navigate to HLR after we have a real weight (not on undefined etc..)
-      //TODO: Fix it so that this part guarantees safety (eg. that this.wetflag is good number)
-      this.hlrDosageService.setDosagesFromWeight(Number(wetflagNumber));
+    if(this.verifyStringFromKeypad(this.lastKeypadString, inputType)) {
+      if (this.useAge == false) {
+        this.wetflag = String(this.lastKeypadString + " kg");
+      }
+      else {
+        let wetflagNumber: number = this._wetflagTransform(this.lastKeypadString, inputType);
+        this.wetflag = String(wetflagNumber + " kg");
+        //TODO: Only navigate to HLR after we have a real weight (not on undefined etc..)
+        //TODO: Fix it so that this part guarantees safety (eg. that this.wetflag is good number)
+        this.hlrDosageService.setDosagesFromWeight(Number(wetflagNumber));
+      }
     }
     else{
       this.wetflag = "Ogiltig";
