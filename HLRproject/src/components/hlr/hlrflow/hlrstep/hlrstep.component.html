@@ -1,0 +1,42 @@
+ <div class="panel panel-default text-center step" [style.border]="getBorder()">
+    <div class="panel-body">
+      <!-- START OF BOLT BUTTON -->
+      <!-- TODO: Add (click) to report medicine buttons to log -->
+      <button class="btn btn-lg def-button"><img class="def-image" [src]="boltFullPath" (click)="changeImage()"/></button>
+      <!-- END OF BOLT BUTTON -->
+    </div>
+    <div class="panel-body">
+      <!-- START OF HEART MASSAGE TEXT -->
+      <div class="panel-heading" [innerHTML]="heartMassageAdult"></div>
+      <!-- END OF HEART MASSAGE TEXT -->
+    </div>
+    <div class="panel-body text-center">
+      <!-- START OF MEDICINE BUTTON -->
+      <template #popMedicineTemplate>
+        <div>
+          <!--TODO: DO EXTENSIVE TESTING HERE TO ASSURE THAT RACE CONDITIONS >DO NOT< EXIST! -->
+          <label class="btn btn-primary btn-block" (click)="pressedMedicineButton('adrenaline', checkModel.adrenaline)" [innerHTML]="adrenaline" [(ngModel)]="checkModel.adrenaline" btnCheckbox></label>
+          <label class="btn btn-primary btn-block" (click)="pressedMedicineButton('amiodarone', checkModel.amiodarone)" [innerHTML]="amiodarone" [(ngModel)]="checkModel.amiodarone" btnCheckbox></label>
+        </div>
+      </template>
+      <button type="button" class="btn btn-lg" [popover]="popMedicineTemplate" popoverTitle="Medicin" [innerHTML]="buttontext"></button>
+      <!-- END OF MEDICINE BUTTON -->
+    </div>
+
+    <!-- START OF ANALYSIS BUTTON -->
+    <div class="panel-body">
+      <template #popAnalysisTemplate><div>
+        <label class="btn btn-danger btn-block" [(ngModel)]="radioModel"
+               btnRadio="VF/VT_alternative" (click)="changeAnalysisStatesNotifier()">VF/VT</label>
+        <label class="btn btn-danger btn-block" [(ngModel)]="radioModel"
+               btnRadio="Asystoli/PEA_alternative" (click)="changeAnalysisStatesNotifier()">Asystoli/PEA</label>
+      </div>
+      </template>
+      <!-- The actual button that includes a popover -->
+      <button type="button" class="btn btn-lg"
+              [popover]="popAnalysisTemplate" popoverTitle="Analys" triggers="click" >
+        Analys
+      </button>
+      <!-- END OF ANALYSIS BUTTON -->
+    </div>
+  </div>

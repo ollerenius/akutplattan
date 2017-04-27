@@ -1,0 +1,21 @@
+.step {
+  width: 250px;
+  height: 100%;
+  display: inline-block;
+  float: none;
+}
+
+.def-button{
+  padding: 5px;
+  height: 60px;
+  width: 60px;
+}
+
+.def-image{
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 45px;
+  height: 45px;
+}
+

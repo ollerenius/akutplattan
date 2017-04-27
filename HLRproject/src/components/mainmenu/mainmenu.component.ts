@@ -12,21 +12,7 @@ import { Component } from '@angular/core';
 })
 
 export class MainMenuComponent {
-
-  goToHLR(): void {
-    console.log('Go to HLR')
-  }
-
-  goToBarnHLR(): void {
-    console.log('Go to Barn-HLR')
-  }
-
   goToAndningstopp(): void {
     console.log('Go to Andningsstopp')
   }
-
-  goToHistory(): void {
-
-  }
-
 }

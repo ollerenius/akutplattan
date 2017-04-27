@@ -1,0 +1,24 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Tid</th>
+        <th>DEF.</th>
+        <th></th>
+        <th>Information</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- A generated history row -->
+      <tr *ngFor="let hlritem of hlrItems" [ngClass]="hlritem.ruler ? 'newstep' : ''">
+        <th scope="row">{{hlritem.timestamp}}</th>
+        <td>
+          <img *ngIf="hlritem.defibrilate == defib.TRUE" class="icon-format" src="../../assets/images/bolt-filled-small.png"/>
+          <img *ngIf="hlritem.defibrilate == defib.FALSE" class="icon-format" src="../../assets/images/bolt-outline-small.png"/>
+        </td>
+        <th scope="row">{{hlritem.compressions}}</th>
+        <td>{{hlritem.information}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

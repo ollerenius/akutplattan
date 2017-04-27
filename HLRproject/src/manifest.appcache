@@ -21,5 +21,10 @@ vendor.bundle.js
 # Images
 favicon.ico
 assets/images/left-arrow.jpg
+assets/images/bolt-filled.png
+assets/images/bolt-filled-small.png
+assets/images/bolt-outline.png
+assets/images/bolt-outline-small.png
+
 
 

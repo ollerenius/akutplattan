@@ -1,0 +1,24 @@
+.barnhlr-choose{
+  padding: 0px 40px 40px 40px;
+  font-size: 42px;
+}
+.messaure-buttons{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-size: 20px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.btn:active {
+  background-color: darkgreen;
+}
+.green-box {
+  background-color: green;
+}

@@ -1,0 +1,10 @@
+.icon-format{
+  width: 20px;
+  height: 20px;
+  display:inline-block;
+  padding: 1px;
+}
+
+.newstep{
+  border-bottom: 3px solid black;
+}
