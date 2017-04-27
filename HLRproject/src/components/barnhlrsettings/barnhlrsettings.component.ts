@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {BarnHLRService} from '../barnhlr/barnhlr.service';
+import {BarnHLRService} from '../../services/barnhlr.service';
 import {HLRDosageService} from "../../services/hlrdosage.service";
 
 @Component({
