@@ -6,6 +6,11 @@ import {BarnHLRService} from '../barnhlr/barnhlr.service';
   templateUrl: './barnhlrsettings.component.html',
   styleUrls: ['./barnhlrsettings.component.css'],
 })
+
+
+/**
+ * The main page of barnhlr. Used to get the necessary medicine dosage for kids, with age or weight as input variables.
+ */
 export class BarnHLRSettingsComponent{
   title = 'BarnHLR page';
   useAge: boolean;
