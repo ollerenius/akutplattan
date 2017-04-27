@@ -9,7 +9,7 @@ import {Defibrilate} from "../../../../classes/HLRItem";
   templateUrl: 'hlrstep.component.html',
   styleUrls: ['hlrstep.component.css']
 })
-export class HlrstepComponent implements OnInit, DoCheck {
+export class HlrstepComponent implements OnInit {
   //HEART MASSAGE
   //TODO: add functionality for changing text depending on patient.
   public heartMassageAdult: string = '30:2 <br> 2 min';
@@ -26,10 +26,6 @@ export class HlrstepComponent implements OnInit, DoCheck {
     adrenaline: false,
     amiodarone: false
   };
-
-  // ANALYSIS BUTTON
-  radioModel: string;
-  oldRadioModel : string;
 
   // NEXT BUTTON
   nextStep: boolean = false;
@@ -54,7 +50,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
     // Check if this is the currently active step in the flow
 
     if (this.step.currentStepIndex == this.step.index) {
-      this.analysisNotifierEmitter.emit(this.radioModel);
+      this.analysisNotifierEmitter.emit(this.step.radioModel);
       this.addToLog("Fortsatte till nästa steg", Defibrilate.NONE, true);
     }
   }
@@ -103,15 +99,6 @@ export class HlrstepComponent implements OnInit, DoCheck {
   ngOnInit() : void {
     this.adrenaline = 'Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg';
     this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' mg';
-    this.radioModel = this.step.radioModel;
-    this.oldRadioModel = this.radioModel;
-  }
-
-  ngDoCheck() : void {
-    if (this.step.radioModel != this.oldRadioModel) {
-      this.oldRadioModel = this.step.radioModel;
-      this.radioModel = this.step.radioModel;
-    }
   }
 
   public changeAnalysisInStep(){
