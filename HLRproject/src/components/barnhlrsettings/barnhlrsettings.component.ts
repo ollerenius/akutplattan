@@ -16,6 +16,8 @@ export class BarnHLRSettingsComponent{
   useAge: boolean;
   wetflag : number = 0;
   inputRadioModel : string = "Ar";
+  calcUnit : string;
+  oppositeCalcUnit : string;
 
   onNotify(weight:number) : void{
     this.wetflag = this.wetflag_transform(weight);
@@ -23,6 +25,35 @@ export class BarnHLRSettingsComponent{
 
   constructor(private barnHLRService: BarnHLRService) {
     this.useAge = barnHLRService.bool_val;
+
+    /**
+     *
+     */
+    if (this.useAge == true){
+      this.calcUnit = "ålder";
+      this.oppositeCalcUnit = "vikt";
+    }
+    else{
+      this.calcUnit = "vikt";
+      this.oppositeCalcUnit = "ålder";
+    }
+  }
+
+  /**
+   *
+   * @param old
+   */
+  switchKeypad(old : boolean){
+    if (old == true){
+      this.useAge = false;
+      this.calcUnit =  "vikt";
+      this.oppositeCalcUnit = "ålder";
+    }
+    else{
+      this.useAge = true;
+      this.calcUnit = "ålder";
+      this.oppositeCalcUnit = "vikt";
+    }
   }
 
   /**
