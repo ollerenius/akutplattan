@@ -10,6 +10,29 @@ import {Defibrilate} from "../../../../classes/HLRItem";
   styleUrls: ['hlrstep.component.css']
 })
 export class HlrstepComponent implements OnInit, DoCheck {
+  //HEART MASSAGE
+  //TODO: add functionality for changing text depending on patient.
+  public heartMassageAdult: string = '30:2 <br> 2 min';
+  public heartMassageChild: string = '15:2 <br> 2 min';
+
+  //MEDICINE BUTTON
+  //TODO: add checkboxes to popover, discuss with group
+  public adrenaline: string;
+  public amiodarone: string;
+
+  public buttontext: string = 'Adrenalin' + '<br>' + 'Amiodaron';
+
+  public checkModel = {
+    adrenaline: false,
+    amiodarone: false
+  };
+
+  // ANALYSIS BUTTON
+  radioModel: string;
+  oldRadioModel : string;
+
+  // NEXT BUTTON
+  nextStep: boolean = false;
 
   //TODO: Use this information
   @Input() step: Step;
@@ -29,11 +52,11 @@ export class HlrstepComponent implements OnInit, DoCheck {
    */
   changeAnalysisStatesNotifier() : void {
     // Check if this is the currently active step in the flow
+
     if (this.step.currentStepIndex == this.step.index) {
       this.analysisNotifierEmitter.emit(this.radioModel);
-      this.addToLog(this.getStringFromAnalysisButton(), Defibrilate.NONE, false);
+      this.addToLog("Fortsatte till nästa steg", Defibrilate.NONE, true);
     }
-    this.addToLog("Fortsatte till nästa steg", Defibrilate.NONE, true);
   }
 
   addToLog(information : string, defibrilate : Defibrilate, ruler : boolean) : void {
@@ -91,6 +114,12 @@ export class HlrstepComponent implements OnInit, DoCheck {
     }
   }
 
+  public changeAnalysisInStep(){
+    if (this.step.currentStepIndex == this.step.index) {
+      this.addToLog(this.getStringFromAnalysisButton(), Defibrilate.NONE, false);
+    }
+  }
+
   /**
    * This method specifies whether the border of the current step should
    * be colored or not. If the index of this step equals the current index,
@@ -126,28 +155,4 @@ export class HlrstepComponent implements OnInit, DoCheck {
       this.addToLog("Defibrilering utförd!", Defibrilate.TRUE, false)
     }
   }
-
-  //HEART MASSAGE
-  //TODO: add functionality for changing text depending on patient.
-  public heartMassageAdult: string = '30:2 <br> 2 min';
-  public heartMassageChild: string = '15:2 <br> 2 min';
-
-  //MEDICINE BUTTON
-  //TODO: add checkboxes to popover, discuss with group
-  public adrenaline: string;
-  public amiodarone: string;
-
-  public buttontext: string = 'Adrenalin' + '<br>' + 'Amiodaron';
-
-  public checkModel = {
-    adrenaline: false,
-    amiodarone: false
-  };
-
-  // ANALYSIS BUTTON
-  radioModel: string;
-  oldRadioModel : string;
-
-  // NEXT BUTTON
-  nextStep: boolean = false;
 }
