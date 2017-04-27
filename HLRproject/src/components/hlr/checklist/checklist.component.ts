@@ -31,6 +31,7 @@ export class ChecklistComponent implements OnInit {
   //Setups the checkbox rows that are looped through in the .html file.
   setupCheckboxRows(){
     const elementsPerRow : number = 3;
+
     let currentElementInRow : number = 0;
     let nextRow : CheckboxData[] = [];
 

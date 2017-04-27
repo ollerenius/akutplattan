@@ -9,7 +9,26 @@ import {Defibrilate} from "../../../../classes/HLRItem";
   templateUrl: 'hlrstep.component.html',
   styleUrls: ['hlrstep.component.css']
 })
-export class HlrstepComponent implements OnInit, DoCheck {
+export class HlrstepComponent implements OnInit {
+  //HEART MASSAGE
+  //TODO: add functionality for changing text depending on patient.
+  public heartMassageAdult: string = '30:2 <br> 2 min';
+  public heartMassageChild: string = '15:2 <br> 2 min';
+
+  //MEDICINE BUTTON
+  //TODO: add checkboxes to popover, discuss with group
+  public adrenaline: string;
+  public amiodarone: string;
+
+  public buttontext: string = 'Adrenalin' + '<br>' + 'Amiodaron';
+
+  public checkModel = {
+    adrenaline: false,
+    amiodarone: false
+  };
+
+  // NEXT BUTTON
+  nextStep: boolean = false;
 
   //TODO: Use this information
   @Input() step: Step;
@@ -27,32 +46,34 @@ export class HlrstepComponent implements OnInit, DoCheck {
    * TODO: This is probably best achieved in the HTML file.
    * TODO: Idea: maybe move the currentStepIndex check to the HTML file completely?
    */
-  changeAnalysisStatesNotifier(){
+  changeAnalysisStatesNotifier() : void {
     // Check if this is the currently active step in the flow
-    if (this.step.currentStepIndex == this.step.index) {
-      this.analysisNotifierEmitter.emit(this.radioModel);
-      this.addToLog(this.getStringFromAnalysisButton(), Defibrilate.NONE, true);
-    }
 
+    if (this.step.currentStepIndex == this.step.index) {
+      this.analysisNotifierEmitter.emit(this.step.radioModel);
+      this.addToLog("Fortsatte till nästa steg i tillstånd " +
+        this.getStringFromAnalysisButton(), Defibrilate.NONE, true);
+    }
   }
 
-  addToLog(information : string, defibrilate : Defibrilate, ruler : boolean){
+  addToLog(information : string, defibrilate : Defibrilate, ruler : boolean) : void {
     this.loggingService.addHLRItem(this.timerService.currentTimeString, defibrilate , "TODO", information, ruler);
   }
 
-  getStringFromAnalysisButton(){
+  getStringFromAnalysisButton() : string {
     let str_button : string = this.step.radioModel.toString();
     switch(str_button){
       case "VF/VT_alternative":
-        return "Ändrade nästkommande steg till VF/VT";
+        return "VF/VT";
       case "Asystoli/PEA_alternative":
-        return "Ändrade nästkommande steg till Asystoli/PEA";
+        return "Asystoli/PEA";
       default:
-        return "ERROR: Nostate detected.";
+        console.log("Alternative not defined - getStringFromAnalysisButton")
+        return "not defined";
     }
   }
 
-  pressedMedicineButton(medicineString : string, state : boolean){
+  pressedMedicineButton(medicineString : string, state : boolean) : void {
     let logString : string = "";
     switch(medicineString){
       case "adrenaline":
@@ -60,6 +81,9 @@ export class HlrstepComponent implements OnInit, DoCheck {
         break;
       case "amiodarone":
         logString += this.amiodarone;
+        break;
+      default:
+        logString += "ERROR";
         break;
     }
     //Inverted as we go from state -> !state during this click.
@@ -74,17 +98,15 @@ export class HlrstepComponent implements OnInit, DoCheck {
   }
 
 
-  ngOnInit(){
+  ngOnInit() : void {
     this.adrenaline = 'Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg';
     this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' mg';
-    this.radioModel = this.step.radioModel;
-    this.oldRadioModel = this.radioModel;
   }
 
-  ngDoCheck() : void {
-    if (this.step.radioModel != this.oldRadioModel) {
-      this.oldRadioModel = this.step.radioModel;
-      this.radioModel = this.step.radioModel;
+  // TODO:
+  public changeAnalysisInStep(){
+    if (this.step.currentStepIndex == this.step.index) {
+
     }
   }
 
@@ -108,7 +130,7 @@ export class HlrstepComponent implements OnInit, DoCheck {
 
   boltFullPath: string = this.boltOutlinePath;
 
-  public changeImage(){
+  public changeImage() : void {
     //TODO: add log and timestamp
     if(this.step.defibrilate){
       //Test
@@ -123,25 +145,4 @@ export class HlrstepComponent implements OnInit, DoCheck {
       this.addToLog("Defibrilering utförd!", Defibrilate.TRUE, false)
     }
   }
-
-  //HEART MASSAGE
-  //TODO: add functionality for changing text depending on patient.
-  public heartMassageAdult: string = '30:2 <br> 2 min';
-  public heartMassageChild: string = '15:2 <br> 2 min';
-
-  //MEDICINE BUTTON
-  //TODO: add checkboxes to popover, discuss with group
-  public adrenaline: string;
-  public amiodarone: string;
-
-  public buttontext: string = 'Adrenalin' + '<br>' + 'Amiodaron';
-
-  public checkModel = {
-    adrenaline: false,
-    amiodarone: false
-  };
-
-  // ANALYSIS BUTTON
-  radioModel: string;
-  oldRadioModel : string;
 }
