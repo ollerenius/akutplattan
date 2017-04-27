@@ -12,10 +12,21 @@
   <!-- Make it possible to run ass web app on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
+  <!-- Import library fast click to remove 300ms delay -->
+  <script type='application/javascript' src='../node_modules/fastclick/lib/fastclick.js'></script>
+
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+
+  <!-- JavaScript to activate fastclick -->
+  <script>if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body);
+    }, false);
+  }</script>
+
 <div class="screen">
     <app-root>Loading...</app-root>
 </div>
