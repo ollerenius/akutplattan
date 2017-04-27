@@ -15,6 +15,7 @@ import {BarnHLRService} from "../components/barnhlr/barnhlr.service";
 import {KeyPadComponent} from "../components/keypad/keypad.component";
 import {HLRModule} from "../components/hlr/hlr.module";
 import { ButtonsModule } from 'ng2-bootstrap/buttons';
+import {HLRDosageService} from "../services/hlrdosage.service";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { ButtonsModule } from 'ng2-bootstrap/buttons';
     routing,
     HLRModule
   ],
-  providers: [BarnHLRService, LoggingService],
+  providers: [BarnHLRService, LoggingService, HLRDosageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {BarnHLRService} from '../barnhlr/barnhlr.service';
+import {HLRDosageService} from "../../services/hlrdosage.service";
 
 @Component({
   selector: 'barnhlrsettings-page',
@@ -26,7 +27,7 @@ export class BarnHLRSettingsComponent{
     this.updateDisplayedWetflagValue();
   }
 
-  constructor(private barnHLRService: BarnHLRService) {
+  constructor(private barnHLRService: BarnHLRService, private hlrDosageService : HLRDosageService) {
     this.useAge = barnHLRService.bool_val;
 
     /**
@@ -65,7 +66,11 @@ export class BarnHLRSettingsComponent{
   private updateDisplayedWetflagValue(){
     let inputType = this.inputRadioModel;
     if(this.verifyStringFromKeypad(this.lastKeypadString, inputType)){
-      this.wetflag = String(this._wetflagTransform(this.lastKeypadString, inputType)+"kg");
+      let wetflagNumber : number = this._wetflagTransform(this.lastKeypadString, inputType);
+      this.wetflag = String(wetflagNumber +"kg");
+      //TODO: Only navigate to HLR after we have a real weight (not on undefined etc..)
+      //TODO: Fix it so that this part guarantees safety (eg. that this.wetflag is good number)
+      this.hlrDosageService.setDosagesFromWeight(Number(wetflagNumber));
     }
     else{
       this.wetflag = "Ogiltig";
@@ -99,6 +104,8 @@ export class BarnHLRSettingsComponent{
    */
   private pnToMonths(pnumber : string) : number{
     //TODO: This does NOT count days, what can be done is dDays - pnDays where 15 is round to 1 and lower 0 (in added months)
+    //TODO: Better sanity check (pnYears > dYears is possible right now.. as well as pnMonths > 12)
+    //TODO: Change format to YYMMDD / YYMMDDxxxx instead. This requires sanity check in form of rounding to the best full years (eg. not 19xx when xx=07 but not 20xx when xx=99)
     //Get current year, month and day.
     let date : Date = new Date();
     let dYears : number = date.getFullYear();
