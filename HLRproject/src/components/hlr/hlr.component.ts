@@ -17,11 +17,11 @@ export class HLRComponent implements OnInit {
 
 //Simply prints the time which the HLR was initated to the log.
   ngOnInit(){
-    this.loggingService.addHLRItem("00:00:00", Defibrilate.NONE, "", "HLR-förloppet startade vid klockan " + this.printHLRStartTimeToLog(), false);
+    this.loggingService.addHLRItem("00:00:00", Defibrilate.NONE, "", "HLR-förloppet startade vid klockan " + this.printCurrentTimeToLog(), false);
   }
 
   //the time function that is called when you want the current time.
-  printHLRStartTimeToLog(): string{
+  printCurrentTimeToLog(): string{
     // Get time values
     let date : Date = new Date();
     let hours : number = date.getHours();
@@ -46,7 +46,8 @@ export class HLRComponent implements OnInit {
 
 //The function that is called when the "avsluta"-button is pressed. Logs the end of the HLR-session.
   goToLog(){
-    this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE, "TODO", "HLR-förloppet avslutades vid klockan " + this.printHLRStartTimeToLog() , true);
+    //TODO: This >might< cause a race-condition with the timerService reset in the timer.component destructor. (It works most times tho)
+    this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE, "", "HLR-förloppet avslutades vid klockan " + this.printCurrentTimeToLog() , true);
 
   }
 
