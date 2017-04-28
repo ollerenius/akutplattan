@@ -21,6 +21,13 @@ export class TimerComponent implements OnDestroy{
   }
 
   ngOnDestroy(){
+    this.destroyTimer()
+  }
+
+  /**
+   * Destroys and resets the timer object, so that it doesn't reflect its previous state in a later appearance.
+   */
+  private destroyTimer() : void{
     clearInterval(this.timer);
     this.timerService.currentTimeString = "00:00:00";
   }
