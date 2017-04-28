@@ -10,11 +10,6 @@ import {Defibrilate} from "../../../../classes/HLRItem";
   styleUrls: ['hlrstep.component.css']
 })
 export class HlrstepComponent implements OnInit {
-  //HEART MASSAGE
-  //TODO: add functionality for changing text depending on patient.
-  public heartMassageAdult: string = '30:2 <br> 2 min';
-  public heartMassageChild: string = '15:2 <br> 2 min';
-
   //MEDICINE BUTTON
   //TODO: add checkboxes to popover, discuss with group
   public adrenaline: string;
@@ -57,7 +52,7 @@ export class HlrstepComponent implements OnInit {
   }
 
   addToLog(information : string, defibrilate : Defibrilate, ruler : boolean) : void {
-    this.loggingService.addHLRItem(this.timerService.currentTimeString, defibrilate , "TODO", information, ruler);
+    this.loggingService.addHLRItem(this.timerService.currentTimeString, defibrilate , this.step.heartMassage, information, ruler);
   }
 
   getStringFromAnalysisButton() : string {
