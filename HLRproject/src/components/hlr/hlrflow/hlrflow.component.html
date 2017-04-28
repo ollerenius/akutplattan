@@ -1,6 +1,6 @@
 <section>
-  <div class="container">
-    <div class="row hlrflow">
+  <div class="container-fluid">
+    <div class="hlrflow">
         <hlrstep *ngFor="let step of steps" (analysisNotifierEmitter)="changeAnalysisState($event)" [step]="step"></hlrstep>
     </div>
   </div>
