@@ -15,6 +15,8 @@ import {BarnHLRService} from "../components/barnhlr/barnhlr.service";
 import {KeyPadComponent} from "../components/keypad/keypad.component";
 import {HLRModule} from "../components/hlr/hlr.module";
 import { ButtonsModule } from 'ng2-bootstrap/buttons';
+import { RespiratoryArrestComponent } from '../components/respiratoryarrest/respiratoryarrest.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ButtonsModule } from 'ng2-bootstrap/buttons';
     BarnHLRStartComponent,
     KeyPadComponent,
     HeaderComponent,
-    LogComponent]
+    LogComponent,
+    RespiratoryArrestComponent]
   ,
   imports: [
     BrowserModule,
