@@ -38,11 +38,11 @@ export class HeaderComponent {
     let new_route : string;
     switch(cur_route){
       /*
-        New routes are added as such:
-        case 'current_route':
-          new_route = 'the_new_route';
-          break;
-        Where current and new routes always start with an /.
+       New routes are added as such:
+       case 'current_route':
+       new_route = 'the_new_route';
+       break;
+       Where current and new routes always start with an /.
        */
       case '/hlr':
         new_route = '/';
@@ -55,6 +55,9 @@ export class HeaderComponent {
         break;
       case '/barnhlr/calc':
         new_route = '/barnhlr';
+        break;
+      case '/respiratoryarrest':
+        new_route = '/';
         break;
       default:
         new_route = '';

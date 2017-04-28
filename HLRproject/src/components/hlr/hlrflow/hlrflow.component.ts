@@ -16,11 +16,11 @@ export class HLRFlowComponent{
     let amiodarone : number = hlrDosageService.amiodarone;
     let adrenaline : number = hlrDosageService.adrenaline;
     this.steps = [
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative"),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative"),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative"),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative"),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative")
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2')
     ];
   }
 
