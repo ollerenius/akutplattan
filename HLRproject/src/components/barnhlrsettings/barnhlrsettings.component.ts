@@ -81,15 +81,10 @@ export class BarnHLRSettingsComponent{
  * @returns {boolean} True if input holds to the type specification, false if not.
  */
 private verifyStringFromKeypad(keypadString : string, expectedInputType : string) : boolean{
-  switch(expectedInputType){
-    case "Ar": case "Manader":
-    return !isNaN(Number(keypadString));
-    case "Personnummer":
-      return (keypadString.length == 8 || keypadString.length == 12)  && !isNaN(Number(keypadString));
-    default:
-      console.error("Unsupported input format type expected. Please check the radiomodel for clues to this error. (type="+expectedInputType+")");
-      return false;
+  if (this.useAge == true && expectedInputType=="Personnummer") {
+    return (keypadString.length == 8 || keypadString.length == 12) && !isNaN(Number(keypadString));
   }
+  return !isNaN(Number(keypadString));
 }
 
 /**
