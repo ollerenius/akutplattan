@@ -56,6 +56,9 @@ export class HeaderComponent {
       case '/barnhlr/calc':
         new_route = '/barnhlr';
         break;
+      case '/respiratoryarrest':
+        new_route = '/';
+        break;
       default:
         new_route = '';
     }
