@@ -46,7 +46,7 @@ export class HLRComponent implements OnInit {
 
 //The function that is called when the "avsluta"-button is pressed. Logs the end of the HLR-session.
   goToLog(){
-    this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE, "TODO", "HLR-förloppet avslutades vid klockan " + this.printHLRStartTimeToLog() , true);
+    this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE, "", "HLR-förloppet avslutades vid klockan " + this.printHLRStartTimeToLog() , true);
 
   }
 
