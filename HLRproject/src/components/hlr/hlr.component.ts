@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LoggingService} from "../../services/logging.service";
 import {Defibrilate} from "../../classes/HLRItem";
+import {TimerService} from "../../services/timer.service";
 
 @Component({
   selector: 'hlr-page',
@@ -10,14 +11,17 @@ import {Defibrilate} from "../../classes/HLRItem";
 export class HLRComponent implements OnInit {
   public title: string = 'HLR page';
 
-  constructor(private loggingService : LoggingService){}
-
-  ngOnInit(){
-    this.printHLRStartTimeToLog();
+  constructor(private loggingService : LoggingService, private timerService : TimerService){
   }
 
-  //Simply prints the time which the HLR was initated to the log.
-  printHLRStartTimeToLog(){
+
+//Simply prints the time which the HLR was initated to the log.
+  ngOnInit(){
+    this.loggingService.addHLRItem("00:00:00", Defibrilate.NONE, "", "HLR-förloppet startade vid klockan " + this.printHLRStartTimeToLog(), false);
+  }
+
+  //the time function that is called when you want the current time.
+  printHLRStartTimeToLog(): string{
     // Get time values
     let date : Date = new Date();
     let hours : number = date.getHours();
@@ -37,12 +41,13 @@ export class HLRComponent implements OnInit {
     if (seconds < 10) {
       secondsString = '0' + seconds;
     }
-    let startTime : string = hoursString + ':' + minutesString + ':' + secondsString;
-    this.loggingService.addHLRItem("00:00:00", Defibrilate.NONE, "", "HLR-förloppet startade vid klockan " + startTime, false);
+    return hoursString + ':' + minutesString + ':' + secondsString;
+  }
+
+//The function that is called when the "avsluta"-button is pressed. Logs the end of the HLR-session.
+  goToLog(){
+    this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE, "TODO", "HLR-förloppet avslutades vid klockan " + this.printHLRStartTimeToLog() , true);
+
   }
 
 }
-
-
-
-
