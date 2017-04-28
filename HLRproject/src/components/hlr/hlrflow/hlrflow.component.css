@@ -1,8 +1,9 @@
-.hlrflow {
-  width: 100%;
-  height: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  margin: auto;
-}
+
+  .hlrflow{
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+  }
