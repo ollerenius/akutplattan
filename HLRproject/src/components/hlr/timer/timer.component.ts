@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import {TimerService} from "../../../services/timer.service";
 
 @Component({
@@ -11,13 +11,18 @@ import {TimerService} from "../../../services/timer.service";
  * A class necessary for displaying the time which has passed since a HLR-process was initated.
  * This information is also passed outside the component by use of a TimerService singleton.
  */
-export class TimerComponent{
-
+export class TimerComponent implements OnDestroy{
   currentTime : string = "00:00:00";
   timeElapsed : number = 0;
+  timer;
 
   constructor(private timerService : TimerService) {
     this.startTimer();
+  }
+
+  ngOnDestroy(){
+    clearInterval(this.timer);
+    this.timerService.currentTimeString = "00:00:00";
   }
 
   /**
@@ -25,7 +30,7 @@ export class TimerComponent{
    */
   private startTimer() : void {
     this.updateTimer();
-    setInterval(() => {
+    this.timer = setInterval(() => {
       this.updateTimer();
     }, 1000);
   }
