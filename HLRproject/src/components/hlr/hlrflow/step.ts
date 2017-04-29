@@ -9,6 +9,7 @@ export class Step {
    */
   public currentStepIndex : number = 0;
   public index : number;
+  public htmlId : string;
   private static ASSIGN_INDEX : number = 0;
 
   constructor(public amiodaroneDose: number,
@@ -17,5 +18,6 @@ export class Step {
               public radioModel : string){
 
     this.index = Step.ASSIGN_INDEX++;
+    this.htmlId = "step" + this.index;
   }
 }

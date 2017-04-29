@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {Step} from "./step";
 
+declare var window : any;
+declare var document : any;
+
 @Component({
   selector: 'hlrflow',
   templateUrl: 'hlrflow.component.html',
@@ -36,6 +39,11 @@ export class HLRFlowComponent{
       step.currentStepIndex = this.currentStepIndex + 1;
     }
     this.currentStepIndex++;
+    this.steps.push(new Step(98, 87, false, "VF/VT_alternative"));
+    /*
+    var myElement = document.getElementById("step5");
+    var scrollPos = myElement.offsetWidth;
+    document.getElementById("flow").scrollWidth = scrollPos;*/
   }
 }
 
