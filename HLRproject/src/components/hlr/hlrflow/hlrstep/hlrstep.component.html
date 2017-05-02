@@ -19,11 +19,11 @@
    <div class="panel-body" id="medicine-buttons">
 
      <!--TODO: DO EXTENSIVE TESTING HERE TO ASSURE THAT RACE CONDITIONS >DO NOT< EXIST! -->
-     <div *ngIf="step.showAdrenalineDose == true">
+     <div [ngClass]="step.showAdrenalineDose ? '' : 'hideButton'">
      <label class="btn btn-primary btn-block" (click)="pressedMedicineButton('adrenaline', checkModel.adrenaline)"
             [innerHTML]="adrenaline" [(ngModel)]="checkModel.adrenaline" btnCheckbox></label>
      </div>
-     <div *ngIf="step.showAmiodaroneDose == true">
+     <div [ngClass]="step.showAmiodaroneDose ? '' : 'hideButton'">
      <label class="btn btn-success btn-block" (click)="pressedMedicineButton('amiodarone', checkModel.amiodarone)"
             [innerHTML]="amiodarone" [(ngModel)]="checkModel.amiodarone" btnCheckbox></label>
      </div>
