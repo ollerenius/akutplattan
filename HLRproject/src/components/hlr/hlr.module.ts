@@ -12,6 +12,7 @@ import { HLRFlowComponent } from "./hlrflow/hlrflow.component";
 import {HlrstepComponent} from "./hlrflow/hlrstep/hlrstep.component";
 import {TimerComponent} from "./timer/timer.component";
 import {TimerService} from "../../services/timer.service";
+import {HLRDosageService} from "../../services/hlrdosage.service";
 import {routing} from "../../app/app.routes";
 
 
@@ -31,7 +32,7 @@ import {routing} from "../../app/app.routes";
     HttpModule,
     routing
   ],
-  providers: [TimerService],
+  providers: [TimerService,HLRDosageService],
   bootstrap: [HLRComponent]
 })
 export class HLRModule { }
