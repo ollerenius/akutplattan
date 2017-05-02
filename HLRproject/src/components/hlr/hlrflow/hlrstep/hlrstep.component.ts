@@ -98,12 +98,6 @@ export class HlrstepComponent implements OnInit {
     this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' ml';
   }
 
-  // TODO:
-  public changeAnalysisInStep(){
-    if (this.step.currentStepIndex == this.step.index) {
-
-    }
-  }
 
   /**
    * This method specifies whether the border of the current step should

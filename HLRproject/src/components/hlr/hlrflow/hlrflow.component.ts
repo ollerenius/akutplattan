@@ -20,6 +20,16 @@ export class HLRFlowComponent{
       new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
       new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
       new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
       new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2')
     ];
   }
@@ -30,7 +40,7 @@ export class HLRFlowComponent{
    *  current one before triggering) this method goes to the next step. It also changes the state of all the
    * remaining steps but does not touch the previous ones.
    */
-  changeAnalysisState(event) {
+  changeAnalysisState(event) : void {
     for (let step of this.steps) {
       if (step.index >= this.currentStepIndex) {
         step.radioModel = event;
@@ -41,6 +51,8 @@ export class HLRFlowComponent{
     this.currentStepIndex++;
   }
 }
+
+
 
 
 
