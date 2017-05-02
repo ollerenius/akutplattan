@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-4 col-md-3" id="headerElement">
-      <img [src]="leftArrow" class="img-responsive" (click)="goBack()">
+      <img *ngIf="!(hideInPaths.indexOf(router.url) != -1)" [src]="leftArrow" class="img-responsive" (click)="goBack()">
     </div>
     <div class="col-xs-4 col-md-6">
       <h1 class="text-center">
