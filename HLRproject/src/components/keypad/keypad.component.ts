@@ -16,7 +16,6 @@ export class KeyPadComponent {
   keypad_res:string = "";
 
   /**
-   *
    * @param input Takes the attribute which is named and puts its value as a string to display as a placeholder in the keypad textfield
    */
   constructor(@Attribute('placeholder') input: string) {
@@ -25,9 +24,9 @@ export class KeyPadComponent {
 
   /**
    * Handles all actions that are to be triggered when a keypad button is pressed.
-   * @param pressedKey The key which was pressed on the keypad.
+   * @param pressedKey : string The key which was pressed on the keypad.
    */
-  public handleInput(pressedKey){
+  public handleInput(pressedKey : string) : void{
     switch(pressedKey){
       case 'C':
           this.keypad_res = "";

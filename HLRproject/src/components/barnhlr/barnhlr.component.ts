@@ -18,7 +18,7 @@ export class BarnHLRStartComponent implements OnDestroy {
   constructor(private barnHLRService: BarnHLRService) {
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() : void{
     this.barnHLRService.bool_val = this.useAge;
   }
 }
