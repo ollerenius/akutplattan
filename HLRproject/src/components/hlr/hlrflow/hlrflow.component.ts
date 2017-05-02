@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Step} from "./step";
+import {HLRDosageService} from "../../../services/hlrdosage.service";
 
 @Component({
   selector: 'hlrflow',
@@ -11,21 +12,25 @@ export class HLRFlowComponent{
   steps: Array<Step>;
   private currentStepIndex : number = 0;
 
-  constructor() {
+  constructor(private hlrDosageService : HLRDosageService) {
+    let amiodarone : number = hlrDosageService.amiodarone;
+    let adrenaline : number = hlrDosageService.adrenaline;
     this.steps = [
-      new Step(99, 88, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2'),
-      new Step(98, 87, false, "VF/VT_alternative", '30:2')
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2')
     ];
   }
 

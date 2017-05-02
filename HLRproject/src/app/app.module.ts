@@ -11,10 +11,11 @@ import {LoggingService} from "../services/logging.service";
 import {routing} from "./app.routes";
 import {BarnHLRSettingsComponent} from "../components/barnhlrsettings/barnhlrsettings.component";
 import {BarnHLRStartComponent} from "../components/barnhlr/barnhlr.component";
-import {BarnHLRService} from "../components/barnhlr/barnhlr.service";
+import {BarnHLRService} from "../services/barnhlr.service";
 import {KeyPadComponent} from "../components/keypad/keypad.component";
 import {HLRModule} from "../components/hlr/hlr.module";
 import { ButtonsModule } from 'ng2-bootstrap/buttons';
+import {HLRDosageService} from "../services/hlrdosage.service";
 import { RespiratoryArrestComponent } from '../components/respiratoryarrest/respiratoryarrest.component';
 
 
@@ -38,7 +39,7 @@ import { RespiratoryArrestComponent } from '../components/respiratoryarrest/resp
     routing,
     HLRModule
   ],
-  providers: [BarnHLRService, LoggingService],
+  providers: [BarnHLRService, LoggingService, HLRDosageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

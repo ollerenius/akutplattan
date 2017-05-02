@@ -15,6 +15,8 @@ import {Router} from "@angular/router";
 export class HeaderComponent {
 
   title = 'Titel';
+  hideInPaths = ['/']; //TODO: Add HLR here as well?
+
 
   /**
    * The path to the back arrow image file.
