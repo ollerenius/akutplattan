@@ -42,16 +42,18 @@
 
 
 
-   <!-- START OF NEXT STEP BUTTON -->
    <div class="panel-body" id="next-prev-button">
-     <label class="btn btn-default" *ngIf="step.index == step.currentStepIndex" (click)="changeStepNotifier('next')" btnCheckbox>
-       Next step
-     </label>
+     <!-- START OF PREV BUTTON -->
      <label class="btn btn-default" *ngIf="step.index == step.currentStepIndex" (click)="changeStepNotifier('prev')" btnCheckbox>
        Previous step
      </label>
+     <!-- END OF PREV BUTTON -->
+     <!-- END OF NEXT STEP BUTTON -->
+     <label class="btn btn-default" *ngIf="step.index == step.currentStepIndex" (click)="changeStepNotifier('next')" btnCheckbox>
+       Next step
+     </label>
+     <!-- START OF NEXT STEP BUTTON -->
    </div>
-   <!-- END OF NEXT STEP BUTTON -->
 
 
  </div>
