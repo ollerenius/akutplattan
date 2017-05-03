@@ -137,7 +137,6 @@ export class BarnHLRSettingsComponent{
         break;
       default:
         console.error("Undefined input radio model picked.")
-        //TODO: If we get here we have some real trouble ahead of us. Can we get here?
         break;
     }
 
