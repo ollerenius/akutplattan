@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Step} from "./step";
+import {HLRStepAttributes} from "../../../classes/HLRStepAttributes";
 import {HLRDosageService} from "../../../services/hlrdosage.service";
 
 @Component({
@@ -37,22 +38,34 @@ export class HLRFlowComponent{
   /**
    * Current solution: once a change is triggered from the current step
    * (every instance of the HLR Step component must check if it is the
-   *  current one before triggering) this method goes to the next step. It also changes the state of all the
-   * remaining steps but does not touch the previous ones.
+   *  current one before triggering) this method goes to the next step.
    */
-  changeAnalysisState(event) : void {
+
+  /**
+   * Updates the currentStepIndex and upcoming analysis step to reflect the properties in the current step,
+   * depending on whether the stepDirection is 'next' or 'prev'.
+   * @param stepEvent : HLRStepAttributes The event data related to the current step triggering the event.
+   */
+  changeStep(stepEvent: HLRStepAttributes) : void{
     for (let step of this.steps) {
-      if (step.index >= this.currentStepIndex) {
-        step.radioModel = event;
+      if ((step.index >= this.currentStepIndex) && (stepEvent.stepDirection == 'next')) {
+          step.radioModel = stepEvent.currentAnalysisState;
       }
-      // Go to next step
-      step.currentStepIndex = this.currentStepIndex + 1;
+      if(stepEvent.stepDirection == 'next'){
+        step.currentStepIndex = this.currentStepIndex + 1;
+      }
+      else if((stepEvent.stepDirection == 'prev') && (this.currentStepIndex > 0)){
+        step.currentStepIndex = this.currentStepIndex - 1;
+      }
     }
-    this.currentStepIndex++;
+    if (stepEvent.stepDirection == 'next') {
+      this.currentStepIndex++;
+    }
+    else if ((stepEvent.stepDirection == 'prev') && (this.currentStepIndex > 0)) {
+      this.currentStepIndex--;
+    }
   }
 }
-
-
 
 
 
