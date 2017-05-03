@@ -5,6 +5,10 @@
   float: none;
 }
 
+.hlr-border{
+  border: 2px solid red;
+}
+
 .def-button {
   padding: 5px;
   height: 60px;

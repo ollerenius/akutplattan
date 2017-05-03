@@ -1,7 +1,8 @@
 <section>
   <div class="container-fluid">
     <div class="hlrflow">
-        <hlrstep *ngFor="let step of steps" (analysisNotifierEmitter)="changeAnalysisState($event)" [step]="step"></hlrstep>
+        <hlrstep *ngFor="let step of steps" (changeStepNotifierEmitter)="changeStep($event)"  [step]="step"></hlrstep>
     </div>
   </div>
 </section>
+
