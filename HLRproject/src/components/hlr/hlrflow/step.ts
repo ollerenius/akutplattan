@@ -41,12 +41,12 @@ export class Step {
 
     // Should this step show the adrenaline-button?
     if ((this.index == 2) || (this.index == 4)) {
-      this.showAdrenalineDose = true;
+      this.showAmiodaroneDose = true;
     }
 
     // Should this step show the amiodaron-button?
     if(((this.index % 2) == 0) && (this.index != 0)) {
-      this.showAmiodaroneDose = true;
+      this.showAdrenalineDose = true;
     }
   }
 }
