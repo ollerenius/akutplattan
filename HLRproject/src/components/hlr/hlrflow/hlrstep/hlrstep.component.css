@@ -36,3 +36,7 @@
   background-color: darkred;
   color: white;
 }
+
+.hideButton {
+  visibility: hidden;
+}

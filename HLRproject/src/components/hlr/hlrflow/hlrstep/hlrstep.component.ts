@@ -98,16 +98,10 @@ export class HlrstepComponent implements OnInit {
 
 
   ngOnInit() : void {
-    this.adrenaline = 'Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg';
-    this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' mg';
+    this.adrenaline = 'Adrenalin: ' + this.step.adrenalineDose.toString() + ' ml';
+    this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' ml';
   }
 
-  // TODO:
-  public changeAnalysisInStep(){
-    if (this.step.currentStepIndex == this.step.index) {
-
-    }
-  }
 
   // BOLT BUTTON
   boltFilledPath: string ='../../../../assets/images/bolt-filled-small.png';
