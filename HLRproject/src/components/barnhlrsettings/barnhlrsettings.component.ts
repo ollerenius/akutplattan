@@ -27,7 +27,7 @@ export class BarnHLRSettingsComponent{
   }
 
   constructor(private barnHLRService: BarnHLRService, private hlrDosageService : HLRDosageService) {
-    this.useAge = barnHLRService.bool_val;
+    this.useAge = barnHLRService.isWeightKnown;
 
     if (this.useAge == true){
       this.newCalcUnit = "vikt";

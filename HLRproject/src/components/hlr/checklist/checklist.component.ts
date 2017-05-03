@@ -18,7 +18,6 @@ export class ChecklistComponent implements OnInit {
   checkboxRows : CheckboxData[][] = [];
   checkboxDataList : CheckboxData[] = [];
 
-  //TODO: make fancy checkboxes
   public title: string = 'Checklist';
   constructor(private timerService : TimerService, private loggingService : LoggingService){
   }
