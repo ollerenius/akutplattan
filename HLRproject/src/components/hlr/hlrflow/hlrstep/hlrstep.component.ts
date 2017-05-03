@@ -11,7 +11,6 @@ import {Defibrilate} from "../../../../classes/HLRItem";
 })
 export class HlrstepComponent implements OnInit {
   //MEDICINE BUTTON
-  //TODO: add checkboxes to popover, discuss with group
   public adrenaline: string;
   public amiodarone: string;
 
@@ -25,7 +24,6 @@ export class HlrstepComponent implements OnInit {
   // NEXT BUTTON
   nextStep: boolean = false;
 
-  //TODO: Use this information
   @Input() step: Step;
   @Output() analysisNotifierEmitter:EventEmitter<string> = new EventEmitter();
 
@@ -36,10 +34,6 @@ export class HlrstepComponent implements OnInit {
    * This method is called when an analysis button is pressed ('VF/VT' or 'Asystoli')
    * If this step is the currently active one (as specified by Step.currentStepIndex)
    * it will emit a message to the parent component. If not, it will do nothing.
-   * TODO: The button still changes color even if it has no effect. Make it so that
-   * TODO: only the currently active step can be modified by the user.
-   * TODO: This is probably best achieved in the HTML file.
-   * TODO: Idea: maybe move the currentStepIndex check to the HTML file completely?
    */
   changeAnalysisStatesNotifier() : void {
     // Check if this is the currently active step in the flow
@@ -86,7 +80,6 @@ export class HlrstepComponent implements OnInit {
       logString += " har administrerats."
     }
     else{
-      //TODO: Annan formulering?
       logString += " har ångrats."
     }
     this.addToLog(logString, Defibrilate.NONE, false);
@@ -120,12 +113,10 @@ export class HlrstepComponent implements OnInit {
   boltFullPath: string = this.boltOutlinePath;
 
   public changeImage() : void {
-    //TODO: add log and timestamp
     if(this.step.defibrilate){
       //Test
       this.boltFullPath = this.boltOutlinePath;
       this.step.defibrilate = false;
-      //TODO: Add a CSS attribute instead of depec. font to do this!
       this.addToLog("Defibrilering ångrad!", Defibrilate.FALSE, false)
     }
     else{
