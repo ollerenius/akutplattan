@@ -19,6 +19,6 @@ export class BarnHLRStartComponent implements OnDestroy {
   }
 
   ngOnDestroy() : void{
-    this.barnHLRService.bool_val = this.useAge;
+    this.barnHLRService.isWeightKnown = this.useAge;
   }
 }

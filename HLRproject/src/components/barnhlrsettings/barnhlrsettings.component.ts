@@ -27,7 +27,7 @@ export class BarnHLRSettingsComponent{
   }
 
   constructor(private barnHLRService: BarnHLRService, private hlrDosageService : HLRDosageService) {
-    this.useAge = barnHLRService.bool_val;
+    this.useAge = barnHLRService.isWeightKnown;
 
     if (this.useAge == true){
       this.newCalcUnit = "vikt";
@@ -140,7 +140,6 @@ export class BarnHLRSettingsComponent{
         break;
       default:
         console.error("Undefined input radio model picked.")
-        //TODO: If we get here we have some real trouble ahead of us. Can we get here?
         break;
     }
 

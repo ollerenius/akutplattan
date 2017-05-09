@@ -15,7 +15,7 @@ import {Router} from "@angular/router";
 export class HeaderComponent {
 
   title = 'Titel';
-  hideInPaths = ['/']; //TODO: Add HLR here as well?
+  hideInPaths = ['/'];
 
 
   /**
@@ -34,8 +34,6 @@ export class HeaderComponent {
    * Functionality not yet implemented.
    */
   goBack() : void {
-    //TODO: This was the best way at the time to route this while preventing paths that shouldn't be "backable"
-    //TODO: This should be improved. Either by doing "back-routing" in a different way, or by simply adding handling for the different Promises that navigateByUrl can return.
     let cur_route : string = this.router.url;
     let new_route : string;
     switch(cur_route){
