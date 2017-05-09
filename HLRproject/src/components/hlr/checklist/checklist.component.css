@@ -1,14 +1,13 @@
-.btn {
+.checkb {
   background-color: white;
   border-radius: 8px;
   border: 1px solid black;
   color: black;
-  font-size: 20px;
-  padding: 8px 30px;
+  font-size: 18px;
+  padding: 8px 10px;
   width: 100%;
-
 }
-.btn:active {
+.checkb:active {
   background-color: darkgreen;
 }
 .green-box {
@@ -18,4 +17,3 @@
 #space{
   margin: 8px;
 }
-
