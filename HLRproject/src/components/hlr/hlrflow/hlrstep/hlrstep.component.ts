@@ -23,7 +23,6 @@ export class HlrstepComponent implements OnInit {
     amiodarone: false
   };
 
-
   @Input() step: Step;
   @Output() changeStepNotifierEmitter:EventEmitter<HLRStepAttributes> = new EventEmitter<HLRStepAttributes>();
 
@@ -125,3 +124,4 @@ export class HlrstepComponent implements OnInit {
     }
   }
 }
+
