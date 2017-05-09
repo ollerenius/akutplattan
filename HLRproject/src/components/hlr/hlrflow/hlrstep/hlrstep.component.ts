@@ -4,6 +4,7 @@ import {LoggingService} from "../../../../services/logging.service";
 import {TimerService} from "../../../../services/timer.service";
 import {Defibrilate} from "../../../../classes/HLRItem";
 import {HLRStepAttributes} from "../../../../classes/HLRStepAttributes";
+import {CheckboxData} from "../../../../classes/CheckboxData";
 
 @Component({
   selector: 'hlrstep',
@@ -11,17 +12,9 @@ import {HLRStepAttributes} from "../../../../classes/HLRStepAttributes";
   styleUrls: ['hlrstep.component.css']
 })
 export class HlrstepComponent implements OnInit {
-  //MEDICINE BUTTON
-  public adrenaline: string;
-  public amiodarone: string;
 
-  public buttontext: string = 'Adrenalin' + '<br>' + 'Amiodaron';
-
-  public checkModel = {
-    adrenaline: false,
-    amiodarone: false
-  };
-
+  public adrenaline: CheckboxData;
+  public amiodarone: CheckboxData;
 
   @Input() step: Step;
   @Output() changeStepNotifierEmitter:EventEmitter<HLRStepAttributes> = new EventEmitter<HLRStepAttributes>();
@@ -74,17 +67,17 @@ export class HlrstepComponent implements OnInit {
     let logString : string = "";
     switch(medicineString){
       case "adrenaline":
-        logString += this.adrenaline;
+        logString += this.adrenaline.name;
         break;
       case "amiodarone":
-        logString += this.amiodarone;
+        logString += this.amiodarone.name;
         break;
       default:
         logString += "ERROR";
         break;
     }
     //Inverted as we go from state -> !state during this click.
-    if(state){
+    if(!state){
       logString += " har administrerats."
     }
     else{
@@ -95,8 +88,8 @@ export class HlrstepComponent implements OnInit {
 
 
   ngOnInit() : void {
-    this.adrenaline = 'Adrenalin: ' + this.step.adrenalineDose.toString() + ' ml';
-    this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' ml';
+    this.adrenaline = new CheckboxData('Adrenalin: ' + this.step.adrenalineDose.toString() + ' ml', false);
+    this.amiodarone = new CheckboxData('Amiodarone: ' + this.step.amiodaroneDose.toString() + ' ml', false);
   }
 
 
@@ -108,7 +101,6 @@ export class HlrstepComponent implements OnInit {
 
   public changeImage() : void {
     if(this.step.defibrilate){
-      //Test
       this.boltFullPath = this.boltOutlinePath;
       this.step.defibrilate = false;
       this.addToLog("Defibrilering ångrad!", Defibrilate.FALSE, false)

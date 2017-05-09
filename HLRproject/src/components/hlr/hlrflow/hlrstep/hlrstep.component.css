@@ -28,7 +28,7 @@
 }
 
 .btn-danger {
-  background-color: lightpink;
+  background-color: white;
   color: black;
 }
 
@@ -39,4 +39,23 @@
 
 .hideButton {
   visibility: hidden;
+}
+
+
+
+
+.checkb {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid black;
+  color: black;
+  /* font-size: 18px; */
+  padding: 8px 30px;
+  width: 100%;
+}
+.checkb:active {
+  background-color: darkgreen;
+}
+.green-box {
+  background-color: green;
 }
