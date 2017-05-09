@@ -12,6 +12,7 @@ import {CheckboxData} from "../../../../classes/CheckboxData";
   styleUrls: ['hlrstep.component.css']
 })
 export class HlrstepComponent implements OnInit {
+
   public adrenaline: CheckboxData;
   public amiodarone: CheckboxData;
 
@@ -24,8 +25,7 @@ export class HlrstepComponent implements OnInit {
   /**
    * This method is called when the 'next' or 'previous' button is pressed.
    * If this step is the currently active one (as specified by Step.currentStepIndex)
-   * it will emit a message to the parent component. This action is also transferred to the logging service.
-   * @param stepDirection : string 'next' or 'prev' depending on what button was pressed.
+   * it will emit a message to the parent component. If not, it will do nothing.
    */
   changeStepNotifier(stepDirection: string) : void {
     let hlrStepAttributes = new HLRStepAttributes(stepDirection, this.step.radioModel);
@@ -81,7 +81,6 @@ export class HlrstepComponent implements OnInit {
       logString += " har administrerats."
     }
     else{
-      //TODO: Annan formulering?
       logString += " har ångrats."
     }
     this.addToLog(logString, Defibrilate.NONE, false);
@@ -101,11 +100,9 @@ export class HlrstepComponent implements OnInit {
   boltFullPath: string = this.boltOutlinePath;
 
   public changeImage() : void {
-    //TODO: add log and timestamp
     if(this.step.defibrilate){
       this.boltFullPath = this.boltOutlinePath;
       this.step.defibrilate = false;
-      //TODO: Add a CSS attribute instead of depec. font to do this!
       this.addToLog("Defibrilering ångrad!", Defibrilate.FALSE, false)
     }
     else{

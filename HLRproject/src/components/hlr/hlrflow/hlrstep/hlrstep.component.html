@@ -1,12 +1,11 @@
 <div class="panel panel-default text-center step" [ngClass]="(step.index == step.currentStepIndex) ? 'hlr-border' : ''">
 
 
-  <!-- START OF BOLT BUTTON -->
-  <div class="panel-body" id="bolt-image">
-    <!-- TODO: Add (click) to report medicine buttons to log -->
-    <button class="btn btn-lg def-button"><img class="def-image" [src]="boltFullPath" (click)="changeImage()"/></button>
-  </div>
-  <!-- END OF BOLT BUTTON -->
+   <!-- START OF BOLT BUTTON -->
+   <div class="panel-body" id="bolt-image">
+     <button class="btn btn-lg def-button"><img class="def-image" [src]="boltFullPath" (click)="changeImage()"/></button>
+   </div>
+   <!-- END OF BOLT BUTTON -->
 
 
   <!-- START OF HEART MASSAGE TEXT -->
