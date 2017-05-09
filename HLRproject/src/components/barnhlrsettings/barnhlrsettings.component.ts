@@ -60,14 +60,17 @@ export class BarnHLRSettingsComponent{
     if(this.verifyStringFromKeypad(this.lastKeypadString, inputType)) {
       let wetflagNumber: number = this._wetflagTransform(this.lastKeypadString, inputType);
       if (this.useAge == false) {
+        //TODO: Race condition?
         this.wetflag = String(this.lastKeypadString + " kg");
+        this.hlrDosageService.setDosagesFromWeight(Number(this.lastKeypadString));
       }
       else{
         this.wetflag = String(wetflagNumber + " kg");
+        this.hlrDosageService.setDosagesFromWeight(Number(wetflagNumber));
       }
       //TODO: Only navigate to HLR after we have a real weight (not on undefined etc..)
       //TODO: Fix it so that this part guarantees safety (eg. that this.wetflag is good number)
-      this.hlrDosageService.setDosagesFromWeight(Number(wetflagNumber));
+
     }
     else{
       this.wetflag = "Ogiltig";

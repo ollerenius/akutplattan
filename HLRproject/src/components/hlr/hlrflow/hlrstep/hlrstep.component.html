@@ -1,4 +1,4 @@
- <div class="panel panel-default text-center step" [style.border]="getBorder()">
+ <div class="panel panel-default text-center step" [ngClass]="(step.index == step.currentStepIndex) ? 'hlr-border' : ''">
 
 
    <!-- START OF BOLT BUTTON -->
@@ -41,13 +41,18 @@
 
 
 
-   <!-- START OF NEXT STEP BUTTON -->
-   <div class="panel-body" id="next-button">
-     <label class="btn btn-default" [(ngModel)]="nextStep" (click)="changeAnalysisStatesNotifier()" btnCheckbox>
+   <div class="panel-body" id="next-prev-button">
+     <!-- START OF PREV STEP BUTTON -->
+     <label class="btn btn-default" *ngIf="step.index == step.currentStepIndex" (click)="changeStepNotifier('prev')" btnCheckbox>
+       Previous step
+     </label>
+     <!-- END OF PREV STEP BUTTON -->
+     <!-- START OF NEXT STEP BUTTON -->
+     <label class="btn btn-default" *ngIf="step.index == step.currentStepIndex" (click)="changeStepNotifier('next')" btnCheckbox>
        Next step
      </label>
+     <!-- END OF NEXT STEP BUTTON -->
    </div>
-   <!-- END OF NEXT STEP BUTTON -->
 
 
  </div>
