@@ -1,4 +1,4 @@
- <div class="panel panel-default text-center step" [ngClass]="(step.index == step.currentStepIndex) ? 'hlr-border' : ''">
+<div class="panel panel-default text-center step" [ngClass]="(step.index == step.currentStepIndex) ? 'hlr-border' : ''">
 
    <!-- START OF BOLT BUTTON -->
 
@@ -9,51 +9,59 @@
    <!-- END OF BOLT BUTTON -->
 
 
-   <!-- START OF HEART MASSAGE TEXT -->
-   <div class="panel-body" id="heart-massage" [innerHTML]="step.heartMassage + ' <br> 2 min'"></div>
-   <!-- END OF HEART MASSAGE TEXT -->
+  <!-- START OF HEART MASSAGE TEXT -->
+  <div class="panel-body" id="heart-massage" [innerHTML]="step.heartMassage + ' <br> 2 min'"></div>
+  <!-- END OF HEART MASSAGE TEXT -->
 
 
-   <!-- START OF MEDICINE BUTTONS -->
-   <!-- Theese buttons are not displayed unless the corresponding "show...Dose" boolean is set-->
-   <div class="panel-body" id="medicine-buttons">
+  <!-- START OF MEDICINE BUTTONS -->
+  <!-- Theese buttons are not displayed unless the corresponding "show...Dose" boolean is set-->
+  <div class="panel-body" id="medicine-buttons">
 
-     <!--TODO: DO EXTENSIVE TESTING HERE TO ASSURE THAT RACE CONDITIONS >DO NOT< EXIST! -->
-     <div [ngClass]="step.showAdrenalineDose ? '' : 'hideButton'">
-     <label class="btn btn-primary btn-block" (click)="pressedMedicineButton('adrenaline', checkModel.adrenaline)"
-            [innerHTML]="adrenaline" [(ngModel)]="checkModel.adrenaline" btnCheckbox></label>
-     </div>
-     <div [ngClass]="step.showAmiodaroneDose ? '' : 'hideButton'">
-     <label class="btn btn-success btn-block" (click)="pressedMedicineButton('amiodarone', checkModel.amiodarone)"
-            [innerHTML]="amiodarone" [(ngModel)]="checkModel.amiodarone" btnCheckbox></label>
-     </div>
-   </div>
-   <!-- END OF MEDICINE BUTTONS -->
-
-
-   <!-- START OF ANALYSIS BUTTON -->
-   <div class="panel-body" id="analysis-buttons">
-     <label class="btn btn-danger" [(ngModel)]="step.radioModel"
-            btnRadio="VF/VT_alternative">VF/VT</label>
-     <label class="btn btn-danger" [(ngModel)]="step.radioModel"
-            btnRadio="Asystoli/PEA_alternative">Asystoli/PEA</label>
-   </div>
-   <!-- END OF ANALYSIS BUTTON -->
+    <!--TODO: DO EXTENSIVE TESTING HERE TO ASSURE THAT RACE CONDITIONS >DO NOT< EXIST! -->
+    <div [ngClass]="step.showAdrenalineDose ? '' : 'hideButton'">
+      <div class="checkbox">
+        <label class="btn checkb" [class.green-box]="adrenaline.value">
+          <input (click)="pressedMedicineButton('adrenaline', adrenaline.value)" type="checkbox" [(ngModel)]="adrenaline.value">
+          {{adrenaline.name}}
+        </label>
+      </div>
+    </div>
+    <div [ngClass]="step.showAmiodaroneDose ? '' : 'hideButton'">
+      <div class="checkbox">
+        <label class="btn checkb" [class.green-box]="amiodarone.value">
+          <input (click)="pressedMedicineButton('amiodarone', amiodarone.value)" type="checkbox" [(ngModel)]="amiodarone.value">
+          {{amiodarone.name}}
+        </label>
+      </div>
+    </div>
+  </div>
+  <!-- END OF MEDICINE BUTTONS -->
 
 
-
-   <div class="panel-body" id="next-prev-button">
-     <!-- START OF PREV STEP BUTTON -->
-     <label class="btn btn-default" *ngIf="step.index == step.currentStepIndex" (click)="changeStepNotifier('prev')" btnCheckbox>
-       Previous step
-     </label>
-     <!-- END OF PREV STEP BUTTON -->
-     <!-- START OF NEXT STEP BUTTON -->
-     <label class="btn btn-default" *ngIf="step.index == step.currentStepIndex" (click)="changeStepNotifier('next')" btnCheckbox>
-       Next step
-     </label>
-     <!-- END OF NEXT STEP BUTTON -->
-   </div>
+  <!-- START OF ANALYSIS BUTTON -->
+  <div class="panel-body" id="analysis-buttons">
+    <label class="btn btn-danger" [(ngModel)]="step.radioModel"
+           btnRadio="VF/VT_alternative">VF/VT</label>
+    <label class="btn btn-danger" [(ngModel)]="step.radioModel"
+           btnRadio="Asystoli/PEA_alternative">Asystoli/PEA</label>
+  </div>
+  <!-- END OF ANALYSIS BUTTON -->
 
 
- </div>
+
+  <div class="panel-body" id="next-prev-button">
+    <!-- START OF PREV STEP BUTTON -->
+    <label class="btn btn-default" *ngIf="step.index == step.currentStepIndex" (click)="changeStepNotifier('prev')" btnCheckbox>
+      Föregående
+    </label>
+    <!-- END OF PREV STEP BUTTON -->
+    <!-- START OF NEXT STEP BUTTON -->
+    <label class="btn btn-default" *ngIf="step.index == step.currentStepIndex" (click)="changeStepNotifier('next')" btnCheckbox>
+      Nästa
+    </label>
+    <!-- END OF NEXT STEP BUTTON -->
+  </div>
+
+
+</div>
