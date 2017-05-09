@@ -12,17 +12,8 @@ import {CheckboxData} from "../../../../classes/CheckboxData";
   styleUrls: ['hlrstep.component.css']
 })
 export class HlrstepComponent implements OnInit {
-  //MEDICINE BUTTON
-  //TODO: add checkboxes to popover, discuss with group
-
   public adrenaline: CheckboxData;
   public amiodarone: CheckboxData;
-
-  public checkModel = {
-    adrenaline: false,
-    amiodarone: false
-  };
-
 
   @Input() step: Step;
   @Output() changeStepNotifierEmitter:EventEmitter<HLRStepAttributes> = new EventEmitter<HLRStepAttributes>();
@@ -112,7 +103,6 @@ export class HlrstepComponent implements OnInit {
   public changeImage() : void {
     //TODO: add log and timestamp
     if(this.step.defibrilate){
-      //Test
       this.boltFullPath = this.boltOutlinePath;
       this.step.defibrilate = false;
       //TODO: Add a CSS attribute instead of depec. font to do this!
