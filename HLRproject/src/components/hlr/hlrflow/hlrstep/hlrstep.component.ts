@@ -67,17 +67,17 @@ export class HlrstepComponent implements OnInit {
     let logString : string = "";
     switch(medicineString){
       case "adrenaline":
-        logString += this.adrenaline;
+        logString += this.adrenaline.name;
         break;
       case "amiodarone":
-        logString += this.amiodarone;
+        logString += this.amiodarone.name;
         break;
       default:
         logString += "ERROR";
         break;
     }
     //Inverted as we go from state -> !state during this click.
-    if(state){
+    if(!state){
       logString += " har administrerats."
     }
     else{
