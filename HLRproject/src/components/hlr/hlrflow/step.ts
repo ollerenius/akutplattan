@@ -26,9 +26,10 @@ export class Step {
 
   currentStepIndex : number = 0;
   public index : number;
-  private static ASSIGN_INDEX : number = 0;
+  public  static ASSIGN_INDEX : number = 0;
   public showAdrenalineDose : boolean = false;
   public showAmiodaroneDose : boolean = false;
+  public showBoltPicture : boolean = true;
 
   constructor(public amiodaroneDose: number,
               public adrenalineDose : number,

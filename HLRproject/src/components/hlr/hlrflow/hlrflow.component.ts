@@ -9,7 +9,7 @@ import {HLRDosageService} from "../../../services/hlrdosage.service";
   styleUrls: ['hlrflow.component.css']
 })
 
-export class HLRFlowComponent{
+export class HLRFlowComponent {
   steps: Array<Step>;
   private currentStepIndex : number = 0;
 
@@ -50,6 +50,10 @@ export class HLRFlowComponent{
     for (let step of this.steps) {
       if ((step.index >= this.currentStepIndex) && (stepEvent.stepDirection == 'next')) {
           step.radioModel = stepEvent.currentAnalysisState;
+          if(step.index > this.currentStepIndex){
+            step.showBoltPicture = step.radioModel != "Asystoli/PEA_alternative";
+          }
+
       }
       if(stepEvent.stepDirection == 'next'){
         step.currentStepIndex = this.currentStepIndex + 1;

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {LoggingService} from "../../services/logging.service";
 import {Defibrilate} from "../../classes/HLRItem";
 import {TimerService} from "../../services/timer.service";
+import {Step} from "./hlrflow/step";
 
 @Component({
   selector: 'hlr-page',
@@ -48,7 +49,11 @@ export class HLRComponent implements OnInit {
   goToLog(){
     //TODO: This >might< cause a race-condition with the timerService reset in the timer.component destructor. (It works most times tho)
     this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE, "", "HLR-förloppet avslutades vid klockan " + this.printCurrentTimeToLog() , true);
-
+    this.resetHLRFlow();
   }
 
+  // This function resets the index for the steps to start from when creating a new HLR-flow
+  resetHLRFlow() : void {
+    Step.ASSIGN_INDEX = 0;
+  }
 }
