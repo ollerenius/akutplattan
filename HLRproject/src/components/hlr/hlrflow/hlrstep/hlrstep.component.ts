@@ -4,6 +4,7 @@ import {LoggingService} from "../../../../services/logging.service";
 import {TimerService} from "../../../../services/timer.service";
 import {Defibrilate} from "../../../../classes/HLRItem";
 import {HLRStepAttributes} from "../../../../classes/HLRStepAttributes";
+import {CheckboxData} from "../../../../classes/CheckboxData";
 
 @Component({
   selector: 'hlrstep',
@@ -13,10 +14,9 @@ import {HLRStepAttributes} from "../../../../classes/HLRStepAttributes";
 export class HlrstepComponent implements OnInit {
   //MEDICINE BUTTON
   //TODO: add checkboxes to popover, discuss with group
-  public adrenaline: string;
-  public amiodarone: string;
 
-  public buttontext: string = 'Adrenalin' + '<br>' + 'Amiodaron';
+  public adrenaline: CheckboxData;
+  public amiodarone: CheckboxData;
 
   public checkModel = {
     adrenaline: false,
@@ -98,8 +98,8 @@ export class HlrstepComponent implements OnInit {
 
 
   ngOnInit() : void {
-    this.adrenaline = 'Adrenalin: ' + this.step.adrenalineDose.toString() + ' ml';
-    this.amiodarone = 'Amiodarone: ' + this.step.amiodaroneDose.toString() + ' ml';
+    this.adrenaline = new CheckboxData('Adrenalin: ' + this.step.adrenalineDose.toString() + ' ml', false);
+    this.amiodarone = new CheckboxData('Amiodarone: ' + this.step.amiodaroneDose.toString() + ' ml', false);
   }
 
 

@@ -30,7 +30,7 @@ export class ChecklistComponent implements OnInit {
 
   //Setups the checkbox rows that are looped through in the .html file.
   setupCheckboxRows(){
-    const elementsPerRow : number = 3;
+    const elementsPerRow : number = 4;
 
     let currentElementInRow : number = 0;
     let nextRow : CheckboxData[] = [];
@@ -53,11 +53,14 @@ export class ChecklistComponent implements OnInit {
   setupCheckboxes(){
     this.checkboxDataList.push(new CheckboxData("Larma", false));
     this.checkboxDataList.push(new CheckboxData("Pvk", false));
-    this.checkboxDataList.push(new CheckboxData("Narkos", false));
     this.checkboxDataList.push(new CheckboxData("Hjärtbräda", false));
-    this.checkboxDataList.push(new CheckboxData("Ringer acetat", false));
-    this.checkboxDataList.push(new CheckboxData("Medicinjour", false));
+    this.checkboxDataList.push(new CheckboxData("Journal", false));
+    this.checkboxDataList.push(new CheckboxData("Ringer-Acetat", false));
+    this.checkboxDataList.push(new CheckboxData("Svalgtub", false));
     this.checkboxDataList.push(new CheckboxData("Syrgas", false));
+    this.checkboxDataList.push(new CheckboxData("Hjärtstoppsrapport", false));
+    this.checkboxDataList.push(new CheckboxData("Narkos", false));
+    this.checkboxDataList.push(new CheckboxData("Medicinjour", false));
     this.checkboxDataList.push(new CheckboxData("Anhöriga", false));
   }
 
