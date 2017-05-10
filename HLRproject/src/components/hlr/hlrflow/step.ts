@@ -39,7 +39,6 @@ export class Step {
 
     this.index = Step.ASSIGN_INDEX++;
 
-
     // Should this step show the adrenaline-button?
     if ((this.index == 2) || (this.index == 4)) {
       this.showAmiodaroneDose = true;
