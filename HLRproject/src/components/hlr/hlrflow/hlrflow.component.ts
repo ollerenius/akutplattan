@@ -3,6 +3,9 @@ import {Step} from "./step";
 import {HLRStepAttributes} from "../../../classes/HLRStepAttributes";
 import {HLRDosageService} from "../../../services/hlrdosage.service";
 
+declare var window : any;
+declare var document : any;
+
 @Component({
   selector: 'hlrflow',
   templateUrl: 'hlrflow.component.html',
@@ -51,7 +54,7 @@ export class HLRFlowComponent implements OnDestroy{
    * depending on whether the stepDirection is 'next' or 'prev'.
    * @param stepEvent : HLRStepAttributes The event data related to the current step triggering the event.
    */
-  changeStep(stepEvent: HLRStepAttributes) : void{
+  changeStep(stepEvent: HLRStepAttributes) : void {
     for (let step of this.steps) {
       if ((step.index >= this.currentStepIndex) && (stepEvent.stepDirection == 'next')) {
           step.radioModel = stepEvent.currentAnalysisState;
@@ -69,6 +72,10 @@ export class HLRFlowComponent implements OnDestroy{
     }
     if (stepEvent.stepDirection == 'next') {
       this.currentStepIndex++;
+      // Add a new step
+      this.steps.push(
+        new Step(this.hlrDosageService.amiodarone, this.hlrDosageService.adrenaline,
+          false, stepEvent.currentAnalysisState, "30:2"));
     }
     else if ((stepEvent.stepDirection == 'prev') && (this.currentStepIndex > 0)) {
       this.currentStepIndex--;

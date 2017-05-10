@@ -24,6 +24,7 @@ export class Step {
    */
 
 
+
   currentStepIndex: number = 0;
   public index: number;
   public static ASSIGN_INDEX: number = 0;
@@ -44,6 +45,7 @@ export class Step {
         this.amiodaroneDose = amiodaroneDose / 2;
       }
     }
+
 
       // Should this step show the adrenaline-button?
       if ((this.index == 2) || (this.index == 4)) {
