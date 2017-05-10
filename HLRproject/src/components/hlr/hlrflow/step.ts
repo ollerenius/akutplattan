@@ -24,32 +24,37 @@ export class Step {
    */
 
 
-  currentStepIndex : number = 0;
-  public index : number;
-  public htmlId : string;
-  public  static ASSIGN_INDEX : number = 0;
-  public showAdrenalineDose : boolean = false;
-  public showAmiodaroneDose : boolean = false;
-  public showBoltPicture : boolean = true;
+
+  currentStepIndex: number = 0;
+  public index: number;
+  public static ASSIGN_INDEX: number = 0;
+  public showAdrenalineDose: boolean = false;
+  public showAmiodaroneDose: boolean = false;
+  public showBoltPicture: boolean = true;
 
   constructor(public amiodaroneDose: number,
-              public adrenalineDose : number,
-              public defibrilate : boolean,
-              public radioModel : string,
-              public heartMassage : string){
+              public adrenalineDose: number,
+              public defibrilate: boolean,
+              public radioModel: string,
+              public heartMassage: string) {
 
     this.index = Step.ASSIGN_INDEX++;
-    this.htmlId = "step" + this.index;
 
-
-    // Should this step show the adrenaline-button?
-    if ((this.index == 2) || (this.index == 4)) {
-      this.showAmiodaroneDose = true;
+    if (this.index == 4) {
+      if (this.amiodaroneDose == 300) {
+        this.amiodaroneDose = amiodaroneDose / 2;
+      }
     }
 
-    // Should this step show the amiodarone-button?
-    if(((this.index % 2) == 0) && (this.index != 0)) {
-      this.showAdrenalineDose = true;
+
+      // Should this step show the adrenaline-button?
+      if ((this.index == 2) || (this.index == 4)) {
+        this.showAmiodaroneDose = true;
+      }
+
+      // Should this step show the amiodaron-button?
+      if (((this.index % 2) == 0) && (this.index != 0)) {
+        this.showAdrenalineDose = true;
+      }
     }
-  }
 }
