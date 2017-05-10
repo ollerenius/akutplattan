@@ -11,8 +11,8 @@ export class HLRDosageService {
   /**
    * Standard dose for an adult
    */
-  adrenaline : number = 10;
-  amiodarone : number = 20;
+  adrenaline : number = 1;
+  amiodarone : number = 300;
 
 
   /**
@@ -21,8 +21,8 @@ export class HLRDosageService {
    */
   public setDosagesFromWeight(weightKg : number) : void {
     if (weightKg < 50) {
-      this.adrenaline = Math.round(weightKg * 0.1);
-      this.amiodarone = Math.round(weightKg * 0.33);
+      this.adrenaline = Math.round(weightKg * 0.01*100)/100;
+      this.amiodarone = Math.round(weightKg * 5); //TODO: Double-check these dosage values for corresponding weights
       /*
        From table:
        Adrenaline (0.1 mg/ml) 0.01 mg/kg, 0.1 ml/kg
@@ -32,8 +32,8 @@ export class HLRDosageService {
        */
     }
     else{
-      this.adrenaline = 10;
-      this.amiodarone = 20;
+      this.adrenaline = 1;
+      this.amiodarone = 300;
     }
   }
 }
