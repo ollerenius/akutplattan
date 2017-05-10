@@ -14,7 +14,6 @@ export class HLRDosageService {
   adrenaline : number = 10;
   amiodarone : number = 20;
 
-
   /**
    * Sets the doses for a person based on the persons weight
    * @param weightKg :number - the persons weight in kg
@@ -32,8 +31,15 @@ export class HLRDosageService {
        */
     }
     else{
-      this.adrenaline = 10;
-      this.amiodarone = 20;
+      this.setDefaultAdultDoseage();
     }
+  }
+
+  /**
+   * Sets the medicine doseage to the default values for an adult.
+   */
+  setDefaultAdultDoseage() : void{
+    this.adrenaline = 10;
+    this.amiodarone = 20;
   }
 }
