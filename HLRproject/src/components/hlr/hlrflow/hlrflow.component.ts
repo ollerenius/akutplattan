@@ -75,10 +75,6 @@ export class HLRFlowComponent {
     else if ((stepEvent.stepDirection == 'prev') && (this.currentStepIndex > 0)) {
       this.currentStepIndex--;
     }
-    /*
-    var myElement = document.getElementById("step5");
-    var scrollPos = myElement.offsetWidth;
-    document.getElementById("flow").scrollWidth = scrollPos;*/
   }
 }
 
