@@ -47,7 +47,7 @@ export class Step {
       this.showAmiodaroneDose = true;
     }
 
-    // Should this step show the amiodaron-button?
+    // Should this step show the amiodarone-button?
     if(((this.index % 2) == 0) && (this.index != 0)) {
       this.showAdrenalineDose = true;
     }
