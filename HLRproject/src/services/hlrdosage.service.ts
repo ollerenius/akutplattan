@@ -31,14 +31,14 @@ export class HLRDosageService {
        */
     }
     else{
-      this.setDefaultAdultDoseage();
+      this.setDefaultAdultDosage();
     }
   }
 
   /**
-   * Sets the medicine doseage to the default values for an adult.
+   * Sets the medicine dosage to the default values for an adult.
    */
-  setDefaultAdultDoseage() : void{
+  setDefaultAdultDosage() : void{
     this.adrenaline = 10;
     this.amiodarone = 20;
   }
