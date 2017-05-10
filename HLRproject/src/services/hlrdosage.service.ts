@@ -21,7 +21,7 @@ export class HLRDosageService {
    */
   public setDosagesFromWeight(weightKg : number) : void {
     if (weightKg < 50) {
-      this.adrenaline = (weightKg * 0.01 *100/100);//This equation is written this way because of decimals in the answer.
+      this.adrenaline = Math.round(weightKg * 0.01*100)/100;
       this.amiodarone = Math.round(weightKg * 5); //TODO: Double-check these dosage values for corresponding weights
       /*
        From table:
