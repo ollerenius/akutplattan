@@ -61,7 +61,6 @@ export class HLRFlowComponent implements OnDestroy{
           if(step.index > this.currentStepIndex){
             step.showBoltPicture = step.radioModel != "Asystoli/PEA_alternative";
           }
-
       }
       if(stepEvent.stepDirection == 'next'){
         step.currentStepIndex = this.currentStepIndex + 1;
