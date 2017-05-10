@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import { BarnHLRService } from './barnhlr.service';
+import { BarnHLRService } from '../../services/barnhlr.service';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class BarnHLRStartComponent implements OnDestroy {
   constructor(private barnHLRService: BarnHLRService) {
   }
 
-  ngOnDestroy(){
-    this.barnHLRService.bool_val = this.useAge;
+  ngOnDestroy() : void{
+    this.barnHLRService.isWeightKnown = this.useAge;
   }
 }

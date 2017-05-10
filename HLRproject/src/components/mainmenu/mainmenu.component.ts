@@ -12,7 +12,5 @@ import { Component } from '@angular/core';
 })
 
 export class MainMenuComponent {
-  goToAndningstopp(): void {
-    console.log('Go to Andningsstopp')
-  }
+
 }

@@ -1,0 +1,11 @@
+.img-center{
+  display: block;
+  margin: 0 auto;
+}
+
+/*This image setting adjusts the image to any device screen so scrolls don't appear */
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}

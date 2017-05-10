@@ -1,13 +1,16 @@
-<div class="row">
+<div class="row" *ngIf="useAge == true">
    <div class="col-xs-offset-0 col-sm-offset-1 col-md-offset-3 col-xs-12 col-sm-10 col-md-6">
          <div class="row">
-         <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel" btnRadio="Manader" [class.green-box]="inputRadioModel=='Manader'">
+         <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel"
+                btnRadio="Manader" [class.green-box]="inputRadioModel=='Manader'" (click)="updateDisplayedWetflagValue()">
             Månader
          </label>
-         <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel" btnRadio="Ar" [class.green-box]="inputRadioModel=='Ar'">
+         <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel"
+                btnRadio="Ar" [class.green-box]="inputRadioModel=='Ar'" (click)="updateDisplayedWetflagValue()">
             År
          </label>
-         <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel" btnRadio="Personnummer" [class.green-box]="inputRadioModel=='Personnummer'">
+         <label class="btn btn-lg col-md-4" [(ngModel)]="inputRadioModel"
+                btnRadio="Personnummer" [class.green-box]="inputRadioModel=='Personnummer'" (click)="updateDisplayedWetflagValue()">
             Personnummer
          </label>
       </div>
@@ -16,18 +19,22 @@
 </div>
  <div class="row">
    <div class="col-xs-offset-0 col-sm-offset-1 col-md-offset-3 col-xs-12 col-sm-10 col-md-6">
-       <keypad-comp (notify)='onNotify($event)' placeholder='Ange ålder...'></keypad-comp>
+       <keypad-comp *ngIf="useAge == true" (notify)='onNotify($event)' placeholder='Ange ålder...'></keypad-comp>
+       <keypad-comp *ngIf="useAge == false" (notify)='onNotify($event)' placeholder='Ange vikt...'></keypad-comp>
    </div>
  </div>
 
- <div class="row" *ngIf="useAge">
+ <div class="row">
    <div class="barnhlr-choose">
      <div class="col-sm-offset-2 col-md-offset-3">
-       <h1>Beräknad vikt: {{wetflag}} kg</h1>
+       <h1>
+         <div *ngIf="useAge == true">Beräknad vikt: {{wetflag}}</div>
+         <div *ngIf="useAge == false">Angiven vikt: {{wetflag}}</div>
+       </h1>
      </div>
      <div class="col-sm-offset-2 col-md-offset-3">
-       <button class="col-xs-12 col-sm-5 col-md-4 btn-success">Använd vikt</button>
-       <button class="col-xs-12 col-sm-5 col-md-4 btn-danger">Ange egen vikt</button>
+       <button class="col-xs-12 col-sm-5 col-md-4 btn-success" [routerLink]="['/hlr']">Använd</button>
+       <button class="col-xs-12 col-sm-5 col-md-4 btn-danger" (click)="switchKeypad(useAge)" >Ange {{newCalcUnit}} istället</button>
      </div>
    </div>
  </div>
