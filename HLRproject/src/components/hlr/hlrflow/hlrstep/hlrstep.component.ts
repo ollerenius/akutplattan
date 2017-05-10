@@ -88,8 +88,8 @@ export class HlrstepComponent implements OnInit {
 
 
   ngOnInit() : void {
-    this.adrenaline = new CheckboxData('Adrenalin: ' + this.step.adrenalineDose.toString() + ' ml', false);
-    this.amiodarone = new CheckboxData('Amiodarone: ' + this.step.amiodaroneDose.toString() + ' ml', false);
+    this.adrenaline = new CheckboxData('Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg', false);
+    this.amiodarone = new CheckboxData('Amiodarone: ' + this.step.amiodaroneDose.toString() + ' mg', false);
   }
 
 
