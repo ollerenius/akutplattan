@@ -16,6 +16,13 @@ export class HLRFlowComponent implements OnDestroy{
   steps: Array<Step>;
   private currentStepIndex : number = 0;
 
+  /**
+   * A constant declaring the maximum number of steps between the current
+   * and the last one, i.e. determines when the flow needs to be expanded.
+   * @type {number}
+   */
+  private static MAX_STEP_MARGIN : number = 5;
+
   constructor(private hlrDosageService : HLRDosageService) {
     let amiodarone : number = hlrDosageService.amiodarone;
     let adrenaline : number = hlrDosageService.adrenaline;
@@ -61,7 +68,6 @@ export class HLRFlowComponent implements OnDestroy{
           if(step.index > this.currentStepIndex){
             step.showBoltPicture = step.radioModel != "Asystoli/PEA_alternative";
           }
-
       }
       if(stepEvent.stepDirection == 'next'){
         step.currentStepIndex = this.currentStepIndex + 1;
@@ -73,10 +79,12 @@ export class HLRFlowComponent implements OnDestroy{
     if (stepEvent.stepDirection == 'next') {
       this.currentStepIndex++;
       // Add a new step
-      let step : Step = new Step(this.hlrDosageService.amiodarone, this.hlrDosageService.adrenaline,
-        false, stepEvent.currentAnalysisState, "30:2");
-      step.showBoltPicture = step.radioModel != "Asystoli/PEA_alternative";
-      this.steps.push(step);
+      if (this.currentStepIndex > this.steps.length - HLRFlowComponent.MAX_STEP_MARGIN) {
+          let step : Step = new Step(this.hlrDosageService.amiodarone, this.hlrDosageService.adrenaline,
+              false, stepEvent.currentAnalysisState, "30:2");
+          step.showBoltPicture = step.radioModel != "Asystoli/PEA_alternative";
+          this.steps.push(step);
+      }
     }
     else if ((stepEvent.stepDirection == 'prev') && (this.currentStepIndex > 0)) {
       this.currentStepIndex--;
