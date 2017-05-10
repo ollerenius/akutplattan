@@ -13,8 +13,8 @@
   border: 1px solid black;
   color: black;
   font-size: 20px;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .btn:active {
   background-color: darkgreen;
@@ -22,3 +22,16 @@
 .green-box {
   background-color: green;
 }
+
+#acceptButton{
+  padding: 20px 40px;
+  margin: 5px 5px;
+  font-size: 30px;
+}
+
+#changeButton{
+  padding: 20px 40px;
+  margin: 5px 5px;
+  font-size: 30px;
+}
+
