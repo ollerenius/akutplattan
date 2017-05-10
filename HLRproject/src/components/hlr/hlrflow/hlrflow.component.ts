@@ -80,9 +80,10 @@ export class HLRFlowComponent implements OnDestroy{
       this.currentStepIndex++;
       // Add a new step
       if (this.currentStepIndex > this.steps.length - HLRFlowComponent.MAX_STEP_MARGIN) {
-        this.steps.push(
-          new Step(this.hlrDosageService.amiodarone, this.hlrDosageService.adrenaline,
-            false, stepEvent.currentAnalysisState, "30:2"));
+          let step : Step = new Step(this.hlrDosageService.amiodarone, this.hlrDosageService.adrenaline,
+              false, stepEvent.currentAnalysisState, "30:2");
+          step.showBoltPicture = step.radioModel != "Asystoli/PEA_alternative";
+          this.steps.push(step);
       }
     }
     else if ((stepEvent.stepDirection == 'prev') && (this.currentStepIndex > 0)) {
