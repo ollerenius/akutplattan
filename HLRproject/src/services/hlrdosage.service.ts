@@ -14,14 +14,13 @@ export class HLRDosageService {
   adrenaline : number = 1;
   amiodarone : number = 300;
 
-
   /**
    * Sets the doses for a person based on the persons weight
    * @param weightKg :number - the persons weight in kg
    */
   public setDosagesFromWeight(weightKg : number) : void {
     if (weightKg < 50) {
-      this.adrenaline = Math.round(weightKg * 0.01 *100)/100;//This equation is written this way because of decimals in the answer.
+      this.adrenaline = Math.round(weightKg * 0.01*100)/100;
       this.amiodarone = Math.round(weightKg * 5); //TODO: Double-check these dosage values for corresponding weights
       /*
        From table:

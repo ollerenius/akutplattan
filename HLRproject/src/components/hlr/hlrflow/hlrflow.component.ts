@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {Step} from "./step";
 import {HLRStepAttributes} from "../../../classes/HLRStepAttributes";
 import {HLRDosageService} from "../../../services/hlrdosage.service";
@@ -9,7 +9,7 @@ import {HLRDosageService} from "../../../services/hlrdosage.service";
   styleUrls: ['hlrflow.component.css']
 })
 
-export class HLRFlowComponent {
+export class HLRFlowComponent implements OnDestroy{
   steps: Array<Step>;
   private currentStepIndex : number = 0;
 
@@ -33,6 +33,11 @@ export class HLRFlowComponent {
       new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
       new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2')
     ];
+  }
+
+
+  ngOnDestroy(): void {
+    this.hlrDosageService.setDefaultAdultDosage(); //Resets the dosage to an adult dose after a flow has been terminated.
   }
 
   /**
