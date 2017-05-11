@@ -41,9 +41,6 @@
   visibility: hidden;
 }
 
-
-
-
 .checkb {
   background-color: white;
   border-radius: 8px;
@@ -53,9 +50,18 @@
   padding: 8px 30px;
   width: 100%;
 }
+
 .checkb:active {
   background-color: darkgreen;
 }
+
 .green-box {
   background-color: green;
 }
+
+.disabled-step{
+  pointer-events: none;
+  background-color: rgba(191,191,191,0.4);
+  opacity: 0.7;
+}
+
