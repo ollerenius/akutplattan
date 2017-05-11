@@ -1,6 +1,5 @@
 export class Step {
 
-  // TODO: Make variables private, introduce getters
   /**
    * currentStepIndex:
    * The index of the currently active step.
@@ -8,6 +7,7 @@ export class Step {
    * will be changed to reflect that.
    * @type {number}
    */
+  currentStepIndex: number = 0;
 
   /**
    * index:
@@ -15,18 +15,15 @@ export class Step {
    * When a new step is generated, it would be assigned with an incremented unique number.
    * @type {number}
    */
+  public index: number;
 
   /**
    * ASSIGN_INDEX:
-   * The index of how many new steps that has been generated.
+   * The index of how many new steps that have been generated.
    * When a new step is generated, this value will be incremented with 1.
+   * The variable is reset to 0 by calling resetAssignIndex().
    * @type {number}
    */
-
-
-
-  currentStepIndex: number = 0;
-  public index: number;
   private static ASSIGN_INDEX: number = 0;
   public showAdrenalineDose: boolean = false;
   public showAmiodaroneDose: boolean = false;
