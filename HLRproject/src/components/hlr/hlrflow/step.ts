@@ -1,6 +1,5 @@
 export class Step {
 
-  // TODO: Make variables private, introduce getters
   /**
    * currentStepIndex:
    * The index of the currently active step.
@@ -8,6 +7,7 @@ export class Step {
    * will be changed to reflect that.
    * @type {number}
    */
+  currentStepIndex: number = 0;
 
   /**
    * index:
@@ -15,19 +15,16 @@ export class Step {
    * When a new step is generated, it would be assigned with an incremented unique number.
    * @type {number}
    */
+  public index: number;
 
   /**
    * ASSIGN_INDEX:
-   * The index of how many new steps that has been generated.
+   * The index of how many new steps that have been generated.
    * When a new step is generated, this value will be incremented with 1.
+   * The variable is reset to 0 by calling resetAssignIndex().
    * @type {number}
    */
-
-
-
-  currentStepIndex: number = 0;
-  public index: number;
-  public static ASSIGN_INDEX: number = 0;
+  private static ASSIGN_INDEX: number = 0;
   public showAdrenalineDose: boolean = false;
   public showAmiodaroneDose: boolean = false;
   public showBoltPicture: boolean = true;
@@ -56,5 +53,13 @@ export class Step {
       if (((this.index % 2) == 0) && (this.index != 0)) {
         this.showAdrenalineDose = true;
       }
+    }
+
+  /**
+   * When finishing a flow, call this function to reset the assign
+   * index variable, making the next flow start at index 0.
+   */
+  public static resetAssignIndex() : void {
+        Step.ASSIGN_INDEX = 0;
     }
 }

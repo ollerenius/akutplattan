@@ -54,6 +54,6 @@ export class HLRComponent implements OnInit {
 
   // This function resets the index for the steps to start from when creating a new HLR-flow
   resetHLRFlow() : void {
-    Step.ASSIGN_INDEX = 0;
+    Step.resetAssignIndex();
   }
 }
