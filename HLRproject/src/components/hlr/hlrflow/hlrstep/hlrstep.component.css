@@ -59,9 +59,13 @@
   background-color: green;
 }
 
-.disabled-step{
+.disabled-step {
   pointer-events: none;
   background-color: rgba(191,191,191,0.4);
   opacity: 0.7;
+}
+
+.panel-body {
+  padding: 10px;
 }
 
