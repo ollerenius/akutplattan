@@ -14,7 +14,7 @@ import {Router} from "@angular/router";
 
 export class HeaderComponent {
 
-  title = 'Titel';
+  title = 'Akutvagn 1';
   hideInPaths = ['/', '/hlr'];
 
 
