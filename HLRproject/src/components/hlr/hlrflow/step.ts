@@ -1,3 +1,12 @@
+/**
+ * This class contains data for each step of the HLR flow.
+ * Each Step instance is associated with exactly one hlrstep component
+ * (see ./hlrstep/hlrstep.component.ts for implementation details).
+ *
+ * The Step instances are created in the hlrflow component
+ * (./hlrflow.component.ts) when the flow is first created and when
+ * it is expanded.
+ */
 export class Step {
 
   /**
