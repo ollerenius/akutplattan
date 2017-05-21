@@ -4,7 +4,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LoggingService} from "../../../services/logging.service";
 import {TimerService} from "../../../services/timer.service";
-import {Defibrilate} from "../../../classes/HLRItem";
+import {Defibrilate, Ruler} from "../../../classes/HLRItem";
 import {CheckboxData} from "../../../classes/CheckboxData";
 
 @Component({
@@ -66,10 +66,10 @@ export class ChecklistComponent implements OnInit {
   addToLog(information : string, state : boolean){
     //The state is inverted to what it actually is, due to the click event and checkbox value change happening at the same time
     if(!state){
-      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har markerats.", false);
+      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har markerats.", Ruler.NONE);
     }
     else{
-      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har avmarkerats.", false);
+      this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har avmarkerats.", Ruler.NONE);
     }
   }
 }
