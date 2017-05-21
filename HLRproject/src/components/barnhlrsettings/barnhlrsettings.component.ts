@@ -62,11 +62,11 @@ export class BarnHLRSettingsComponent{
       if (this.useAge == false) {
         //TODO: Race condition?
         this.wetflag = String(this.lastKeypadString + " kg");
-        this.hlrDosageService.setDosagesFromWeight(Number(this.lastKeypadString));
+        this.hlrDosageService.setChildCPRValues(Number(this.lastKeypadString));
       }
       else{
         this.wetflag = String(wetflagNumber + " kg");
-        this.hlrDosageService.setDosagesFromWeight(Number(wetflagNumber));
+        this.hlrDosageService.setChildCPRValues(Number(wetflagNumber));
       }
       //TODO: Only navigate to HLR after we have a real weight (not on undefined etc..)
       //TODO: Fix it so that this part guarantees safety (eg. that this.wetflag is good number)
