@@ -65,8 +65,11 @@ export class HLRFlowComponent implements OnDestroy{
     for (let step of this.steps) {
       if ((step.index >= this.currentStepIndex) && (stepEvent.stepDirection == 'next')) {
           step.radioModel = stepEvent.currentAnalysisState;
-          if(step.index > this.currentStepIndex){
-            step.showBoltPicture = step.radioModel != "Asystoli/PEA_alternative";
+          if (step.index > this.currentStepIndex){
+            step.showBoltPicture = (step.radioModel != "Asystoli/PEA_alternative");
+            if ((step.index == 2) || (step.index == 4)) {
+              step.showAmiodaroneDose = (step.radioModel != "Asystoli/PEA_alternative");
+            }
           }
       }
       if(stepEvent.stepDirection == 'next'){
