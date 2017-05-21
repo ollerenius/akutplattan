@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <!-- A generated history row -->
+      <!-- Generates a list of history rows -->
       <tr *ngFor="let hlritem of hlrItems" [ngClass]="hlritem.ruler ? 'newstep' : ''">
         <th scope="row">{{hlritem.timestamp}}</th>
         <td>
