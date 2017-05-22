@@ -26,28 +26,29 @@ export class HLRFlowComponent implements OnDestroy{
   constructor(private hlrDosageService : HLRDosageService) {
     let amiodarone : number = hlrDosageService.amiodarone;
     let adrenaline : number = hlrDosageService.adrenaline;
+    let compressions  : string = hlrDosageService.compressions;
     this.steps = [
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2'),
-      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", '30:2')
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
+      new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions)
     ];
   }
 
 
   ngOnDestroy(): void {
-    this.hlrDosageService.setDefaultAdultDosage(); //Resets the dosage to an adult dose after a flow has been terminated.
+    this.hlrDosageService.setAdultCPRValues(); //Resets the dosage to an adult dose after a flow has been terminated.
   }
 
   /**
