@@ -1,21 +1,9 @@
-# tddd96_project
-The project repository for TDDD96, Group 8
+# Akutplattan
+Akutplattan is a digital tool designed to be used in medical centers to help visualizing the workflow during CPR situations. 
 
-## General guidelines
+## Installation and deployment
+To build the project, you need to: 
+* install [node](https://nodejs.org/en/download/)
+* Install [Angular/CLI](https://github.com/angular/angular-cli) and run the command 'npm install -g @angular/cli'
 
-* Commits and merges should contain a descriptive message, detailing its contents. Commit messages should be formatted according to the guide linked below.
-* More guidelines may be added in the future, be shure to check in whenever this file is updated.
-
-## The git cycle
-* Before starting working, make it a habit to always pull from the branch you are currently working on.
-
-* Once there are files staged for commit:
- 1. git add "filename1" "filename2" ...
- 2. git commit -m "message" (alternatively, leave out the "m" flag and use your favourite editor)
- 3. git pull (origin "branch_name")
- 4. If any, resolve merge conflicts
- 5. git push (origin "branch_name")
-
-## Useful links
-* [How to write commit messages]
-(http://chris.beams.io/posts/git-commit/#seven-rules)
+Then, run the command 'ng build'. The dist/ directory that is created contains the web application and can be used for deployment. Alternatively, run the command 'ng serve --port X' to deploy the application locally via port X. If the '--port' flag is left out, the default port is set to 4200.  
