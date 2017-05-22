@@ -2,7 +2,7 @@ import {Component, OnInit, Input, Output, EventEmitter, DoCheck} from '@angular/
 import {Step} from "../step";
 import {LoggingService} from "../../../../services/logging.service";
 import {TimerService} from "../../../../services/timer.service";
-import {Defibrilate} from "../../../../classes/HLRItem";
+import {Defibrilate, Ruler} from "../../../../classes/HLRItem";
 import {HLRStepAttributes} from "../../../../classes/HLRStepAttributes";
 import {CheckboxData} from "../../../../classes/CheckboxData";
 
@@ -35,18 +35,18 @@ export class HlrstepComponent implements OnInit {
 
       if (stepDirection == 'next') {
         this.addToLog("Fortsatte till nästa steg i tillstånd " +
-          this.getStringFromAnalysisButton(), Defibrilate.NONE, true);
+          this.getStringFromAnalysisButton(), Defibrilate.NONE, Ruler.HLRSTEP);
       }
 
       else if ((stepDirection == 'prev') && (this.step.index != 0)) {
-        this.addToLog("Backade till föregående steg!", Defibrilate.NONE, true);
+        this.addToLog("Backade till föregående steg!", Defibrilate.NONE, Ruler.HLRSTEP);
 
       }
     }
   }
 
 
-  addToLog(information : string, defibrilate : Defibrilate, ruler : boolean) : void {
+  addToLog(information : string, defibrilate : Defibrilate, ruler : Ruler) : void {
     this.loggingService.addHLRItem(this.timerService.currentTimeString, defibrilate , this.step.heartMassage, information, ruler);
   }
 
@@ -83,7 +83,7 @@ export class HlrstepComponent implements OnInit {
     else{
       logString += " har ångrats."
     }
-    this.addToLog(logString, Defibrilate.NONE, false);
+    this.addToLog(logString, Defibrilate.NONE, Ruler.NONE);
   }
 
 
@@ -103,12 +103,12 @@ export class HlrstepComponent implements OnInit {
     if(this.step.defibrilate){
       this.boltFullPath = this.boltOutlinePath;
       this.step.defibrilate = false;
-      this.addToLog("Defibrilering ångrad!", Defibrilate.FALSE, false)
+      this.addToLog("Defibrilering ångrad!", Defibrilate.FALSE, Ruler.NONE)
     }
     else{
       this.boltFullPath = this.boltFilledPath;
       this.step.defibrilate = true;
-      this.addToLog("Defibrilering utförd!", Defibrilate.TRUE, false)
+      this.addToLog("Defibrilering utförd!", Defibrilate.TRUE, Ruler.NONE)
     }
   }
 }
