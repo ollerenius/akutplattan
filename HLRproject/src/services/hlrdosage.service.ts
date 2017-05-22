@@ -21,7 +21,7 @@ export class HLRDosageService {
 
 
   /**
-   * Initial values assigned to dosage and compressions, being dosages for an dult.
+   * Initial values assigned to dosage and compressions, being dosages for an adult.
    */
   adrenaline : number = this.adultAdrenaline;
   amiodarone : number = this.adultAmiodarone;
@@ -54,7 +54,7 @@ export class HLRDosageService {
 
   /**
    * Sets the doses for a person based on the persons weight. This is primarily used for child CPR.
-   * @param weightKg : number The persons weight in kg
+   * @param weightKg : number The persons weight in kg.
    */
   private setDosagesFromWeight(weightKg : number) : void {
     if (weightKg < 50) {
