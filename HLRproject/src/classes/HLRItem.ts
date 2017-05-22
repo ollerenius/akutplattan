@@ -15,6 +15,18 @@ interface HLRItemInterface{
 }
 
 /**
+ * Defines the different type of rulers that can be present in the log.
+ * NONE - No ruler is present
+ * HLRSTEP - Hlr-step ruler is present
+ * NONE - Finished hlr-flow ruler is present
+ */
+export enum Ruler{
+  NONE,
+  HLRSTEP,
+  HLRFLOW
+}
+
+/**
  * The different states that a defibrilation can be in for each HLRItem.
  * FALSE - Defibrilation is not done.
  * TRUE - Defibrilation has been done.
@@ -34,9 +46,9 @@ export class HLRItem implements HLRItemInterface{
   defibrilate : Defibrilate;
   compressions : string;
   information : string;
-  ruler : boolean;
+  ruler : Ruler;
 
-  constructor(timestamp : string, defibrilate : Defibrilate, compressions : string, information : string, ruler : boolean){
+  constructor(timestamp : string, defibrilate : Defibrilate, compressions : string, information : string, ruler : Ruler){
     this.timestamp = timestamp;
     this.defibrilate = defibrilate;
     this.compressions = compressions;

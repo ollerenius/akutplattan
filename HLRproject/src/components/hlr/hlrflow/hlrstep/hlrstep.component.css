@@ -51,12 +51,22 @@
   width: 100%;
 }
 
-.checkb:active {
+#amiodarone-button:active {
   background-color: darkgreen;
+}
+
+#adrenaline-button:active {
+  background-color: darkblue;
 }
 
 .green-box {
   background-color: green;
+  color: white;
+}
+
+.blue-box {
+  background-color: blue;
+  color: white;
 }
 
 .disabled-step {

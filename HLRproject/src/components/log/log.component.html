@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <!-- Generates a list of history rows -->
-      <tr *ngFor="let hlritem of hlrItems" [ngClass]="hlritem.ruler ? 'newstep' : ''">
+      <tr *ngFor="let hlritem of hlrItems" [ngClass]="getRulerCSS(hlritem.ruler)">
         <th scope="row">{{hlritem.timestamp}}</th>
         <td>
           <img *ngIf="hlritem.defibrilate == defib.TRUE" class="icon-format" src="../../assets/images/bolt-filled-small.png"/>

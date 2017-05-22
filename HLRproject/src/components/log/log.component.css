@@ -8,3 +8,7 @@
 .newstep{
   border-bottom: 3px solid black;
 }
+
+.endflow{
+  border-bottom: 4px double darkred;
+}
