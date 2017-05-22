@@ -13,7 +13,7 @@ declare var document : any;
 })
 
 export class HLRFlowComponent implements OnDestroy {
-  public steps: Array<Step>;
+  private steps: Array<Step>;
   private currentStepIndex : number = 0;
   private jouleText : string;
 
