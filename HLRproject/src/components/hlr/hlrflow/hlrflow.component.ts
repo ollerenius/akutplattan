@@ -50,13 +50,8 @@ export class HLRFlowComponent implements OnDestroy {
   }
 
 
-<<<<<<< joule_text
-  ngOnDestroy() : void {
-    this.hlrDosageService.setDefaultAdultDosage(); //Resets the dosage to an adult dose after a flow has been terminated.
-=======
   ngOnDestroy(): void {
     this.hlrDosageService.setAdultCPRValues(); //Resets the dosage to an adult dose after a flow has been terminated.
->>>>>>> master
   }
 
   /**
