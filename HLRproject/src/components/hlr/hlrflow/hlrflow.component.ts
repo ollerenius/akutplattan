@@ -12,9 +12,10 @@ declare var document : any;
   styleUrls: ['hlrflow.component.css']
 })
 
-export class HLRFlowComponent implements OnDestroy{
-  steps: Array<Step>;
+export class HLRFlowComponent implements OnDestroy {
+  private steps: Array<Step>;
   private currentStepIndex : number = 0;
+  private jouleText : string;
 
   /**
    * A constant declaring the maximum number of steps between the current
@@ -44,11 +45,27 @@ export class HLRFlowComponent implements OnDestroy{
       new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions),
       new Step(amiodarone, adrenaline, false, "VF/VT_alternative", compressions)
     ];
+
+    this.jouleText = "Defibrillera med en styrka av " + String(hlrDosageService.joule) + " Joule";
   }
 
 
+<<<<<<< joule_text
+  ngOnDestroy() : void {
+    this.hlrDosageService.setDefaultAdultDosage(); //Resets the dosage to an adult dose after a flow has been terminated.
+=======
   ngOnDestroy(): void {
     this.hlrDosageService.setAdultCPRValues(); //Resets the dosage to an adult dose after a flow has been terminated.
+>>>>>>> master
+  }
+
+  /**
+   * A getter used to tell if the joule data is to be visible.
+   * The joule data is only supposed to be visible during children-CPR.
+   * @returns {boolean}
+   */
+  hideJoule() : boolean {
+    return (this.hlrDosageService.joule == 0);
   }
 
   /**
@@ -66,8 +83,11 @@ export class HLRFlowComponent implements OnDestroy{
     for (let step of this.steps) {
       if ((step.index >= this.currentStepIndex) && (stepEvent.stepDirection == 'next')) {
           step.radioModel = stepEvent.currentAnalysisState;
-          if(step.index > this.currentStepIndex){
-            step.showBoltPicture = step.radioModel != "Asystoli/PEA_alternative";
+          if (step.index > this.currentStepIndex){
+            step.showBoltPicture = (step.radioModel != "Asystoli/PEA_alternative");
+            if ((step.index == 2) || (step.index == 4)) {
+              step.showAmiodaroneDose = (step.radioModel != "Asystoli/PEA_alternative");
+            }
           }
       }
       if(stepEvent.stepDirection == 'next'){
