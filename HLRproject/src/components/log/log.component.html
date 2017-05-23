@@ -5,7 +5,11 @@
         <th>Tid</th>
         <th>DEF.</th>
         <th></th>
-        <th>Information</th>
+        <th class="textalign">Information
+          <button (click)="loggingService.removeHLRItems()" class="btn btn-warning pull-right">
+            Rensa historik
+          </button>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -21,4 +25,5 @@
       </tr>
     </tbody>
   </table>
+
 </div>

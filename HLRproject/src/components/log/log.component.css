@@ -12,3 +12,7 @@
 .endflow{
   border-bottom: 4px double darkred;
 }
+
+.table > thead> tr > .classalign {
+  vertical-align: bottom;
+}
