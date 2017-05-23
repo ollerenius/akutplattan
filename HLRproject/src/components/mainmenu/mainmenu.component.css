@@ -1,8 +1,13 @@
 .btn-mainmenu {
-  padding: 20% 0 20% 0;
-  margin-top: 3%;
-  width: 50%;
+  width: 70%;
+  padding-top: -webkit-calc(26vh - 75px); padding-top: -moz-calc(26vh - 75px); padding-top:  calc(26vh - 75px);
+  padding-bottom: -webkit-calc(26vh - 75px); padding-bottom: -moz-calc(26vh - 75px); padding-bottom: calc(26vh - 75px);
+  padding-left: 0;
+  padding-right: 0;
+  margin: 1vh auto 1vh auto;
   font-size: xx-large;
+  white-space: initial;
+  word-wrap: break-word;
+  overflow: hidden;
 }
-
 

@@ -1,4 +1,4 @@
-<div class="table-responsive">
+<div class="scroll">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -8,6 +8,7 @@
         <th>Information</th>
       </tr>
     </thead>
+
     <tbody>
       <!-- A generated history row -->
       <tr *ngFor="let hlritem of hlrItems" [ngClass]="getRulerCSS(hlritem.ruler)">
