@@ -76,8 +76,8 @@ export class HlrstepComponent implements OnInit {
         logString += "ERROR";
         break;
     }
-    //Inverted as we go from state -> !state during this click.
-    if(!state){
+
+    if(state){
       logString += " har administrerats."
     }
     else{
