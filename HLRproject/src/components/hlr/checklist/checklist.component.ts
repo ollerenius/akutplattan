@@ -64,7 +64,6 @@ export class ChecklistComponent implements OnInit {
   }
 
   addToLog(information : string, state : boolean){
-    console.log("Information state is: " + state);
     if(state){
       this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har markerats.", Ruler.NONE);
     }
