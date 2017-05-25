@@ -87,7 +87,6 @@ export class HlrstepComponent implements OnInit {
   }
 
   changeImage() : void {
-    console.log("I actually get here...");
     if(this.step.defibrilate){
       this.boltFullPath = this.boltOutlinePath;
       this.step.defibrilate = false;
