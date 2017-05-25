@@ -16,12 +16,16 @@ export class HLRComponent implements OnInit {
   }
 
 
-//Simply prints the time which the HLR was initated to the log.
+  /**
+   * A functions which prints the time when the HLR session was initiated to the log.
+   */
   ngOnInit(){
     this.loggingService.addHLRItem("00:00:00", Defibrilate.NONE, "", "HLR-förloppet startade vid klockan " + this.printCurrentTimeToLog(), Ruler.NONE);
   }
 
-  //the time function that is called when you want the current time.
+  /**
+   * The function which returns the current time to the log.
+   */
   printCurrentTimeToLog(): string{
     // Get time values
     let date : Date = new Date();
@@ -45,14 +49,22 @@ export class HLRComponent implements OnInit {
     return hoursString + ':' + minutesString + ':' + secondsString;
   }
 
-//The function that is called when the "avsluta"-button is pressed. Logs the end of the HLR-session.
+  /**
+   * The function that is called when you quit the HLR session. Logs the end of the HLR-session.
+   *
+   **/
+
+
   goToLog(){
     //TODO: This >might< cause a race-condition with the timerService reset in the timer.component destructor. (It works most times tho)
     this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE, "", "HLR-förloppet avslutades vid klockan " + this.printCurrentTimeToLog() , Ruler.HLRFLOW);
     this.resetHLRFlow();
   }
 
-  // This function resets the index for the steps to start from when creating a new HLR-flow
+  /**
+   * This function resets the index for the steps to start from when creating a new HLR-flow
+   */
+
   resetHLRFlow() : void {
     Step.resetAssignIndex();
   }
