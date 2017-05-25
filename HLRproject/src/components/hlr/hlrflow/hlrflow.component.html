@@ -3,6 +3,9 @@
     <div class="hlrflow">
         <hlrstep *ngFor="let step of steps" (changeStepNotifierEmitter)="changeStep($event)"  [step]="step"></hlrstep>
     </div>
+    <div class="text-danger" [hidden]="hideJoule()">
+      <label>{{jouleText}}</label>
+    </div>
   </div>
 </section>
 

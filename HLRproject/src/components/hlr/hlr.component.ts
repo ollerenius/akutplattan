@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LoggingService} from "../../services/logging.service";
-import {Defibrilate} from "../../classes/HLRItem";
+import {Defibrilate, Ruler} from "../../classes/HLRItem";
 import {TimerService} from "../../services/timer.service";
 import {Step} from "./hlrflow/step";
 
@@ -18,7 +18,7 @@ export class HLRComponent implements OnInit {
 
 //Simply prints the time which the HLR was initated to the log.
   ngOnInit(){
-    this.loggingService.addHLRItem("00:00:00", Defibrilate.NONE, "", "HLR-förloppet startade vid klockan " + this.printCurrentTimeToLog(), false);
+    this.loggingService.addHLRItem("00:00:00", Defibrilate.NONE, "", "HLR-förloppet startade vid klockan " + this.printCurrentTimeToLog(), Ruler.NONE);
   }
 
   //the time function that is called when you want the current time.
@@ -48,7 +48,7 @@ export class HLRComponent implements OnInit {
 //The function that is called when the "avsluta"-button is pressed. Logs the end of the HLR-session.
   goToLog(){
     //TODO: This >might< cause a race-condition with the timerService reset in the timer.component destructor. (It works most times tho)
-    this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE, "", "HLR-förloppet avslutades vid klockan " + this.printCurrentTimeToLog() , true);
+    this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE, "", "HLR-förloppet avslutades vid klockan " + this.printCurrentTimeToLog() , Ruler.HLRFLOW);
     this.resetHLRFlow();
   }
 

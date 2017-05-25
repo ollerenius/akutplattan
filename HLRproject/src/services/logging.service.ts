@@ -3,7 +3,7 @@
  */
 
 import {Injectable} from "@angular/core";
-import {HLRItem, Defibrilate} from "../classes/HLRItem";
+import {HLRItem, Defibrilate, Ruler} from "../classes/HLRItem";
 
 
 /**
@@ -24,9 +24,9 @@ export class LoggingService{
    * @param defibrilation : Defibrilate The state in which the defibrilation-icon will appear in the log.
    * @param compressions : string The compression ratio to be displayed in the log.
    * @param information : string Additional information to be displayed for this item in the log.
-   * @param ruler : boolean Whether to display a horizontal border below this item in the log.
+   * @param ruler : Ruler The ruler type to display in the log for this HLR-item.
    */
-  addHLRItem(timestamp : string, defibrilation : Defibrilate, compressions : string, information : string, ruler : boolean){
+  addHLRItem(timestamp : string, defibrilation : Defibrilate, compressions : string, information : string, ruler : Ruler){
     this.hlrItems.push(new HLRItem(timestamp, defibrilation, compressions, information, ruler));
   }
 

@@ -21,7 +21,7 @@
     <!--TODO: DO EXTENSIVE TESTING HERE TO ASSURE THAT RACE CONDITIONS >DO NOT< EXIST! -->
     <div [ngClass]="step.showAdrenalineDose ? '' : 'hideButton'">
       <div class="checkbox">
-        <label class="btn checkb" [class.green-box]="adrenaline.value">
+        <label class="btn checkb" [class.blue-box]="adrenaline.value" id="adrenaline-button">
           <input (click)="pressedMedicineButton('adrenaline', adrenaline.value)" type="checkbox" [(ngModel)]="adrenaline.value">
           {{adrenaline.name}}
         </label>
@@ -29,7 +29,7 @@
     </div>
     <div [ngClass]="step.showAmiodaroneDose ? '' : 'hideButton'">
       <div class="checkbox">
-        <label class="btn checkb" [class.green-box]="amiodarone.value">
+        <label class="btn checkb" [class.green-box]="amiodarone.value" id="amiodarone-button">
           <input (click)="pressedMedicineButton('amiodarone', amiodarone.value)" type="checkbox" [(ngModel)]="amiodarone.value">
           {{amiodarone.name}}
         </label>
