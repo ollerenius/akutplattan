@@ -22,7 +22,7 @@
     <div [ngClass]="step.showAdrenalineDose ? '' : 'hideButton'">
       <div class="checkbox">
         <label class="btn checkb" [class.blue-box]="adrenaline.value" id="adrenaline-button">
-          <input (change)="pressedMedicineButton('adrenaline', $event.target.value)" type="checkbox" [(ngModel)]="adrenaline.value">
+          <input type="checkbox" [(ngModel)]="adrenaline.value" (ngModelChange)="pressedMedicineButton('adrenaline', adrenaline.value)">
           {{adrenaline.name}}
         </label>
       </div>
@@ -30,7 +30,7 @@
     <div [ngClass]="step.showAmiodaroneDose ? '' : 'hideButton'">
       <div class="checkbox">
         <label class="btn checkb" [class.green-box]="amiodarone.value" id="amiodarone-button">
-          <input (change)="pressedMedicineButton('amiodarone', $event.target.value)" type="checkbox" [(ngModel)]="amiodarone.value">
+          <input type="checkbox" [(ngModel)]="amiodarone.value" (ngModelChange)="pressedMedicineButton('amiodarone', amiodarone.value)">
           {{amiodarone.name}}
         </label>
       </div>
