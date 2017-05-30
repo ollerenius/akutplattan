@@ -67,8 +67,7 @@ export class ChecklistComponent implements OnInit {
   }
 
   addToLog(information : string, state : boolean){
-    //The state is inverted to what it actually is, due to the click event and checkbox value change happening at the same time
-    if(!state){
+    if(state){
       this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har markerats.", Ruler.NONE);
     }
     else{

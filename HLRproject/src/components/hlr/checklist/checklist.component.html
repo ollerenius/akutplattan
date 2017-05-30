@@ -3,7 +3,7 @@
     <div class="checkbox">
       <div *ngFor="let checkbox of row" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <label class="btn btn-lg checkb" [class.green-box]="checkbox.value">
-          <input (click)="addToLog(checkbox.name, checkbox.value)" type="checkbox" [(ngModel)]="checkbox.value" value="checkbox.name">
+          <input type="checkbox" [(ngModel)]="checkbox.value" (ngModelChange)="addToLog(checkbox.name, checkbox.value)">
           {{checkbox.name}}
         </label>
       </div>

@@ -76,8 +76,8 @@ export class HlrstepComponent implements OnInit {
         logString += "ERROR";
         break;
     }
-    //Inverted as we go from state -> !state during this click.
-    if(!state){
+
+    if(state){
       logString += " har administrerats."
     }
     else{
@@ -86,6 +86,18 @@ export class HlrstepComponent implements OnInit {
     this.addToLog(logString, Defibrilate.NONE, Ruler.NONE);
   }
 
+  changeImage() : void {
+    if(this.step.defibrilate){
+      this.boltFullPath = this.boltOutlinePath;
+      this.step.defibrilate = false;
+      this.addToLog("Defibrilering ångrad!", Defibrilate.FALSE, Ruler.NONE)
+    }
+    else{
+      this.boltFullPath = this.boltFilledPath;
+      this.step.defibrilate = true;
+      this.addToLog("Defibrilering utförd!", Defibrilate.TRUE, Ruler.NONE)
+    }
+  }
 
   ngOnInit() : void {
     this.adrenaline = new CheckboxData('Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg', false);
@@ -103,17 +115,6 @@ export class HlrstepComponent implements OnInit {
 
   boltFullPath: string = this.boltOutlinePath;
 
-  public changeImage() : void {
-    if(this.step.defibrilate){
-      this.boltFullPath = this.boltOutlinePath;
-      this.step.defibrilate = false;
-      this.addToLog("Defibrilering ångrad!", Defibrilate.FALSE, Ruler.NONE)
-    }
-    else{
-      this.boltFullPath = this.boltFilledPath;
-      this.step.defibrilate = true;
-      this.addToLog("Defibrilering utförd!", Defibrilate.TRUE, Ruler.NONE)
-    }
-  }
+
 }
 
