@@ -31,7 +31,6 @@ export class HeaderComponent {
 
   /**
    * goBack() is called when clicking the back button in the header.
-   * Functionality not yet implemented.
    */
   goBack() : void {
     let cur_route : string = this.router.url;

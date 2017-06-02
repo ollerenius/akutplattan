@@ -1,6 +1,3 @@
-/**
- * Created by Kim on 2017-03-21.
- */
 import {Component, OnInit} from '@angular/core';
 import {LoggingService} from "../../../services/logging.service";
 import {TimerService} from "../../../services/timer.service";
@@ -27,7 +24,10 @@ export class ChecklistComponent implements OnInit {
     this.setupCheckboxRows();
   }
 
-  //Setups the checkbox rows that are looped through in the .html file.
+  /**
+   * Sets up the checkbox rows that are looped through in the .html file.
+   *
+   */
   setupCheckboxRows(){
     const elementsPerRow : number = 4;
 
@@ -48,7 +48,10 @@ export class ChecklistComponent implements OnInit {
     }
   }
 
-  //This will setup the standard-option checkbox-list
+  /**
+   * This will setup the standard-option checkbox-list
+   */
+
   setupCheckboxes(){
     this.checkboxDataList.push(new CheckboxData("Larma", false));
     this.checkboxDataList.push(new CheckboxData("Pvk", false));
@@ -64,8 +67,7 @@ export class ChecklistComponent implements OnInit {
   }
 
   addToLog(information : string, state : boolean){
-    //The state is inverted to what it actually is, due to the click event and checkbox value change happening at the same time
-    if(!state){
+    if(state){
       this.loggingService.addHLRItem(this.timerService.currentTimeString, Defibrilate.NONE , "", "Checkbox '"+information+"' har markerats.", Ruler.NONE);
     }
     else{

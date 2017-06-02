@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter, DoCheck} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Step} from "../step";
 import {LoggingService} from "../../../../services/logging.service";
 import {TimerService} from "../../../../services/timer.service";
@@ -58,7 +58,7 @@ export class HlrstepComponent implements OnInit {
       case "Asystoli/PEA_alternative":
         return "Asystoli/PEA";
       default:
-        console.log("Alternative not defined - getStringFromAnalysisButton")
+        console.log("Alternative not defined - getStringFromAnalysisButton");
         return "not defined";
     }
   }
@@ -76,8 +76,8 @@ export class HlrstepComponent implements OnInit {
         logString += "ERROR";
         break;
     }
-    //Inverted as we go from state -> !state during this click.
-    if(!state){
+
+    if(state){
       logString += " har administrerats."
     }
     else{
@@ -86,20 +86,7 @@ export class HlrstepComponent implements OnInit {
     this.addToLog(logString, Defibrilate.NONE, Ruler.NONE);
   }
 
-
-  ngOnInit() : void {
-    this.adrenaline = new CheckboxData('Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg', false);
-    this.amiodarone = new CheckboxData('Amiodarone: ' + this.step.amiodaroneDose.toString() + ' mg', false);
-  }
-
-
-  // BOLT BUTTON
-  boltFilledPath: string ='../../../../assets/images/bolt-filled-small.png';
-  boltOutlinePath: string ='../../../../assets/images/bolt-outline-small.png';
-
-  boltFullPath: string = this.boltOutlinePath;
-
-  public changeImage() : void {
+  changeImage() : void {
     if(this.step.defibrilate){
       this.boltFullPath = this.boltOutlinePath;
       this.step.defibrilate = false;
@@ -111,5 +98,23 @@ export class HlrstepComponent implements OnInit {
       this.addToLog("Defibrilering utförd!", Defibrilate.TRUE, Ruler.NONE)
     }
   }
+
+  ngOnInit() : void {
+    this.adrenaline = new CheckboxData('Adrenalin: ' + this.step.adrenalineDose.toString() + ' mg', false);
+    this.amiodarone = new CheckboxData('Amiodarone: ' + this.step.amiodaroneDose.toString() + ' mg', false);
+  }
+
+
+  /**
+   * This method is called when the bolt button should toggle, and uses the images below.
+   *
+   */
+
+  boltFilledPath: string ='../../../../assets/images/bolt-filled-small.png';
+  boltOutlinePath: string ='../../../../assets/images/bolt-outline-small.png';
+
+  boltFullPath: string = this.boltOutlinePath;
+
+
 }
 

@@ -1,0 +1,30 @@
+CACHE MANIFEST
+# Version 0.2.2
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# All files that are to be cached must be specified       #
+# in this file. Luckily, most files are compiled and      #
+# packaged in such a way that the manifest does not       #
+# need to change in order to cache them. However,         #
+# all assets (images, etc.) must be specified explicitly  #
+# here as they are added to the application.              #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# Angular
+inline.bundle.js
+main.bundle.js
+polyfills.bundle.js
+styles.bundle.js
+styles.bundle.js
+vendor.bundle.js
+
+# Images
+favicon.ico
+assets/images/left-arrow.jpg
+assets/images/bolt-filled.png
+assets/images/bolt-filled-small.png
+assets/images/bolt-outline.png
+assets/images/bolt-outline-small.png
+assets/images/respiratoryarrest.png
+
+

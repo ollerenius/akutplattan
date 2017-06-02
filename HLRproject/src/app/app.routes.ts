@@ -7,6 +7,11 @@ import {LogComponent} from "../components/log/log.component";
 import {HLRComponent} from "../components/hlr/hlr.component";
 import {RespiratoryArrestComponent} from '../components/respiratoryarrest/respiratoryarrest.component'
 
+
+/**
+ * A list of route elements that are used in routing.
+ */
+
 export const routes: Routes = [
   { path: '', component: MainMenuComponent },
   { path: 'hlr', component: HLRComponent },

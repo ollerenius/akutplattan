@@ -3,7 +3,7 @@ import {Step} from "./step";
 import {HLRStepAttributes} from "../../../classes/HLRStepAttributes";
 import {HLRDosageService} from "../../../services/hlrdosage.service";
 
-declare var window : any;
+declare var window: any;
 declare var document : any;
 
 @Component({
