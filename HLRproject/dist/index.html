@@ -1,0 +1,34 @@
+<!doctype html>
+<html manifest="manifest.appcache">
+<head>
+  <meta charset="utf-8">
+  <title>HLRproject</title>
+  <base href="/">
+
+  <!-- Remove zooming in application -->
+  <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no" />
+  <!-- title when saving app -->
+  <meta name="apple-mobile-web-app-title" content="HLR" />
+  <!-- Make it possible to run ass web app on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!-- Import library fast click to remove 300ms delay -->
+  <script type='application/javascript' src='../node_modules/fastclick/lib/fastclick.js'></script>
+
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- JavaScript to activate fastclick -->
+  <script>if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body);
+    }, false);
+  }</script>
+
+<div class="screen">
+    <app-root>Loading...</app-root>
+</div>
+<script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="polyfills.bundle.js"></script><script type="text/javascript" src="styles.bundle.js"></script><script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
+</html>
