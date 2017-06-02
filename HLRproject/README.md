@@ -12,6 +12,7 @@ Copyright 2017 TDDD96 Group 8 Linköpings Universitet
    See the License for the specific language governing permissions and
    limitations under the License.
 
+
 # Background
 
 This application was developed as part of the course TDDD96 Kandidatprojekt i programvaruutveckling by Group 8, 2017, at Linköpings Universitet. 
