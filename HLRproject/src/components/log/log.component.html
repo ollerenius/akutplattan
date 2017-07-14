@@ -5,7 +5,11 @@
         <th>Tid</th>
         <th>DEF.</th>
         <th></th>
-        <th>Information</th>
+        <th>Information
+        </th>
+        <th><button (click)="loggingService.removeHLRItems()" class="btn btn-warning pull-right">
+          Rensa historik
+        </button></th>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +22,9 @@
         </td>
         <th scope="row">{{hlritem.compressions}}</th>
         <td>{{hlritem.information}}</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+
 </div>
